@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>添加hugo博客</title>
+      <title>用 hugo 搭建个人博客</title>
       <link>https://qiujia236.github.io/posts/%E6%B7%BB%E5%8A%A0hugo%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Mon, 30 Dec 2019 13:39:13 +0800</pubDate>
       
@@ -21,7 +21,7 @@
   使用hugo new site xxx创建一个hugo站点，其中xxx为站点的名字；
   添加主题，使用cmder软件输入cd xxx命令进入站点，在站点里面输入git init和git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke两条命令获取主题，最后输入echo &amp;lsquo;theme = &amp;ldquo;ananke&amp;rdquo;&amp;rsquo; &amp;raquo; config.toml添加主题，在config.toml中可以修改相关配置，例如你的标题，你的语言编码，还有URL，其中URL必须为你的域名，比如xxx.github.io域名；   添加内容，使用hugo new posts/xxx.md命令添加博客内容，xxx为要编辑博客文件的名字，根据个人喜好取名。 .md文件中的标题，date和draft均可以根据需要修改。draft修改为false，在hugo启动后便可以查看整体效果；
   启动hugo，受用hugo server -D命令启动，在浏览器中输入 http://localhost:1313/ 便可以访问博客；
-  使用hugo -D会在./public/生成静态页面，可以再github或者其他网站上展示。
+  使用hugo -D会在./public/生成静态页面，可以在github或者其他网站上展示。
   </description>
     </item>
     
