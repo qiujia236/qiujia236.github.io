@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://example.org/posts/" />
-<meta property="og:updated_time" content="2019-12-30T11:34:30+08:00" />
+<meta property="og:updated_time" content="2019-12-30T13:39:13+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -94,12 +94,18 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="http://example.org/posts/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/" class="link black dim">
-        开博大吉
+      <a href="http://example.org/posts/%E6%B7%BB%E5%8A%A0hugo%E5%8D%9A%E5%AE%A2/" class="link black dim">
+        添加hugo博客
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      大家好 我的博客开通了，希望能写出好文章。
+      如何使用hugo搭建个人博客   下载hugo，到https://github.com/gohugoio/hugo/releases 下载hugo_0.62.0_Windows-64bit.zip，解压，将hugo.exe放到个人目录里面，并且设置环境变量，path为你的个人目录路径,安装完成后使用hugo version检测hugo是否安装成功，如果出现Hugo Static Site Generator v0.62.0-6608F155 windows/amd64 BuildDate: 2019-12-23T10:26:18Z的字样，则表明安装成功；
+  使用hugo new site xxx创建一个hugo站点，其中xxx为站点的名字；
+  添加主题，使用cmder软件输入cd xxx命令进入站点，在站点里面输入git init和git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke两条命令获取主题，在config.toml中可以修改相关配置，例如你的主题，你的语言编码， 最后输入echo &lsquo;theme = &ldquo;ananke&rdquo;&rsquo; &raquo; config.toml 添加主题；
+  添加内容，使用hugo new posts/xxx.md命令添加博客内容，xxx为要编辑博客文件的名字，根据个人喜好取名。 .md文件中的标题，date和draft均可以根据需要修改。draft修改为false，在hugo启动后便可以查看整体效果；
+  启动hugo，受用hugo server -D命令启动，在浏览器中输入 http://localhost:1313/ 便可以访问博客；
+  使用hugo -D会在./public/生成静态页面，可以再github或者其他网站上展示。
+  
     </div>
   </div>
 </div>
