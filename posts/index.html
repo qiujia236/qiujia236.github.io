@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://qiujia236.github.io/posts/" />
-<meta property="og:updated_time" content="2019-12-30T13:39:13+08:00" />
+<meta property="og:updated_time" content="2019-12-31T19:45:18+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -94,15 +94,36 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="https://qiujia236.github.io/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" class="link black dim">
+        HTML入门笔记1
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      HTML 入门笔记 1 概述 HTML 是网页使用的语言，定义了网页的结构和内容。浏览器访问网站，其实就是从服务器下载 HTML 代码，然后渲染出网页。
+HTML 的全名是“超文本标记语言”（HyperText Markup Language），上个世纪 90 年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明。它的最大特点就是支持超链接，可以跳转到其他网页，从而构成了整个互联网。1999 年，HTML 4.01 版发布，成为广泛接受的 HTML 标准。2014 年，HTML 5 发布，这是目前正在使用的版本。
+HTML 起手式&ndash;头部介绍   网页的第一个标签通常是 &lt;!doctype&gt;，表示文档类型，告诉浏览器如何解析网页。一般来说，只要简单声明 doctype 为 html 即可。
+&lt;!DOCTYPE html&gt; 浏览器就会按照 HTML5 的规则处理网页。有时，该标签采用完全大写的形式 &lt;!DOCTYPE html&gt;，以便区别于正常的 HTML 标签。因为&lt;!doctype&gt;本质上不是标签，更像一个处理指令。
+&lt;!DOCTYPE html&gt;   &lt;html&gt;标签是网页的顶层容器，也称为根元素（root element），其他元素都是它的子元素。一个网页只能有一个&lt;html&gt;标签。该标签的 lang 属性，表示网页内容默认的语言,可以把 en 改成 zh-CN。
+&lt;html lang=&#34;en&#34;&gt;&lt;/html&gt;   &lt;head&gt;标签是一个容器标签，用于放置网页的元信息。它的内容不会出现在网页上，而是为网页渲染做准备。&lt;head&gt;是&lt;html&gt;的第一个子元素。如果网页不包含&lt;head&gt;，浏览器会自动创建一个。&lt;meta&gt; 标签用于设置或说明网页的元数据，必须放在&lt;head&gt;里面。一个&lt;meta&gt;标签就是一项元数据，网页可以有多个&lt;meta&gt;。
+下面代码声明，网页为 UTF-8 编码。虽然可以使用其他的编码方式，但基本上都采用 UTF-8。注意，声明的编码方式，应该与网页实际的编码方式一致，即声明了 UTF-8，网页就应该使用 UTF-8 编码保存。
+&lt;meta charset=&#34;utf-8&#34; /&gt; 下面代码声明禁用缩放，用于兼容手机。
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="https://qiujia236.github.io/posts/%E6%B7%BB%E5%8A%A0hugo%E5%8D%9A%E5%AE%A2/" class="link black dim">
         用 hugo 搭建个人博客
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      如何使用hugo搭建个人博客   下载hugo，到https://github.com/gohugoio/hugo/releases 下载hugo_0.62.0_Windows-64bit.zip，解压，将hugo.exe放到个人目录里面，并且设置环境变量，path为你的个人目录路径,安装完成后使用hugo version检测hugo是否安装成功，如果出现Hugo Static Site Generator v0.62.0-6608F155 windows/amd64 BuildDate: 2019-12-23T10:26:18Z的字样，则表明安装成功；
-  使用hugo new site xxx创建一个hugo站点，其中xxx为站点的名字；
-  添加主题，使用cmder软件输入cd xxx命令进入站点，在站点里面输入git init和git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke两条命令获取主题，最后输入echo &lsquo;theme = &ldquo;ananke&rdquo;&rsquo; &raquo; config.toml添加主题，在config.toml中可以修改相关配置，例如你的标题，你的语言编码，还有URL，其中URL必须为你的域名，比如xxx.github.io域名；   添加内容，使用hugo new posts/xxx.md命令添加博客内容，xxx为要编辑博客文件的名字，根据个人喜好取名。 .md文件中的标题，date和draft均可以根据需要修改。draft修改为false，在hugo启动后便可以查看整体效果；
-  启动hugo，受用hugo server -D命令启动，在浏览器中输入 http://localhost:1313/ 便可以访问博客；   使用hugo -D会在./public/生成博客的静态页面，上传到github后，可以通过xxx.github.io观看。   
+      如何使用 hugo 搭建个人博客   下载 hugo，到https://github.com/gohugoio/hugo/releases 下载 hugo_0.62.0_Windows-64bit.zip，解压，将 hugo.exe 放到个人目录里面，并且设置环境变量，path 为你的个人目录路径,安装完成后使用 hugo version 检测 hugo 是否安装成功，如果出现 Hugo Static Site Generator v0.62.0-6608F155 windows/amd64 BuildDate: 2019-12-23T10:26:18Z 的字样，则表明安装成功；
+  使用 hugo new site xxx 创建一个 hugo 站点，其中 xxx 为站点的名字；
+  添加主题，使用 cmder 软件输入 cd xxx 命令进入站点，在站点里面输入 git init 和 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 两条命令获取主题，最后输入 echo &lsquo;theme = &ldquo;ananke&rdquo;&rsquo; &raquo; config.toml 添加主题，在 config.toml 中可以修改相关配置，例如你的标题，你的语言编码，还有 URL，其中 URL 必须为你的域名，比如 xxx.github.io 域名；   添加内容，使用 hugo new posts/xxx.
     </div>
   </div>
 </div>
@@ -116,7 +137,7 @@
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://qiujia236.github.io/" >
-    &copy; 2019 wb的博客
+    &copy; 2020 wb的博客
   </a>
     <div>
 

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>wb的博客  | HTML入门笔记1</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.62.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="HTML入门笔记1" />
+<meta property="og:description" content="HTML 入门笔记 1 概述 HTML 是网页使用的语言，定义了网页的结构和内容。浏览器访问网站，其实就是从服务器下载 HTML 代码，然后渲染出网页。
+HTML 的全名是“超文本标记语言”（HyperText Markup Language），上个世纪 90 年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明。它的最大特点就是支持超链接，可以跳转到其他网页，从而构成了整个互联网。1999 年，HTML 4.01 版发布，成为广泛接受的 HTML 标准。2014 年，HTML 5 发布，这是目前正在使用的版本。
+HTML 起手式&ndash;头部介绍   网页的第一个标签通常是 &lt;!doctype&gt;，表示文档类型，告诉浏览器如何解析网页。一般来说，只要简单声明 doctype 为 html 即可。
+&lt;!DOCTYPE html&gt; 浏览器就会按照 HTML5 的规则处理网页。有时，该标签采用完全大写的形式 &lt;!DOCTYPE html&gt;，以便区别于正常的 HTML 标签。因为&lt;!doctype&gt;本质上不是标签，更像一个处理指令。
+&lt;!DOCTYPE html&gt;   &lt;html&gt;标签是网页的顶层容器，也称为根元素（root element），其他元素都是它的子元素。一个网页只能有一个&lt;html&gt;标签。该标签的 lang 属性，表示网页内容默认的语言,可以把 en 改成 zh-CN。
+&lt;html lang=&#34;en&#34;&gt;&lt;/html&gt;   &lt;head&gt;标签是一个容器标签，用于放置网页的元信息。它的内容不会出现在网页上，而是为网页渲染做准备。&lt;head&gt;是&lt;html&gt;的第一个子元素。如果网页不包含&lt;head&gt;，浏览器会自动创建一个。&lt;meta&gt; 标签用于设置或说明网页的元数据，必须放在&lt;head&gt;里面。一个&lt;meta&gt;标签就是一项元数据，网页可以有多个&lt;meta&gt;。
+下面代码声明，网页为 UTF-8 编码。虽然可以使用其他的编码方式，但基本上都采用 UTF-8。注意，声明的编码方式，应该与网页实际的编码方式一致，即声明了 UTF-8，网页就应该使用 UTF-8 编码保存。
+&lt;meta charset=&#34;utf-8&#34; /&gt; 下面代码声明禁用缩放，用于兼容手机。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qiujia236.github.io/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" />
+<meta property="article:published_time" content="2019-12-31T19:45:18+08:00" />
+<meta property="article:modified_time" content="2019-12-31T19:45:18+08:00" />
+<meta itemprop="name" content="HTML入门笔记1">
+<meta itemprop="description" content="HTML 入门笔记 1 概述 HTML 是网页使用的语言，定义了网页的结构和内容。浏览器访问网站，其实就是从服务器下载 HTML 代码，然后渲染出网页。
+HTML 的全名是“超文本标记语言”（HyperText Markup Language），上个世纪 90 年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明。它的最大特点就是支持超链接，可以跳转到其他网页，从而构成了整个互联网。1999 年，HTML 4.01 版发布，成为广泛接受的 HTML 标准。2014 年，HTML 5 发布，这是目前正在使用的版本。
+HTML 起手式&ndash;头部介绍   网页的第一个标签通常是 &lt;!doctype&gt;，表示文档类型，告诉浏览器如何解析网页。一般来说，只要简单声明 doctype 为 html 即可。
+&lt;!DOCTYPE html&gt; 浏览器就会按照 HTML5 的规则处理网页。有时，该标签采用完全大写的形式 &lt;!DOCTYPE html&gt;，以便区别于正常的 HTML 标签。因为&lt;!doctype&gt;本质上不是标签，更像一个处理指令。
+&lt;!DOCTYPE html&gt;   &lt;html&gt;标签是网页的顶层容器，也称为根元素（root element），其他元素都是它的子元素。一个网页只能有一个&lt;html&gt;标签。该标签的 lang 属性，表示网页内容默认的语言,可以把 en 改成 zh-CN。
+&lt;html lang=&#34;en&#34;&gt;&lt;/html&gt;   &lt;head&gt;标签是一个容器标签，用于放置网页的元信息。它的内容不会出现在网页上，而是为网页渲染做准备。&lt;head&gt;是&lt;html&gt;的第一个子元素。如果网页不包含&lt;head&gt;，浏览器会自动创建一个。&lt;meta&gt; 标签用于设置或说明网页的元数据，必须放在&lt;head&gt;里面。一个&lt;meta&gt;标签就是一项元数据，网页可以有多个&lt;meta&gt;。
+下面代码声明，网页为 UTF-8 编码。虽然可以使用其他的编码方式，但基本上都采用 UTF-8。注意，声明的编码方式，应该与网页实际的编码方式一致，即声明了 UTF-8，网页就应该使用 UTF-8 编码保存。
+&lt;meta charset=&#34;utf-8&#34; /&gt; 下面代码声明禁用缩放，用于兼容手机。">
+<meta itemprop="datePublished" content="2019-12-31T19:45:18&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-31T19:45:18&#43;08:00" />
+<meta itemprop="wordCount" content="536">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTML入门笔记1"/>
+<meta name="twitter:description" content="HTML 入门笔记 1 概述 HTML 是网页使用的语言，定义了网页的结构和内容。浏览器访问网站，其实就是从服务器下载 HTML 代码，然后渲染出网页。
+HTML 的全名是“超文本标记语言”（HyperText Markup Language），上个世纪 90 年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明。它的最大特点就是支持超链接，可以跳转到其他网页，从而构成了整个互联网。1999 年，HTML 4.01 版发布，成为广泛接受的 HTML 标准。2014 年，HTML 5 发布，这是目前正在使用的版本。
+HTML 起手式&ndash;头部介绍   网页的第一个标签通常是 &lt;!doctype&gt;，表示文档类型，告诉浏览器如何解析网页。一般来说，只要简单声明 doctype 为 html 即可。
+&lt;!DOCTYPE html&gt; 浏览器就会按照 HTML5 的规则处理网页。有时，该标签采用完全大写的形式 &lt;!DOCTYPE html&gt;，以便区别于正常的 HTML 标签。因为&lt;!doctype&gt;本质上不是标签，更像一个处理指令。
+&lt;!DOCTYPE html&gt;   &lt;html&gt;标签是网页的顶层容器，也称为根元素（root element），其他元素都是它的子元素。一个网页只能有一个&lt;html&gt;标签。该标签的 lang 属性，表示网页内容默认的语言,可以把 en 改成 zh-CN。
+&lt;html lang=&#34;en&#34;&gt;&lt;/html&gt;   &lt;head&gt;标签是一个容器标签，用于放置网页的元信息。它的内容不会出现在网页上，而是为网页渲染做准备。&lt;head&gt;是&lt;html&gt;的第一个子元素。如果网页不包含&lt;head&gt;，浏览器会自动创建一个。&lt;meta&gt; 标签用于设置或说明网页的元数据，必须放在&lt;head&gt;里面。一个&lt;meta&gt;标签就是一项元数据，网页可以有多个&lt;meta&gt;。
+下面代码声明，网页为 UTF-8 编码。虽然可以使用其他的编码方式，但基本上都采用 UTF-8。注意，声明的编码方式，应该与网页实际的编码方式一致，即声明了 UTF-8，网页就应该使用 UTF-8 编码保存。
+&lt;meta charset=&#34;utf-8&#34; /&gt; 下面代码声明禁用缩放，用于兼容手机。"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://qiujia236.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      wb的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">HTML入门笔记1</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-12-31T19:45:18&#43;08:00">December 31, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="html--1">HTML 入门笔记 1</h1>
+<h2 id="heading">概述</h2>
+<p>HTML 是网页使用的语言，定义了网页的结构和内容。浏览器访问网站，其实就是从服务器下载 HTML 代码，然后渲染出网页。</p>
+<p>HTML 的全名是“超文本标记语言”（HyperText Markup Language），上个世纪 90 年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明。它的最大特点就是支持超链接，可以跳转到其他网页，从而构成了整个互联网。1999 年，HTML 4.01 版发布，成为广泛接受的 HTML 标准。2014 年，HTML 5 发布，这是目前正在使用的版本。</p>
+<h2 id="html---">HTML 起手式&ndash;头部介绍</h2>
+<p><img src="/static/HTML/HTML%E5%A4%B4%E9%83%A8.png" alt=""></p>
+<ol>
+<li>
+<p>网页的第一个标签通常是 &lt;!doctype&gt;，表示文档类型，告诉浏览器如何解析网页。一般来说，只要简单声明 doctype 为 html 即可。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</code></pre></div><p>浏览器就会按照 HTML5 的规则处理网页。有时，该标签采用完全大写的形式 &lt;!DOCTYPE html&gt;，以便区别于正常的 HTML 标签。因为&lt;!doctype&gt;本质上不是标签，更像一个处理指令。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</code></pre></div></li>
+<li>
+<p>&lt;html&gt;标签是网页的顶层容器，也称为根元素（root element），其他元素都是它的子元素。一个网页只能有一个&lt;html&gt;标签。该标签的 lang 属性，表示网页内容默认的语言,可以把 en 改成 zh-CN。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div></li>
+<li>
+<p>&lt;head&gt;标签是一个容器标签，用于放置网页的元信息。它的内容不会出现在网页上，而是为网页渲染做准备。&lt;head&gt;是&lt;html&gt;的第一个子元素。如果网页不包含&lt;head&gt;，浏览器会自动创建一个。&lt;meta&gt; 标签用于设置或说明网页的元数据，必须放在&lt;head&gt;里面。一个&lt;meta&gt;标签就是一项元数据，网页可以有多个&lt;meta&gt;。</p>
+<p>下面代码声明，网页为 UTF-8 编码。虽然可以使用其他的编码方式，但基本上都采用 UTF-8。注意，声明的编码方式，应该与网页实际的编码方式一致，即声明了 UTF-8，网页就应该使用 UTF-8 编码保存。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
+</code></pre></div><p>下面代码声明禁用缩放，用于兼容手机。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span> /&gt;
+</code></pre></div><p>下面代码用于告诉 IE 浏览器使用最新的内核。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ie=edge&#34;</span> /&gt;
+</code></pre></div></li>
+<li>
+<p>&lt;head&gt;的子元素除了&lt;meta&gt;外一般还有下面六个：</p>
+<ul>
+<li>&lt;link&gt;：连接外部样式表。</li>
+<li>&lt;title&gt;：设置网页标题。</li>
+<li>&lt;style&gt;：放置内嵌的样式表。</li>
+<li>&lt;script&gt;：引入脚本。</li>
+<li>&lt;noscript&gt;：浏览器不支持脚本时，所要显示的内容。</li>
+<li>&lt;base&gt;：设置网页内部相对 URL 的计算基准。</li>
+</ul>
+</li>
+</ol>
+<h2 id="html-">HTML 常用的表章节标签</h2>
+<p>HTML 标签的一个重要作用，就是声明网页元素的性质，使得用户只看标签，就能了解这个元素的意义，阅读 HTML 源码就能了解网页的大致结构。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+  &lt;<span style="color:#f92672">header</span>&gt;页眉&lt;/<span style="color:#f92672">header</span>&gt;
+  &lt;<span style="color:#f92672">main</span>&gt;
+    &lt;<span style="color:#f92672">article</span>&gt;
+      &lt;<span style="color:#f92672">h1</span>&gt;文章标题&lt;/<span style="color:#f92672">h1</span>&gt;
+      &lt;<span style="color:#f92672">p</span>&gt;文章内容&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;/<span style="color:#f92672">article</span>&gt;
+  &lt;/<span style="color:#f92672">main</span>&gt;
+  &lt;<span style="color:#f92672">footer</span>&gt;页尾&lt;/<span style="color:#f92672">footer</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div><p>只看上面的代码，就可以知道，页面分成页眉（&lt;head&gt;）、主体（&lt;main&gt;）、页尾（&lt;footer&gt;）三个部分。</p>
+<ol>
+<li>
+<p>HTML 提供了 6 个标签，用来表示文章的标题。按照标题的等级，一共分成六级。&lt;h1&gt;是最高级别的标题，&lt;h6&gt;是最低级别的标题。下一级标题都是上一级标题的子标题，比如，一个&lt;h1&gt;后面可以有多个&lt;h2&gt;，每个&lt;h2&gt;后面又可以有多个&lt;h3&gt;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+  &lt;<span style="color:#f92672">h1</span>&gt;HTML 介绍&lt;/<span style="color:#f92672">h1</span>&gt;
+  &lt;<span style="color:#f92672">h2</span>&gt;概述&lt;/<span style="color:#f92672">h2</span>&gt;
+  &lt;<span style="color:#f92672">h2</span>&gt;基本概念&lt;/<span style="color:#f92672">h2</span>&gt;
+  &lt;<span style="color:#f92672">h3</span>&gt;网页&lt;/<span style="color:#f92672">h3</span>&gt;
+  &lt;<span style="color:#f92672">h3</span>&gt;链接&lt;/<span style="color:#f92672">h3</span>&gt;
+  &lt;<span style="color:#f92672">h2</span>&gt;主要用法&lt;/<span style="color:#f92672">h2</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div></li>
+<li>
+<p>&lt;header&gt;标签可以用在多个场景，既可以表示整个网页的头部，也可以表示一篇文章或者一个区块的头部。如果用在网页的头部，就称为“页眉”。如果&lt;header&gt;用在文章的头部，则可以把文章标题、作者等信息放进去。</p>
+</li>
+<li>
+<p>&lt;footer&gt;标签表示网页、文章或章节的尾部。如果用于整张网页的尾部，就称为“页尾”，通常包含版权信息或者其他相关信息。</p>
+</li>
+<li>
+<p>&lt;main&gt;标签表示页面的主体内容，一个页面只能有一个&lt;main&gt;。注意，&lt;main&gt;是顶层标签，不能放置在&lt;header&gt;、&lt;footer&gt;、&lt;article&gt;、&lt;aside&gt;、&lt;nav&gt;等标签之中。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+  &lt;<span style="color:#f92672">header</span>&gt;页眉&lt;/<span style="color:#f92672">header</span>&gt;
+  &lt;<span style="color:#f92672">main</span>&gt;
+    &lt;<span style="color:#f92672">article</span>&gt;文章&lt;/<span style="color:#f92672">article</span>&gt;
+  &lt;/<span style="color:#f92672">main</span>&gt;
+  &lt;<span style="color:#f92672">aside</span>&gt;侧边栏&lt;/<span style="color:#f92672">aside</span>&gt;
+  &lt;<span style="color:#f92672">footer</span>&gt;页尾&lt;/<span style="color:#f92672">footer</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div></li>
+<li>
+<p>&lt;article&gt;标签表示页面里面一段完整的内容，即使页面的其他部分不存在，也具有独立使用的意义，通常用来表示一篇文章或者一个论坛帖子。它可以有自己的标题（&lt;h1&gt;到&lt;h6&gt;）。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">article</span>&gt;
+  &lt;<span style="color:#f92672">h2</span>&gt;文章标题&lt;/<span style="color:#f92672">h2</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;文章内容&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">article</span>&gt;
+</code></pre></div></li>
+<li>
+<p>&lt;aside&gt;标签用来放置与网页或文章主要内容间接相关的部分。网页级别的&lt;aside&gt;，可以用来放置侧边栏，但不
+一定就在页面的侧边；文章级别的&lt;aside&gt;，可以用来放置评论或注释。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+  &lt;<span style="color:#f92672">main</span>&gt;主体内容&lt;/<span style="color:#f92672">main</span>&gt;
+  &lt;<span style="color:#f92672">aside</span>&gt;侧边栏&lt;/<span style="color:#f92672">aside</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;第一段&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;<span style="color:#f92672">aside</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;本段是文章的重点。&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">aside</span>&gt;
+</code></pre></div></li>
+<li>
+<p>&lt;section&gt;标签表示一个含有主题的独立部分，通常用在文档里面表示一个章节，比如&lt;article&gt;可以
+包含多个&lt;section&gt;。&lt;section&gt;总是多个一起使用，一个页面不能只有一个&lt;section&gt;。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">article</span>&gt;
+  &lt;<span style="color:#f92672">h1</span>&gt;文章标题&lt;/<span style="color:#f92672">h1</span>&gt;
+  &lt;<span style="color:#f92672">section</span>&gt;
+    &lt;<span style="color:#f92672">h2</span>&gt;第一章&lt;/<span style="color:#f92672">h2</span>&gt;
+    &lt;<span style="color:#f92672">p</span>&gt;...&lt;/<span style="color:#f92672">p</span>&gt;
+  &lt;/<span style="color:#f92672">section</span>&gt;
+  &lt;<span style="color:#f92672">section</span>&gt;
+    &lt;<span style="color:#f92672">h2</span>&gt;第二章&lt;/<span style="color:#f92672">h2</span>&gt;
+    &lt;<span style="color:#f92672">p</span>&gt;...&lt;/<span style="color:#f92672">p</span>&gt;
+  &lt;/<span style="color:#f92672">section</span>&gt;
+&lt;/<span style="color:#f92672">article</span>&gt;
+</code></pre></div></li>
+<li>
+<p>&lt;div&gt;是一个通用标签，表示一个区块（division）。它没有语义，如果网页需要一个块级元素容器，又没有其他合适的标签，就可以使用这个标签。它的最常见用途就是提供 CSS 的钩子，用来指定各种样式。所以在早期，下面层层包裹的&lt;div&gt;就很常见。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;article&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span>&gt;
+      &lt;<span style="color:#f92672">h1</span>&gt;文章标题&lt;/<span style="color:#f92672">h1</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>上面代码读起来很费力，因为不带有语义。后来，HTML 5 就提出了语义标签，改进了上面的代码。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">main</span>&gt;
+  &lt;<span style="color:#f92672">article</span>&gt;
+    &lt;<span style="color:#f92672">header</span>&gt;
+      &lt;<span style="color:#f92672">h1</span>&gt;文章标题&lt;/<span style="color:#f92672">h1</span>&gt;
+    &lt;/<span style="color:#f92672">header</span>&gt;
+  &lt;/<span style="color:#f92672">article</span>&gt;
+&lt;/<span style="color:#f92672">main</span>&gt;
+</code></pre></div><p>只要样式上需要多个块级元素组合在一起，就可以使用&lt;div&gt;。但是，这应该是最后的措施，带有语
+义的块级标签（比如&lt;article&gt;、&lt;section&gt;、&lt;aside&gt;、&lt;nav&gt;等）始终应该优先使用，当且仅当没有其他语
+义元素合适时，才可以使用&lt;div&gt;。</p>
+</li>
+</ol>
+<h2 id="html--2">HTML 常用的全局属性</h2>
+<p>网页元素的属性（attribute）可以定制元素的行为，不同的属性会导致元素有不同的行为。元素属性的写法是 HTML 标签内部的“键值对”。属性名与标签名一样，不区分大小写，lang 和 LANG 是同一个属性。<br>
+属性名与属性值之间，通过等号=连接。属性值可以放在单引号或双引号之中，建议统一使用双引号。某些属性值可以不使用引号，但是建议不要这样写。<br>
+有些属性是布尔属性，即属性值是一个布尔值，只有“打开”和“关闭”两种情况。这时属性值可以省略，只要添加了属性名，就表示打开该属性。<br>
+全局属性（global attributes）是所有元素都可以使用的属性。也就是说，你可以把下面的属性，加在任意一个网页元素上面，不过有些属性对某些元素可能不产生意义。</p>
+<ol>
+<li>
+<p>id 属性是元素在网页内的唯一标识符。比如，网页可能包含多个<!-- raw HTML omitted -->标签，id 属性可以指定每个&lt;p&gt;标签的唯一标识符</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p1&#34;</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p2&#34;</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p3&#34;</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div><p>id 属性的值必须是全局唯一的，同一个页面不能有两个相同的 id 属性。另外，id 属性的值不得包含空格。id 属性的值还可以在最前面加上#，放到 URL 中作为锚点，定位到该元素在网页内部的位置。比如，用户访问网址https://foo.com/index.html#bar的时候，浏览器会自动将页面滚动到bar的位置，让用户第一眼就看到这部分内容。<br>
+但是要注意，不到万不得已，不要用 id，因为 id 属性不容易报错。</p>
+</li>
+<li>
+<p>class 属性用来对网页元素进行分类。如果不同元素的 class 属性值相同，就表示它们是一类的。元素可以同时具有多个 class，它们之间使用空格分隔。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;p1 p2 p3&#34;</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div></li>
+<li>
+<p>HTML 网页的内容默认是用户不能编辑，contenteditable 属性允许用户修改内容。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">contenteditable</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>&gt;
+  鼠标点击，本句内容可修改。
+&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div><p>上面代码中，鼠标单击句子，就可以进入编辑状态，用户可以改变句子的内容。当然，除非提交到服务器，否则刷新页面还是显示原来的内容。该属性是枚举属性，不是布尔属性，规范的写法是最好带上属性值。</p>
+</li>
+<li>
+<p>hidden 是一个布尔属性，表示当前的网页元素不再跟页面相关，因此浏览器不会渲染这个元素，所以就会在网页中隐藏这个网页元素。</p>
+</li>
+<li>
+<p>title 属性用来为元素添加附加说明。大多数浏览器中，鼠标悬浮在元素上面时，会将 title 属性值作为浮动提示，显示出来。title 属性解释了这一块内容的目的。鼠标悬停在上面时，浏览器会显示一个浮动提示。一旦鼠标移开，提示就会消失。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;版权说明&#34;</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;本站内容使用创意共享许可证，可以自由使用。&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div></li>
+<li>
+<p>网页通常使用鼠标操作，但是某些情况下，用户可能希望使用键盘，或者只有键盘可以用。因此，浏览器允许使用 Tab 键，遍历网页元素。也就是说，只要不停按下 Tab 键，网页的焦点就会从一个元素转移到另一个元素，选定焦点元素以后，就可以进行下一步操作，比如按下回车键访问某个链接，或者直接在某个输入框输入文字。HTML 提供了 tabindex 属性，解决这个问题。它的名字的含义，就是 Tab 的顺序（index）。<br>
+tabindex 属性的值是一个整数，表示用户按下 Tab 键的时候，网页焦点转移的顺序。不同的属性值有不同的含义。</p>
+<ul>
+<li>正整数：网页元素按照从小到大的顺序（1、2、3、……），参与 Tab 键的遍历。如果多个元素的 tabindex 属性相同，则按照在网页源码里面出现的顺序遍历。</li>
+<li>0：该元素参与 Tab 键的遍历，顺序由浏览器指定，通常是按照其在网页里面出现的位置，但是如果有其他的 tabindex 被设置为正整数，则设置为 0 的最后访问。</li>
+<li>负整数：该元素可以获得焦点（比如使用 JavaScript 的 focus()方法），但不参与 Tab 键对网页元素的遍历。这个值通常是-1。</li>
+</ul>
+<p>一般来说，tabindex 属性最好都设成 0，按照自然顺序进行遍历，这样比较符合用户的预期，除非网页有特殊布局。如果网页所有元素都没有设置 tabindex，那么只有那些默认可以遍历的元素（比如链接、输入框等）才能参与 Tab 键的遍历，顺序由其在源码的位置决定。因此实际上，只有那些无法获得焦点的元素（比如&lt;span&gt;、&lt;div&gt;）需要参与遍历，才有必要设置 tabindex 属性。</p>
+</li>
+<li>
+<p>style 属性用来指定当前元素的 CSS 样式。具体的设置，请看 CSS 教程。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color: red;&#34;</span>&gt;hello&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div></li>
+<li>
+<p>accesskey 属性指定网页元素获得焦点的快捷键，该属性的值必须是单个的可打印字符。只要按下快捷键，该元素就会得到焦点。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">accesskey</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;s&#34;</span>&gt;提交&lt;/<span style="color:#f92672">button</span>&gt;
+</code></pre></div><p>上面代码中，&lt;button&gt;的快捷键是 s，按下快捷键，该元素就得到了焦点。
+accesskey 属性的字符键，必须配合功能键，一起按下才会生效。也就是说，快捷键是“功能键 + 字符键”的组合。不同的浏览器与不同的操作系统，功能键都不一样。比如，Chrome 浏览器在 Windows 系统和 Linux 系统的快捷键是 Alt + 字符键，在 Mac 系统的快捷键是 Ctrl + Alt + 字符键。<br>
+注意，accesskey 如果跟操作系统或浏览器级别的快捷键有冲突，这时不会生效。</p>
+</li>
+</ol>
+<h2 id="heading-1">常用的内容标签</h2>
+<h3 id="heading-2">列表标签</h3>
+<p>列表是一系列排列好的项目，主要分成两类：有序列表和无序列表。<br>
+有序列表是每个列表项前面有编号，呈现出顺序，就像下面这样。</p>
+<pre><code>1. 列表项 A
+2. 列表项 B
+3. 列表项 C
+</code></pre><p>无序列表则是列表项前面没有编号，只有一个列表符号，默认是一个圆点。</p>
+<pre><code>· 列表项 A
+· 列表项 B
+· 列表项 C
+</code></pre><ol>
+<li>
+<p>&lt;ol&gt;标签是一个有序列表容器（ordered list），会在内部的列表项前面产生数字编号。列表项的顺序有意义时，比如排名，就会采用这个标签。下面代码会在列表项 A、B、C 前面，分别产生 1、2、3 的编号。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ol</span>&gt;
+  &lt;<span style="color:#f92672">li</span>&gt;列表项 A&lt;/<span style="color:#f92672">li</span>&gt;
+  &lt;<span style="color:#f92672">li</span>&gt;列表项 B&lt;/<span style="color:#f92672">li</span>&gt;
+  &lt;<span style="color:#f92672">li</span>&gt;列表项 C&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;/<span style="color:#f92672">ol</span>&gt;
+</code></pre></div><p>该标签有以下属性：</p>
+<ul>
+<li>reversed 属性产生倒序的数字列表。</li>
+<li>start 属性的值是一个整数，表示数字列表的起始编号。</li>
+<li>type 属性指定数字编号的样式。目前，浏览器支持以下样式。
+<pre><code>   a：小写字母
+   A：大写字母
+   i：小写罗马数字
+   I：大写罗马数字
+   1：整数（默认值）
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p>&lt;ul&gt;标签是一个无序列表容器（unordered list），会在内部的列表项前面产生实心小圆点，作为列表符号。列表项的顺序无意义时，采用这个标签。下面代码的渲染结果是，列表项 A、B、C 前面，分别产生一个实心小圆点，作为列表符号。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ul</span>&gt;
+  &lt;<span style="color:#f92672">li</span>&gt;列表项 A&lt;/<span style="color:#f92672">li</span>&gt;
+  &lt;<span style="color:#f92672">li</span>&gt;列表项 B&lt;/<span style="color:#f92672">li</span>&gt;
+  &lt;<span style="color:#f92672">li</span>&gt;列表项 C&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;/<span style="color:#f92672">ul</span>&gt;
+</code></pre></div><p>&lt;ul&gt;标签内部可以嵌套&lt;ul&gt;或&lt;ol&gt;，形成多级列表。</p>
+</li>
+<li>
+<p>&lt;li&gt;表示列表项，用在&lt;ol&gt;或&lt;ul&gt;容器之中。有序列表&lt;ol&gt;之中，&lt;li&gt;有一个 value 属性，定义当前列表项的编号，后面列表项会从这个值开始编号。<br>
+下面代码中，value 属性指定第二个列表项的编号是 4，因此三个列表项的编号，分别为 1、4、5。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ol</span>&gt;
+  &lt;<span style="color:#f92672">li</span>&gt;列表项 A&lt;/<span style="color:#f92672">li</span>&gt;
+  &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;4&#34;</span>&gt;列表项 B&lt;/<span style="color:#f92672">li</span>&gt;
+  &lt;<span style="color:#f92672">li</span>&gt;列表项 C&lt;/<span style="color:#f92672">li</span>&gt;
+&lt;/<span style="color:#f92672">ol</span>&gt;
+</code></pre></div></li>
+<li>
+<p>&lt;dl&gt;标签是一个块级元素，表示一组术语的列表（description list）。&lt;dt&gt;（description term）标签术语解释为要说明的词语，&lt;dd&gt;标签（description detail）术语解释为说明的详细信息。&lt;dl&gt;常用来定义词汇表。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">dl</span>&gt;
+  &lt;<span style="color:#f92672">dt</span>&gt;CPU&lt;/<span style="color:#f92672">dt</span>&gt;
+  &lt;<span style="color:#f92672">dd</span>&gt;中央处理器&lt;/<span style="color:#f92672">dd</span>&gt;
+
+  &lt;<span style="color:#f92672">dt</span>&gt;Memory&lt;/<span style="color:#f92672">dt</span>&gt;
+  &lt;<span style="color:#f92672">dd</span>&gt;内存&lt;/<span style="color:#f92672">dd</span>&gt;
+
+  &lt;<span style="color:#f92672">dt</span>&gt;Hard Disk&lt;/<span style="color:#f92672">dt</span>&gt;
+  &lt;<span style="color:#f92672">dd</span>&gt;硬盘&lt;/<span style="color:#f92672">dd</span>&gt;
+&lt;/<span style="color:#f92672">dl</span>&gt;
+</code></pre></div><p>&lt;dt&gt;和&lt;dd&gt;都是块级元素，&lt;dd&gt;默认会在&lt;dt&gt;下方缩进显示。上面代码的默认渲染结果如下。</p>
+<pre><code> CPU
+     中央处理器
+
+ Memory
+     内存
+
+ Hard Disk
+     硬盘
+</code></pre><p>多个术语（&lt;dt&gt;）对应一个解释（&lt;dd&gt;），或者多个解释（&lt;dd&gt;）对应一个术语（&lt;dt&gt;），都是合法的。</p>
+</li>
+</ol>
+<h3 id="heading-3">文本标签</h3>
+<ol>
+<li>
+<p>&lt;p&gt;标签是一个块级元素，代表文章的一个段落（paragraph）。不仅是文本，任何想以段落显示的内容，比如图片和表单项，都可以放进&lt;p&gt;元素。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;hello world&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div></li>
+<li>
+<p>&lt;br&gt;让网页产生一个换行效果。该标签是单独使用的，没有闭合标签。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">hello&lt;<span style="color:#f92672">br</span> /&gt;world
+</code></pre></div><p>浏览器渲染上面代码时，会分成两行，hello 和 world 各占一行。<br>
+注意，块级元素的间隔，不要使用&lt;br&gt;来产生，而要使用 CSS 指定。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;第一段&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;<span style="color:#f92672">br</span> /&gt;
+&lt;<span style="color:#f92672">br</span> /&gt;
+&lt;<span style="color:#f92672">p</span>&gt;第二段&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div><p>上面的代码希望段落之间有两个换行，这时不应该使用&lt;br&gt;，而应该使用 CSS。</p>
+</li>
+<li>
+<p>&lt;hr&gt;用来在一篇文章中分隔两个不同的主题，浏览器会将其渲染为一根水平线。该标签是单独使用的，没有闭合标签。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;第一个主题&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;<span style="color:#f92672">hr</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;第二个主题<span style="color:#960050;background-color:#1e0010">&lt;</span>/
+</code></pre></div><p>上面代码的渲染结果是，两段之间会出现一根水平线。该标签是历史遗留下来的，建议尽量避免使用。主题之间的分隔可以使用&lt;section&gt;，如果想要水平线的效果，可以使用 CSS。</p>
+</li>
+<li>
+<p>&lt;pre&gt;是一个块级元素，表示保留原来的格（preformatted），即浏览器会保留该标签内部原始的换行和空格。浏览器默认以等宽字体显示标签内容。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pre</span>&gt;
+hello
+   
+ world &lt;/<span style="color:#f92672">pre</span>
+&gt;
+</code></pre></div><p>上面代码中，换行和连续空格都会由于&lt;pre&gt;标签，而被保留下来，浏览器按照原样输出。注意，HTML 标签在&lt;pre&gt;里面还是起作用的。&lt;pre&gt;只保留空格和换行，不会保留 HTML 标签。</p>
+</li>
+<li>
+<p>&lt;strong&gt;是一个行内元素，表示它包含的内容具有很强的重要性，需要引起注意。浏览器会以粗体显示内容。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;开会时间是&lt;<span style="color:#f92672">strong</span>&gt;下午两点&lt;/<span style="color:#f92672">strong</span>&gt;。&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div></li>
+<li>
+<p>&lt;em&gt;是一个行内标签，表示强调（emphasize），浏览器会以斜体显示它包含的内容。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;我们&lt;<span style="color:#f92672">em</span>&gt;已经&lt;/<span style="color:#f92672">em</span>&gt;讨论过这件事情了。&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div><p>虽然浏览器通常会以斜体显示&lt;em&gt;，但无法保证一定如此，所以最好还是用 CSS 指定一下这个标签的样式。</p>
+</li>
+<li>
+<p>&lt;blockquote&gt;是一个块级标签，表示引用他人的话。浏览器会在样式上，与正常文本区别显示。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">blockquote</span> <span style="color:#a6e22e">cite</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://quote.example.com&#34;</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;白日依山尽，黄河入海流。&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">blockquote</span>&gt;
+</code></pre></div><p>&lt;q&gt;是一个行内标签，也表示引用。它与&lt;blockquote&gt;的区别，就是它不会产生换行。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;
+  辛弃疾有一句著名的诗词：
+  &lt;<span style="color:#f92672">q</span> <span style="color:#a6e22e">cite</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://quote.example.com&#34;</span>&gt;蓦然回首，那人却在灯火阑珊处。&lt;/<span style="color:#f92672">q</span>&gt;
+&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div></li>
+<li>
+<p>&lt;code&gt;标签是一个行内元素，表示标签内容是计算机代码，浏览器默认会以等宽字体显示。如果要表示多行代码，&lt;code&gt;标签必须放在&lt;pre&gt;内部。&lt;code&gt;本身仅表示一行代码。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">pre</span>&gt;
+&lt;<span style="color:#f92672">code</span>&gt;
+let a = 1;
+console.log(a);
+&lt;/<span style="color:#f92672">code</span>&gt;
+&lt;/<span style="color:#f92672">pre</span>&gt;
+</code></pre></div></li>
+</ol>
+<h3 id="heading-4">链接标签</h3>
+<ol>
+<li>
+<p>链接通过&lt;a&gt;标签表示，用户点击后，浏览器会跳转到指定的网址。下面就是一个典型的链接。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://wikipedia.org/&#34;</span>&gt;维基百科&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>上面代码就定义了一个超级链接。浏览器显示“维基百科”，文字下面默认会有下划线，表示这是一个链接。用户点击后，浏览器跳转到 href 属性指定的网址。<br>
+&lt;a&gt;标签内部不仅可以放置文字，也可以放置其他元素，比如段落、图像、多媒体等等。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/&#34;</span>&gt;
+  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/foo.jpg&#34;</span> /&gt;
+&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>&lt;a&gt;标签有如下属性：</p>
+<ul>
+<li>
+<p>href 属性给出链接指向的网址。它的值应该是一个 URL 或者锚点。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#demo&#34;</span>&gt;示例&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>上面代码中，href 属性的值是#加上锚点名称。点击后，浏览器会自动滚动，停在当前页面里面 demo 锚点所在的位置。</p>
+</li>
+<li>
+<p>title 属性给出链接的说明信息。鼠标悬停在链接上方时，浏览器会将这个属性的值，以提示块的形式显示出来。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello&#34;</span>&gt;示例&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>上面代码中，用户鼠标停留在链接上面，会出现文字提示 hello。</p>
+</li>
+<li>
+<p>target 属性指定如何展示打开的链接。它可以是在指定的窗口打开，也可以在&lt;iframe&gt;里面打开。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://foo.com&#34;</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span>&gt;foo&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://bar.com&#34;</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span>&gt;bar&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div><p>上面代码中，两个链接都在名叫 test 的窗口打开。首先点击链接 foo，浏览器发现没有叫做 test 的窗口，就新建一个窗口，起名为 test，在该窗口打开 foo.com。然后，用户又点击链接 bar，由于已经存在 test 窗口，浏览器就在该窗口打开 bar.com，取代里面已经打开的 foo.com。</p>
+</li>
+</ul>
+</li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://qiujia236.github.io/" >
+    &copy; 2020 wb的博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
