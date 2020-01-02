@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>wb的博客  | HTML常用标签</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.62.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="HTML常用标签" />
+<meta property="og:description" content="HTML 常用标签 链接标签 链接（hyperlink）是互联网的核心。它允许用户在页面上，从一个网址跳转到另一个网址，从而把所有资源联系在一起。
+URL 是链接指向的地址。链接不仅可以指向另一个网页，也可以指向文本、图像、文件等资源。可以这样说，所有互联网上的资源，都可以通过链接访问。 链接通过&lt;a&gt;标签表示，用户点击后，浏览器会跳转到指定的网址。下面就是一个典型的链接。
+&lt;a href=&#34;https://www.google.com&#34;&gt;谷歌&lt;/a&gt; 上面代码就定义了一个超级链接。浏览器显示“谷歌”，文字下面默认会有下划线，表示这是一个链接。用户点击后，浏览器跳转到 href 属性指定的网址。
+&lt;a&gt;标签内部不仅可以放置文字，也可以放置其他元素，比如段落、图像、多媒体等等。
+&lt;a href=&#34;https://www.google.com&#34;&gt; &lt;img src=&#34;https://www.example.com/foo.jpg&#34; /&gt; &lt;/a&gt; &lt;a&gt;标签有如下属性：
+  href 属性给出链接指向的网址。它的值应该是一个 URL 或者锚点。
+&lt;a href=&#34;#demo&#34;&gt;示例&lt;/a&gt; 上面代码中，href 属性的值是#加上锚点名称。点击后，浏览器会自动滚动，停在当前页面里面 demo 锚点所在的位置。
+  hreflang 属性给出链接指向的网址所使用的语言，纯粹是提示性的，没有实际功能。
+&lt;a href=&#34;https://www.google.com&#34; hreflang=&#34;en&#34;&gt;示例网址&lt;/a&gt; 上面代码表明，href 属性指向的网址的语言是英语。
+  title 属性给出链接的说明信息。鼠标悬停在链接上方时，浏览器会将这个属性的值，以提示块的形式显示出来。
+下面代码中，用户鼠标停留在链接上面，会出现文字提示 hello。
+&lt;a href=&#34;https://www.google.com&#34; title=&#34;hello&#34;&gt;示例&lt;/a&gt;。   target 属性指定如何展示打开的链接。它可以是在指定的窗口打开，也可以在&lt;iframe&gt;里面打开。
+&lt;p&gt;&lt;a href=&#34;https://www.google.com&#34; target=&#34;test&#34;&gt;google&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href=&#34;https://www.baidu.com&#34; target=&#34;test&#34;&gt;baidu&lt;/a&gt;&lt;/p&gt; 上面代码中，两个链接都在名叫 test 的窗口打开。首先点击链接 google，浏览器发现没有叫做 test 的窗口，就新建一个窗口，起名为 test，在该窗口打开 google.com。然后，用户又点击链接 baidu，由于已经存在 test 窗口，浏览器就在该窗口打开 baidu." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qiujia236.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" />
+<meta property="article:published_time" content="2020-01-01T22:34:29+08:00" />
+<meta property="article:modified_time" content="2020-01-01T22:34:29+08:00" />
+<meta itemprop="name" content="HTML常用标签">
+<meta itemprop="description" content="HTML 常用标签 链接标签 链接（hyperlink）是互联网的核心。它允许用户在页面上，从一个网址跳转到另一个网址，从而把所有资源联系在一起。
+URL 是链接指向的地址。链接不仅可以指向另一个网页，也可以指向文本、图像、文件等资源。可以这样说，所有互联网上的资源，都可以通过链接访问。 链接通过&lt;a&gt;标签表示，用户点击后，浏览器会跳转到指定的网址。下面就是一个典型的链接。
+&lt;a href=&#34;https://www.google.com&#34;&gt;谷歌&lt;/a&gt; 上面代码就定义了一个超级链接。浏览器显示“谷歌”，文字下面默认会有下划线，表示这是一个链接。用户点击后，浏览器跳转到 href 属性指定的网址。
+&lt;a&gt;标签内部不仅可以放置文字，也可以放置其他元素，比如段落、图像、多媒体等等。
+&lt;a href=&#34;https://www.google.com&#34;&gt; &lt;img src=&#34;https://www.example.com/foo.jpg&#34; /&gt; &lt;/a&gt; &lt;a&gt;标签有如下属性：
+  href 属性给出链接指向的网址。它的值应该是一个 URL 或者锚点。
+&lt;a href=&#34;#demo&#34;&gt;示例&lt;/a&gt; 上面代码中，href 属性的值是#加上锚点名称。点击后，浏览器会自动滚动，停在当前页面里面 demo 锚点所在的位置。
+  hreflang 属性给出链接指向的网址所使用的语言，纯粹是提示性的，没有实际功能。
+&lt;a href=&#34;https://www.google.com&#34; hreflang=&#34;en&#34;&gt;示例网址&lt;/a&gt; 上面代码表明，href 属性指向的网址的语言是英语。
+  title 属性给出链接的说明信息。鼠标悬停在链接上方时，浏览器会将这个属性的值，以提示块的形式显示出来。
+下面代码中，用户鼠标停留在链接上面，会出现文字提示 hello。
+&lt;a href=&#34;https://www.google.com&#34; title=&#34;hello&#34;&gt;示例&lt;/a&gt;。   target 属性指定如何展示打开的链接。它可以是在指定的窗口打开，也可以在&lt;iframe&gt;里面打开。
+&lt;p&gt;&lt;a href=&#34;https://www.google.com&#34; target=&#34;test&#34;&gt;google&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href=&#34;https://www.baidu.com&#34; target=&#34;test&#34;&gt;baidu&lt;/a&gt;&lt;/p&gt; 上面代码中，两个链接都在名叫 test 的窗口打开。首先点击链接 google，浏览器发现没有叫做 test 的窗口，就新建一个窗口，起名为 test，在该窗口打开 google.com。然后，用户又点击链接 baidu，由于已经存在 test 窗口，浏览器就在该窗口打开 baidu.">
+<meta itemprop="datePublished" content="2020-01-01T22:34:29&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-01T22:34:29&#43;08:00" />
+<meta itemprop="wordCount" content="614">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTML常用标签"/>
+<meta name="twitter:description" content="HTML 常用标签 链接标签 链接（hyperlink）是互联网的核心。它允许用户在页面上，从一个网址跳转到另一个网址，从而把所有资源联系在一起。
+URL 是链接指向的地址。链接不仅可以指向另一个网页，也可以指向文本、图像、文件等资源。可以这样说，所有互联网上的资源，都可以通过链接访问。 链接通过&lt;a&gt;标签表示，用户点击后，浏览器会跳转到指定的网址。下面就是一个典型的链接。
+&lt;a href=&#34;https://www.google.com&#34;&gt;谷歌&lt;/a&gt; 上面代码就定义了一个超级链接。浏览器显示“谷歌”，文字下面默认会有下划线，表示这是一个链接。用户点击后，浏览器跳转到 href 属性指定的网址。
+&lt;a&gt;标签内部不仅可以放置文字，也可以放置其他元素，比如段落、图像、多媒体等等。
+&lt;a href=&#34;https://www.google.com&#34;&gt; &lt;img src=&#34;https://www.example.com/foo.jpg&#34; /&gt; &lt;/a&gt; &lt;a&gt;标签有如下属性：
+  href 属性给出链接指向的网址。它的值应该是一个 URL 或者锚点。
+&lt;a href=&#34;#demo&#34;&gt;示例&lt;/a&gt; 上面代码中，href 属性的值是#加上锚点名称。点击后，浏览器会自动滚动，停在当前页面里面 demo 锚点所在的位置。
+  hreflang 属性给出链接指向的网址所使用的语言，纯粹是提示性的，没有实际功能。
+&lt;a href=&#34;https://www.google.com&#34; hreflang=&#34;en&#34;&gt;示例网址&lt;/a&gt; 上面代码表明，href 属性指向的网址的语言是英语。
+  title 属性给出链接的说明信息。鼠标悬停在链接上方时，浏览器会将这个属性的值，以提示块的形式显示出来。
+下面代码中，用户鼠标停留在链接上面，会出现文字提示 hello。
+&lt;a href=&#34;https://www.google.com&#34; title=&#34;hello&#34;&gt;示例&lt;/a&gt;。   target 属性指定如何展示打开的链接。它可以是在指定的窗口打开，也可以在&lt;iframe&gt;里面打开。
+&lt;p&gt;&lt;a href=&#34;https://www.google.com&#34; target=&#34;test&#34;&gt;google&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href=&#34;https://www.baidu.com&#34; target=&#34;test&#34;&gt;baidu&lt;/a&gt;&lt;/p&gt; 上面代码中，两个链接都在名叫 test 的窗口打开。首先点击链接 google，浏览器发现没有叫做 test 的窗口，就新建一个窗口，起名为 test，在该窗口打开 google.com。然后，用户又点击链接 baidu，由于已经存在 test 窗口，浏览器就在该窗口打开 baidu."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://qiujia236.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      wb的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">HTML常用标签</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-01-01T22:34:29&#43;08:00">January 1, 2020</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="html-">HTML 常用标签</h1>
+<h2 id="heading">链接标签</h2>
+<p>链接（hyperlink）是互联网的核心。它允许用户在页面上，从一个网址跳转到另一个网址，从而把所有资源联系在一起。</p>
+<p>URL 是链接指向的地址。链接不仅可以指向另一个网页，也可以指向文本、图像、文件等资源。可以这样说，所有互联网上的资源，都可以通过链接访问。
+链接通过&lt;a&gt;标签表示，用户点击后，浏览器会跳转到指定的网址。下面就是一个典型的链接。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.google.com&#34;</span>&gt;谷歌&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>上面代码就定义了一个超级链接。浏览器显示“谷歌”，文字下面默认会有下划线，表示这是一个链接。用户点击后，浏览器跳转到 href 属性指定的网址。<br>
+&lt;a&gt;标签内部不仅可以放置文字，也可以放置其他元素，比如段落、图像、多媒体等等。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.google.com&#34;</span>&gt;
+  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.example.com/foo.jpg&#34;</span> /&gt;
+&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>&lt;a&gt;标签有如下属性：</p>
+<ol>
+<li>
+<p>href 属性给出链接指向的网址。它的值应该是一个 URL 或者锚点。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#demo&#34;</span>&gt;示例&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>上面代码中，href 属性的值是#加上锚点名称。点击后，浏览器会自动滚动，停在当前页面里面 demo 锚点所在的位置。</p>
+</li>
+<li>
+<p>hreflang 属性给出链接指向的网址所使用的语言，纯粹是提示性的，没有实际功能。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.google.com&#34;</span> <span style="color:#a6e22e">hreflang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;示例网址&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>上面代码表明，href 属性指向的网址的语言是英语。</p>
+</li>
+<li>
+<p>title 属性给出链接的说明信息。鼠标悬停在链接上方时，浏览器会将这个属性的值，以提示块的形式显示出来。<br>
+下面代码中，用户鼠标停留在链接上面，会出现文字提示 hello。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.google.com&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello&#34;</span>&gt;示例&lt;/<span style="color:#f92672">a</span>&gt;。
+</code></pre></div></li>
+<li>
+<p>target 属性指定如何展示打开的链接。它可以是在指定的窗口打开，也可以在&lt;iframe&gt;里面打开。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.google.com&#34;</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span>&gt;google&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.baidu.com&#34;</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span>&gt;baidu&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div><p>上面代码中，两个链接都在名叫 test 的窗口打开。首先点击链接 google，浏览器发现没有叫做 test 的窗口，就新建一个窗口，起名为 test，在该窗口打开 google.com。然后，用户又点击链接 baidu，由于已经存在 test 窗口，浏览器就在该窗口打开 baidu.com，取代里面已经打开的 google.com。
+target 属性的值也可以是以下四个关键字之一：</p>
+<ul>
+<li>_self：当前窗口打开，这是默认值。</li>
+<li>_blank：新窗口打开。</li>
+<li>_parent：上层窗口打开，这通常用于从父窗口打开的子窗口，如果当前窗口没有上层窗口，这个值等同于_self。</li>
+<li>_top：顶层窗口打开。如果当前窗口就是顶层窗口，这个值等同于_self。</li>
+</ul>
+<p>注意，使用 target 属性的时候，最好跟 rel=&quot;noreferrer&quot;一起使用，这样可以避免安全风险。</p>
+</li>
+<li>
+<p>rel 属性说明链接与当前页面的关系。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;help.html&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;help&#34;</span>&gt;帮助&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>上面代码的 rel 属性，说明链接是当前页面的帮助文档。
+下面是一些常见的 rel 属性的值：</p>
+<ul>
+<li><!-- raw HTML omitted -->alternate<!-- raw HTML omitted -->：当前文档的另一种形式，比如翻译。</li>
+<li><!-- raw HTML omitted -->author<!-- raw HTML omitted -->：作者链接。</li>
+<li><!-- raw HTML omitted -->bookmark<!-- raw HTML omitted -->：用作书签的永久地址。</li>
+<li><!-- raw HTML omitted -->external<!-- raw HTML omitted -->：当前文档的外部参考文档。</li>
+<li><!-- raw HTML omitted -->help<!-- raw HTML omitted -->：帮助链接。</li>
+<li><!-- raw HTML omitted -->license<!-- raw HTML omitted -->：许可证链接。</li>
+<li><!-- raw HTML omitted -->next<!-- raw HTML omitted -->：系列文档的下一篇。</li>
+<li><!-- raw HTML omitted -->nofollow<!-- raw HTML omitted -->：告诉搜索引擎忽略该链接，主要用于用户提交的内容，防止有人企图通过添加链接，提高该链接的搜索排名。</li>
+<li><!-- raw HTML omitted -->noreferrer<!-- raw HTML omitted -->：告诉浏览器打开链接时，不要将当前网址作为 HTTP 头信息的 Referer 字段发送出去，这样可以隐藏点击的来源。</li>
+<li><!-- raw HTML omitted -->noopener<!-- raw HTML omitted -->：告诉浏览器打开链接时，不让链接窗口通过 JavaScript 的 window.opener 属性引用原始窗口，这样就提高了安全性。</li>
+<li><!-- raw HTML omitted -->prev<!-- raw HTML omitted -->：系列文档的上一篇。</li>
+<li><!-- raw HTML omitted -->search<!-- raw HTML omitted -->：文档的搜索链接。</li>
+<li><!-- raw HTML omitted -->tag<!-- raw HTML omitted -->：文档的标签链接。</li>
+</ul>
+</li>
+<li>
+<p>ping 属性指定一个网址，用户点击的时候，会向该网址发出一个 POST 请求，通常用于跟踪用户的行为。</p>
+</li>
+<li>
+<p>type 属性给出链接 URL 的 MIME 类型，比如到底是网页，还是图像或文件。它也是纯粹提示性的属性，没有实际功能。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;smile.jpg&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image/jpeg&#34;</span>&gt;示例图片&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>上面代码中，type 属性提示这是一张图片。</p>
+</li>
+<li>
+<p>download 属性表明当前链接用于下载，而不是跳转到另一个 URL。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;demo.txt&#34;</span> <span style="color:#a6e22e">download</span>&gt;下载&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>注意，download 属性只在链接与网址同源时，才会生效。也就是说，链接应该与网址属于同一个网站。
+如果 download 属性设置了值，那么这个值就是下载的文件名。<br>
+下面代码中，下载文件的原始文件名是 foo.exe。点击后，下载对话框提示的文件名是 bar.exe。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;foo.exe&#34;</span> <span style="color:#a6e22e">download</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bar.exe&#34;</span>&gt;点击下载&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>注意，如果链接点击后，服务器的 HTTP 回应的头信息设置了 Content-Disposition 字段，并且该字段的值与 download 属性不一致，那么该字段优先，下载时将显示其设置的文件名。</p>
+<p>download 属性还有一个用途，就是有些地址不是真实网址，而是数据网址，比如 data:开头的网址。这时，download 属性可以为虚拟网址指定下载的文件名。</p>
+<p>下面链接点击后，会打开一个虚拟网页，上面显示 Hello World!。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data:,Hello%2C%20World!&#34;</span>&gt;点击&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>下面链接点击后，下载的 hello.txt 文件内容就是“Hello, World!”。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data:,Hello%2C%20World!&#34;</span> <span style="color:#a6e22e">download</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello.txt&#34;</span>&gt;点击&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p><!-- raw HTML omitted -->注意，在实际工作中，download 属性已经比较少使用了。<!-- raw HTML omitted --></p>
+</li>
+</ol>
+<h3 id="heading-1">邮件链接</h3>
+<p>链接也可以指向一个邮件地址，使用 mailto 协议。用户点击后，浏览器会打开本机默认的邮件程序，让用户向指定的地址发送邮件。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mailto:contact@example.com&#34;</span>&gt;联系我们&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>上面代码中，链接就指向邮件地址。点击后，浏览器会打开一个邮件地址，让你可以向 <a href="mailto:contact@example.com">contact@example.com</a> 发送邮件。</p>
+<p>除了邮箱，邮件协议还允许指定其他几个邮件要素。</p>
+<ul>
+<li>subject：主题</li>
+<li>cc：抄送</li>
+<li>bcc：密送</li>
+<li>body：邮件内容</li>
+</ul>
+<p>使用方法是将这些邮件要素，以查询字符串的方式，附加在邮箱地址后面。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span>
+  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mailto:foo@bar.com?cc=test@test.com&amp;subject=The%20subject&amp;body=The%20body&#34;</span>
+  &gt;发送邮件&lt;/<span style="color:#f92672">a</span>
+&gt;
+</code></pre></div><p>上面代码中，邮件链接里面不仅包含了邮箱地址，还包含了 cc、subject、body 等邮件要素。这些要素的值需要经过 URL 转义，比如空格转成%20。</p>
+<p>不指定邮箱也是允许的，就像下面这样。这时用户自己在邮件程序里面，填写想要发送的邮箱，通常用于邮件分享网页。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mailto:&#34;</span>&gt;告诉朋友&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><h3 id="heading-2">电话链接</h3>
+<p>如果是手机浏览的页面，还可以使用 tel 协议，创建电话链接。用户点击该链接，会唤起电话，可以进行拨号。</p>
+<p>上面代码在手机中，点击链接会唤起拨号界面，可以直接拨打指定号码。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tel:13312345678&#34;</span>&gt;13312345678&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><h2 id="heading-3">图像标签</h2>
+<p>&lt;iframe&gt;标签用于插入图片。它是单独使用的，没有闭合标签。</p>
+<p>下面代码在网页插入一张图片 foo.jpg。src 属性指定图片的网址，上例是相对 URL，表示图片与网页在同一个目录。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;foo.jpg&#34;</span> /&gt;
+</code></pre></div><p>&lt;iframe&gt;默认是一个行内元素，与前后的文字处在同一行。<br>
+下面代码的渲染结果是，文字和图片在同一行显示。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;Hello&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;foo.jpg&#34;</span> /&gt;World&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div><p>图像默认以原始大小显示。如果图片很大，又与文字处在同一行，那么图片将把当前行的行高撑高，并且图片的底边与文字的底边在同一条水平线上。</p>
+<p>&lt;iframe&gt;可以放在&lt;a&gt;标签内部，使得图片变成一个可以点击的链接。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;example.html&#34;</span>&gt;
+  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;foo.jpg&#34;</span> /&gt;
+&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>img 标签有以下属性：</p>
+<ol>
+<li>
+<p>alt 属性用来设定图片的文字说明。图片不显示时（比如下载失败，或用户关闭图片加载），图片的位置上会显示该文本。<br>
+上面代码中，alt 是图片的说明。图片下载失败时，浏览器会在图片位置，显示文字“示例图片”。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;foo.jpg&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;示例图片&#34;</span> /&gt;
+</code></pre></div></li>
+<li>
+<p>width 属性，height 属性，图片默认以原始大小插入网页，width 属性和 height 属性可以指定图片显示时的宽度和高度，单位是像素或百分比。</p>
+<p>下面代码中，width 属性指定图片显示的宽度为 400 像素，height 属性指定显示高度为 300 像素。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;foo.jpg&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;400&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> /&gt;
+</code></pre></div><p>注意，一旦设置了这两个属性，浏览器会在网页中预先留出这个大小的空间，不管图片有没有加载成功。不过，由于图片的显示大小可以用 CSS 设置，所以不建议使用这两个属性。</p>
+<p>一种特殊情况是，width 属性和 height 属性只设置了一个，另一个没有设置。这时，浏览器会根据图片的原始大小，自动设置对应比例的图片宽度或高度。举例来说，图片大小是 800 像素 x 800 像素，width 属性设置成 200，那么浏览器会自动将 height 设成 200。</p>
+</li>
+<li>
+<p>&lt;img&gt;导致的图片加载的 HTTP 请求，默认会带有 Referer 的头信息。referrerpolicy 属性对这个行为进行设置。</p>
+</li>
+<li>
+<p>有时，图片和网页属于不同的网站，网页加载图片就会导致跨域请求，对方服务器可能要求跨域认证。crossorigin 属性用来告诉浏览器，是否采用跨域的形式下载图片，默认是不采用。<br>
+简单说，只要打开了这个属性，HTTP 请求的头信息里面，就会加入 origin 字段，给出请求发出的域名，不打开这个属性就不加。</p>
+<p>一旦打开该属性，它可以设为两个值。</p>
+<ul>
+<li>anonymous：跨域请求不带有用户凭证（通常是 Cookie）,为默认值。</li>
+<li>use-credentials：跨域请求带有用户凭证。</li>
+</ul>
+</li>
+<li>
+<p>loading，浏览器的默认行为是，只要解析到<!-- raw HTML omitted -->标签，就开始加载图片。对于很长的网页，这样做很浪费带宽，因为用户不一定会往下滚动，一直看到网页结束。用户很可能是点开网页，看了一会就关掉了，那些不在视口的图片加载的流量，就都浪费了。</p>
+<p>loading 属性改变了这个行为，可以指定图片的懒加载，即图片默认不加载，只有即将滚动进入视口，变成用户可见时才会加载，这样就节省了带宽。<br>
+loading 属性可以取以下三个值。</p>
+<ul>
+<li>auto：浏览器默认行为，等同于不使用 loading 属性。</li>
+<li>lazy：启用懒加载。</li>
+<li>eager：立即加载资源，无论它在页面上的哪个位置。</li>
+</ul>
+<p>由于行内图片的懒加载，可能会导致页面布局重排，所以使用这个属性的时候，最好指定图片的高和宽。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image.png&#34;</span> <span style="color:#a6e22e">loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lazy&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;…&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;200&#34;</span> /&gt;
+</code></pre></div></li>
+<li>
+<p>srcset 属性。<br>
+一般来说，桌面端显示的是大尺寸的图像，文件体积较大。手机的屏幕较小，只需要小尺寸的图像，可以节省带宽，加速网页渲染。</p>
+<p>桌面显示器一般是单倍像素密度，而手机的显示屏往往是多倍像素密度，即显示时多个像素合成为一个像素，这种屏幕称为 Retina 屏幕。图像文件很可能在桌面端很清晰，放到手机上会有点模糊，因为图像没有那么高的像素密度，浏览器自动把图像的每个像素复制到周围像素，满足像素密度的要求，导致图像的锐利度有所下降。</p>
+<p>桌面显示器的面积较大，图像可以容纳更多细节。手机的屏幕较小，许多细节是看不清的，需要突出重点。</p>
+<p>为了解决上面这些问题，HTML 语言提供了一套完整的解决方案。首先，&lt;img&gt;标签引入了 srcset 属性。</p>
+<p>srcset 属性用来指定多张图像，适应不同像素密度的屏幕。它的值是一个逗号分隔的字符串，每个部分都是一张图像的 URL，后面接一个空格，然后是像素密度的描述符。请看下面的例子。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span>
+  <span style="color:#a6e22e">srcset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;foo-320w.jpg, foo-480w.jpg 1.5x, foo-640w.jpg 2x&#34;</span>
+  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;foo-640w.jpg&#34;</span>
+/&gt;
+</code></pre></div><p>上面代码中，srcset 属性给出了三个图像 URL，适应三种不同的像素密度。</p>
+<p>图像 URL 后面的像素密度描述符，格式是像素密度倍数 + 字母 x。1x 表示单倍像素密度，可以省略。浏览器根据当前设备的像素密度，选择需要加载的图像。</p>
+<p>如果 srcset 属性都不满足条件，那么就加载 src 属性指定的默认图像</p>
+</li>
+<li>
+<p>sizes 属性<br>
+像素密度的适配，只适合显示区域一样大小的图像。如果希望不同尺寸的屏幕，显示不同大小的图像，srcset 属性就不够用了，必须搭配 sizes 属性。</p>
+<p>第一步，srcset 属性列出所有可用的图像。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span>
+  <span style="color:#a6e22e">srcset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">    foo-160.jpg   160w,
+</span><span style="color:#e6db74">    foo-320.jpg   320w,
+</span><span style="color:#e6db74">    foo-640.jpg   640w,
+</span><span style="color:#e6db74">    foo-1280.jpg 1280w
+</span><span style="color:#e6db74">  &#34;</span>
+  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;foo-1280.jpg&#34;</span>
+/&gt;
+</code></pre></div><p>上面代码中，srcset 属性列出四张可用的图像，每张图像的 URL 后面是一个空格，再加上宽度描述符。</p>
+<p>宽度描述符就是图像原始的宽度，加上字符 w。上例的四种图片的原始宽度分别为 160 像素、320 像素、640 像素和 1280 像素</p>
+<p>第二步，sizes 属性列出不同设备的图像显示宽度。</p>
+<p>sizes 属性的值是一个逗号分隔的字符串，除了最后一部分，前面每个部分都是一个放在括号里面的媒体查询表达式，后面是一个空格，再加上图像的显示宽度。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span>
+  <span style="color:#a6e22e">srcset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">    foo-160.jpg   160w,
+</span><span style="color:#e6db74">    foo-320.jpg   320w,
+</span><span style="color:#e6db74">    foo-640.jpg   640w,
+</span><span style="color:#e6db74">    foo-1280.jpg 1280w
+</span><span style="color:#e6db74">  &#34;</span>
+  <span style="color:#a6e22e">sizes</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;(max-width: 440px) 100vw,
+</span><span style="color:#e6db74">         (max-width: 900px) 33vw,
+</span><span style="color:#e6db74">         254px&#34;</span>
+  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;foo-1280.jpg&#34;</span>
+/&gt;
+</code></pre></div><p>上面代码中，sizes 属性给出了三种屏幕条件，以及对应的图像显示宽度。宽度不超过 440 像素的设备，图像显示宽度为 100%；宽度 441 像素到 900 像素的设备，图像显示宽度为 33%；宽度 900 像素以上的设备，图像显示宽度为 254px。</p>
+<p>第三步，浏览器根据当前设备的宽度，从 sizes 属性获得图像的显示宽度，然后从 srcset 属性找出最接近该宽度的图像，进行加载。</p>
+<p>假定当前设备的屏幕宽度是 480px，浏览器从 sizes 属性查询得到，图片的显示宽度是 33vw（即 33%），等于 160px。srcset 属性里面，正好有宽度等于 160px 的图片，于是加载 foo-160.jpg。</p>
+<p>如果省略 sizes 属性，那么浏览器将根据实际的图像显示宽度，从 srcset 属性选择最接近的图片。一旦使用 sizes 属性，就必须与 srcset 属性搭配使用，单独使用 sizes 属性是无效的。</p>
+</li>
+</ol>
+<h2 id="table-">table 标签</h2>
+<p>&lt;table&gt;是一个块级容器标签，所有表格内容都要放在这个标签里面。</p>
+<ol>
+<li>
+<p>&lt;caption&gt;总是&lt;table&gt;里面的第一个子元素，表示表格的标题。该元素是可选的。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span>&gt;
+  &lt;<span style="color:#f92672">caption</span>&gt;
+    示例表格
+  &lt;/<span style="color:#f92672">caption</span>&gt;
+&lt;/<span style="color:#f92672">table</span>&gt;
+</code></pre></div></li>
+<li>
+<p>&lt;thead&gt;、&lt;tbody&gt;、&lt;tfoot&gt;都是块级容器元素，且都是&lt;table&gt;的一级子元素，分别表示表头、表体和表尾。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span>&gt;
+  &lt;<span style="color:#f92672">thead</span>&gt;
+    ... ...
+  &lt;/<span style="color:#f92672">thead</span>&gt;
+  &lt;<span style="color:#f92672">tbody</span>&gt;
+    ... ...
+  &lt;/<span style="color:#f92672">tbody</span>&gt;
+  &lt;<span style="color:#f92672">tfoot</span>&gt;
+    ... ...
+  &lt;/<span style="color:#f92672">tfoot</span>&gt;
+&lt;/<span style="color:#f92672">table</span>&gt;
+</code></pre></div><p>这三个元素都是可选的。如果使用了&lt;thead&gt;，那么&lt;tbody&gt;和&lt;tfoot&gt;一定在&lt;thead&gt;的后面。如果使用了&lt;tbody&gt;，那么&lt;tfoot&gt;一定在&lt;tbody&gt;后面。大型表格内部可以使用多个&lt;tbody&gt;，表示连续的多个部分</p>
+</li>
+<li>
+<p>&lt;colgroup&gt;是&lt;table&gt;的一级子元素，用来包含一组列的定义。&lt;col&gt;
+是&lt;colgroup&gt;的子元素，用来定义表格的一列。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span>&gt;
+  &lt;<span style="color:#f92672">colgroup</span>&gt;
+    &lt;<span style="color:#f92672">col</span> /&gt;
+    &lt;<span style="color:#f92672">col</span> /&gt;
+    &lt;<span style="color:#f92672">col</span> /&gt;
+  &lt;/<span style="color:#f92672">colgroup</span>&gt;
+&lt;/<span style="color:#f92672">table</span>&gt;
+</code></pre></div><p>上面代码表明表格有 3 列。
+&lt;col&gt;不仅是一个单独使用的标签，没有结束标志，而且还是一个空元素，没有子元素。它的主要作用，除了申明表格结构，还可以为表格附加样式。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span>&gt;
+  &lt;<span style="color:#f92672">colgroup</span>&gt;
+    &lt;<span style="color:#f92672">col</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;c1&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">col</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;c2&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">col</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;c3&#34;</span> /&gt;
+  &lt;/<span style="color:#f92672">colgroup</span>&gt;
+  &lt;<span style="color:#f92672">tr</span>&gt;
+    &lt;<span style="color:#f92672">td</span>&gt;1&lt;/<span style="color:#f92672">td</span>&gt;
+    &lt;<span style="color:#f92672">td</span>&gt;2&lt;/<span style="color:#f92672">td</span>&gt;
+    &lt;<span style="color:#f92672">td</span>&gt;3&lt;/<span style="color:#f92672">td</span>&gt;
+  &lt;/<span style="color:#f92672">tr</span>&gt;
+&lt;/<span style="color:#f92672">table</span>&gt;
+</code></pre></div><p>上面代码中，&lt;colgroup&gt;声明表格有三列，每一列有自己的 class，可以使用 CSS 针对每个 class 设定样式，会对整个表格生效。</p>
+<p>&lt;col&gt;有一个 span 属性，值为正整数，默认为 1。如果大于 1，就表示该列的宽度包含连续的多列。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span>&gt;
+  &lt;<span style="color:#f92672">colgroup</span>&gt;
+    &lt;<span style="color:#f92672">col</span> /&gt;
+    &lt;<span style="color:#f92672">col</span> <span style="color:#a6e22e">span</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">col</span> /&gt;
+  &lt;/<span style="color:#f92672">colgroup</span>&gt;
+&lt;/<span style="color:#f92672">table</span>&gt;
+</code></pre></div><p>上面代码中，表格的表头定义了 3 列，实际数据有 4 列。表头的第 2 列会连续跨 2 列。</p>
+</li>
+<li>
+<p>&lt;tr&gt;标签表示表格的一行（table row）。如果表格有&lt;thead&gt;、&lt;tbody&gt;、&lt;tfoot&gt;，那么&lt;tr&gt;就放在这些容器元素之中，否则直接放在&lt;table&gt;的下一级。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span>&gt;
+  &lt;<span style="color:#f92672">tr</span>&gt;
+    ...
+  &lt;/<span style="color:#f92672">tr</span>&gt;
+  &lt;<span style="color:#f92672">tr</span>&gt;
+    ...
+  &lt;/<span style="color:#f92672">tr</span>&gt;
+  &lt;<span style="color:#f92672">tr</span>&gt;
+    ...
+  &lt;/<span style="color:#f92672">tr</span>&gt;
+&lt;/<span style="color:#f92672">table</span>&gt;
+</code></pre></div><p>上面代码表示表格创造了 3 行。</p>
+</li>
+<li>
+<p>&lt;th&gt;和&lt;td&gt;都用来定义表格的单元格。其中，&lt;th&gt;是标题单元格，&lt;td&gt;是数据单元格。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span>&gt;
+  &lt;<span style="color:#f92672">tr</span>&gt;
+    &lt;<span style="color:#f92672">th</span>&gt;学号&lt;/<span style="color:#f92672">th</span>&gt;
+    &lt;<span style="color:#f92672">th</span>&gt;姓名&lt;/<span style="color:#f92672">th</span>&gt;
+  &lt;/<span style="color:#f92672">tr</span>&gt;
+  &lt;<span style="color:#f92672">tr</span>&gt;
+    &lt;<span style="color:#f92672">td</span>&gt;001&lt;/<span style="color:#f92672">td</span>&gt;
+    &lt;<span style="color:#f92672">td</span>&gt;张三&lt;/<span style="color:#f92672">td</span>&gt;
+  &lt;/<span style="color:#f92672">tr</span>&gt;
+  &lt;<span style="color:#f92672">tr</span>&gt;
+    &lt;<span style="color:#f92672">td</span>&gt;002&lt;/<span style="color:#f92672">td</span>&gt;
+    &lt;<span style="color:#f92672">td</span>&gt;李四&lt;/<span style="color:#f92672">td</span>&gt;
+  &lt;/<span style="color:#f92672">tr</span>&gt;
+&lt;/<span style="color:#f92672">table</span>&gt;
+</code></pre></div><p>上面代码中，表格一共有三行。第一行是标题行，所以使用&lt;th&gt;；第二行和第三行是数据行，所以使用&lt;td&gt;。</p>
+<p>&lt;th&gt;和&lt;td&amp;#62的相关属性：</p>
+<ul>
+<li>
+<p>单元格会有跨越多行或多列的情况，这要通过colspan属性和rowspan属性设置，前者表示单元格跨越的栏数，后者表示单元格跨越的行数。它们的值都是一个非负整数，默认为1。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span>&gt;
+  &lt;<span style="color:#f92672">tr</span>&gt;
+    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">colspan</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span>&gt;A&lt;/<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;B&lt;/<span style="color:#f92672">td</span>&gt;
+  &lt;/<span style="color:#f92672">tr</span>&gt;
+  &lt;<span style="color:#f92672">tr</span>&gt;
+    &lt;<span style="color:#f92672">td</span>&gt;A&lt;/<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;B&lt;/<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;C&lt;/<span style="color:#f92672">td</span>&gt;
+  &lt;/<span style="color:#f92672">tr</span>&gt;
+&lt;/<span style="color:#f92672">table</span>&gt;
+</code></pre></div><p>上面代码中，第一行的第一个单元格会跨两列。</p>
+</li>
+<li>
+<p>headers属性,如果表格很大，单元格很多，源码里面会看不清，哪个单元格对应哪个表头，这时就可以使用headers属性。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span>&gt;
+  &lt;<span style="color:#f92672">tr</span>&gt;
+    &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span>&gt;学号&lt;/<span style="color:#f92672">th</span>&gt;&lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;names&#34;</span>&gt;姓名&lt;/<span style="color:#f92672">th</span>&gt;
+  &lt;/<span style="color:#f92672">tr</span>&gt;
+  &lt;<span style="color:#f92672">tr</span>&gt;
+    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span>&gt;001&lt;/<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;names&#34;</span>&gt;张三&lt;/<span style="color:#f92672">td</span>&gt;
+  &lt;/<span style="color:#f92672">tr</span>&gt;
+  &lt;<span style="color:#f92672">tr</span>&gt;
+    &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span>&gt;002&lt;/<span style="color:#f92672">td</span>&gt;&lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">headers</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;names&#34;</span>&gt;李四&lt;/<span style="color:#f92672">td</span>&gt;
+  &lt;/<span style="color:#f92672">tr</span>&gt;
+&lt;/<span style="color:#f92672">table</span>&gt;
+</code></pre></div><p>上面代码中，标题栏的&lt;th&gt;设置了id属性，后面的&lt;td&gt;单元格的headers属性就对应这些id属性的值，因此就能看出来这些单元格对应哪个标题栏。</p>
+<p>headers属性的值总是对应&lt;th&gt;标签的id属性的值。由于一个单元格可以对应多个标题栏（跨行的情况），所以headers属性可以是一个空格分隔的字符串，对应多个id属性的值。</p>
+</li>
+<li>
+<p>scope属性只有&lt;th&gt;标签支持，一般不在&lt;td&gt;标签使用，表示该&lt;th&gt;单元格到底是栏的标题，还是列的标题。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span>&gt;
+  &lt;<span style="color:#f92672">tr</span>&gt;
+    &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">scope</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;姓名&lt;/<span style="color:#f92672">th</span>&gt;
+    &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">scope</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;学号&lt;/<span style="color:#f92672">th</span>&gt;
+    &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">scope</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;col&#34;</span>&gt;性别&lt;/<span style="color:#f92672">th</span>&gt;
+  &lt;/<span style="color:#f92672">tr</span>&gt;
+  &lt;<span style="color:#f92672">tr</span>&gt;
+    &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">scope</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;张三&lt;/<span style="color:#f92672">th</span>&gt;
+    &lt;<span style="color:#f92672">td</span>&gt;001&lt;/<span style="color:#f92672">td</span>&gt;
+    &lt;<span style="color:#f92672">td</span>&gt;男&lt;/<span style="color:#f92672">td</span>&gt;
+  &lt;/<span style="color:#f92672">tr</span>&gt;
+  &lt;<span style="color:#f92672">tr</span>&gt;
+    &lt;<span style="color:#f92672">th</span> <span style="color:#a6e22e">scope</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;row&#34;</span>&gt;李四&lt;/<span style="color:#f92672">th</span>&gt;
+    &lt;<span style="color:#f92672">td</span>&gt;002&lt;/<span style="color:#f92672">td</span>&gt;
+    &lt;<span style="color:#f92672">td</span>&gt;男&lt;/<span style="color:#f92672">td</span>&gt;
+  &lt;/<span style="color:#f92672">tr</span>&gt;
+&lt;/<span style="color:#f92672">table</span>&gt;
+</code></pre></div><p>上面代码中，第一行的标题栏都是列标题，所以<!-- raw HTML omitted -->的scope属性为col，第二行和第三行的第一列是行标题，所以<!-- raw HTML omitted -->标签的scope属性为row。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>以上就是 HTML 常用标签的总结，通过以上的学习，我们知道了链接标签，图形标签，表单标签的大致的使用方法。有助于我们在前端布局中，打好基础，解决基本的问题。</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://qiujia236.github.io/" >
+    &copy; 2020 wb的博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
