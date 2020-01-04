@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>wb的博客  | Css盒模型</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.62.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="Css盒模型" />
+<meta property="og:description" content="CSS 盒模型 CSS 盒模型就是布局网页的一种手段包括边框（border）、外边距（margin）、内边距（padding）、网页元素（content）、宽（width）、高（height）等元素。 盒模型分为 W3C 标准盒模型和 IE 盒模型：
+  W3C 标准盒模型，又称为 content-box，属性 width,height 只包含内容 content，不包含 border 和 padding。
+width = 内容的宽度
+height = 内容的高度
+  IE 盒模型，又称为 border-box，属性 width,height 包含 border 和 padding，指的是 content&#43;padding&#43;border。
+width = border &#43; padding &#43; 内容的宽度
+height = border &#43; padding &#43; 内容的高度
+  盒模型的相关边框：
+ width 和 height 设置了内容框的宽/高; padding 家族属性设置内边距的宽度; border 家族属性设置边界的宽度、样式和颜色; margin 家族属性设置包围 CSS 盒子外部区域的宽度，这个属性推开布局中其他的 CSS 盒子;    边框颜色：border-color： 四条边框写颜色时的顺序是顺时针的：上、右、下、左，如果只设置两个值的话看对边。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qiujia236.github.io/posts/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" />
+<meta property="article:published_time" content="2020-01-04T14:54:21+08:00" />
+<meta property="article:modified_time" content="2020-01-04T14:54:21+08:00" />
+<meta itemprop="name" content="Css盒模型">
+<meta itemprop="description" content="CSS 盒模型 CSS 盒模型就是布局网页的一种手段包括边框（border）、外边距（margin）、内边距（padding）、网页元素（content）、宽（width）、高（height）等元素。 盒模型分为 W3C 标准盒模型和 IE 盒模型：
+  W3C 标准盒模型，又称为 content-box，属性 width,height 只包含内容 content，不包含 border 和 padding。
+width = 内容的宽度
+height = 内容的高度
+  IE 盒模型，又称为 border-box，属性 width,height 包含 border 和 padding，指的是 content&#43;padding&#43;border。
+width = border &#43; padding &#43; 内容的宽度
+height = border &#43; padding &#43; 内容的高度
+  盒模型的相关边框：
+ width 和 height 设置了内容框的宽/高; padding 家族属性设置内边距的宽度; border 家族属性设置边界的宽度、样式和颜色; margin 家族属性设置包围 CSS 盒子外部区域的宽度，这个属性推开布局中其他的 CSS 盒子;    边框颜色：border-color： 四条边框写颜色时的顺序是顺时针的：上、右、下、左，如果只设置两个值的话看对边。">
+<meta itemprop="datePublished" content="2020-01-04T14:54:21&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-04T14:54:21&#43;08:00" />
+<meta itemprop="wordCount" content="396">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Css盒模型"/>
+<meta name="twitter:description" content="CSS 盒模型 CSS 盒模型就是布局网页的一种手段包括边框（border）、外边距（margin）、内边距（padding）、网页元素（content）、宽（width）、高（height）等元素。 盒模型分为 W3C 标准盒模型和 IE 盒模型：
+  W3C 标准盒模型，又称为 content-box，属性 width,height 只包含内容 content，不包含 border 和 padding。
+width = 内容的宽度
+height = 内容的高度
+  IE 盒模型，又称为 border-box，属性 width,height 包含 border 和 padding，指的是 content&#43;padding&#43;border。
+width = border &#43; padding &#43; 内容的宽度
+height = border &#43; padding &#43; 内容的高度
+  盒模型的相关边框：
+ width 和 height 设置了内容框的宽/高; padding 家族属性设置内边距的宽度; border 家族属性设置边界的宽度、样式和颜色; margin 家族属性设置包围 CSS 盒子外部区域的宽度，这个属性推开布局中其他的 CSS 盒子;    边框颜色：border-color： 四条边框写颜色时的顺序是顺时针的：上、右、下、左，如果只设置两个值的话看对边。"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://qiujia236.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      wb的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Css盒模型</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-01-04T14:54:21&#43;08:00">January 4, 2020</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h1 id="css-">CSS 盒模型</h1>
+<!-- raw HTML omitted -->
+<p>CSS 盒模型就是布局网页的一种手段包括边框（border）、外边距（margin）、内边距（padding）、网页元素（content）、宽（width）、高（height）等元素。
+<img src="/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B1.jpg" alt="">
+<img src="/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B2.png" alt=""></p>
+<p>盒模型分为 W3C 标准盒模型和 IE 盒模型：</p>
+<ol>
+<li>
+<p>W3C 标准盒模型，又称为 content-box，属性 width,height 只包含内容 content，不包含 border 和 padding。<br>
+width = 内容的宽度<br>
+height = 内容的高度</p>
+</li>
+<li>
+<p>IE 盒模型，又称为 border-box，属性 width,height 包含 border 和 padding，指的是 content+padding+border。<br>
+width = border + padding + 内容的宽度<br>
+height = border + padding + 内容的高度</p>
+</li>
+</ol>
+<p>盒模型的相关边框：</p>
+<ol>
+<li>width 和 height 设置了内容框的宽/高;</li>
+<li>padding 家族属性设置内边距的宽度;</li>
+<li>border 家族属性设置边界的宽度、样式和颜色;</li>
+<li>margin 家族属性设置包围 CSS 盒子外部区域的宽度，这个属性推开布局中其他的 CSS 盒子;</li>
+</ol>
+<!-- raw HTML omitted -->
+<ol>
+<li>
+<p>边框颜色：border-color：
+<img src="/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/%E8%BE%B9%E6%A1%86%E9%A2%9C%E8%89%B2.png" alt=""><br>
+四条边框写颜色时的顺序是顺时针的：上、右、下、左，如果只设置两个值的话看对边。</p>
+</li>
+<li>
+<p>边框粗细：border-width 包含 Thin（细）、medium（中间）、thick（粗）、像素值等。</p>
+<ul>
+<li>border-top-width:5px;</li>
+<li>border-right-width:10px;</li>
+<li>border-bottom-width:8px;</li>
+<li>border-left-width:22px;</li>
+</ul>
+<p>四条边框写粗细时的顺序也是顺时针的：上、右、下、左，如果只设置两个值的话看对边。</p>
+</li>
+<li>
+<p>边框样式：border-style 包含 none（没有）、hidden（隐藏）、dotted（点线）、dashed（虚线）、solid（实线）、double（双线）、groove（凹槽边框）、ridge（垄状边框）、inset（嵌入边框）、outset（外凸边框）等。</p>
+<ul>
+<li>border-top-style:solid;</li>
+<li>border-right-style:solid;</li>
+<li>border-bottom-style:solid;</li>
+<li>border-left-style:solid;
+四条边框写类型时的顺序也是顺时针的：上、右、下、左，如果只设置两个值的话看对边。</li>
+</ul>
+</li>
+<li>
+<p>同时设置边框的粗细、样式和颜色。<br>
+border:1px solid #3a6587;<br>
+border: 1px dashed red;</p>
+</li>
+</ol>
+<!-- raw HTML omitted -->
+<ol>
+<li>margin-top、margin-right、margin-bottom、margin-left、margin。<br>
+例如：<br>
+margin-top: 1 px<br>
+margin-right : 2 px<br>
+margin-bottom : 2 px<br>
+margin-left : 1 px<br>
+四个外边距写距离时的顺序也是顺时针的：上、右、下、左，如果只设置两个值的话看对边。</li>
+<li>外边距的妙用<br>
+margin:0px auto;<br>
+网页居中对齐的必要条件：块元素并且必须固定宽度。</li>
+</ol>
+<!-- raw HTML omitted -->
+<ol>
+<li>padding-left、padding-right、padding-top、padding-bottom、padding<br>
+padding-left:10px;<br>
+padding-right: 5px;<br>
+padding-top: 20px; padding-bottom:8px;<br>
+四个内边距写距离时的顺序也是顺时针的：上、右、下、左，如果只设置两个值的话看对边。</li>
+</ol>
+<!-- raw HTML omitted -->
+<p>在 HTML5 中很多元素都有默认的外边距或者内边距。
+比较特殊的是 div，没有外边距或者内边距，其他的都有。</p>
+<p>去掉边距的方法有：<br>
+margin:0;<br>
+padding:0;
+（清除默认样式）</p>
+<p>清除所有元素的边距方法：*{  margin:0;  padding:0;  } （*就是表示包括了所有的元素）</p>
+<!-- raw HTML omitted -->
+<p>当用绝对的值设置盒子的大小时（比如，固定像素的 width 和 height），内容可能会超出设置的大小，此时内容就会溢流盒子。要控制这时候发生的事情，我们可以使用 overflow 属性。</p>
+<p>该属性有几个可能的取值，不过最常用的是：</p>
+<ul>
+<li>auto：如果内容太多，那么超出盒子大小的内容会被隐藏，滚动条显示出来，从而可以让用户滚动看到所有内容。</li>
+<li>hidden：如果内容太多，那么超出盒子大小的内容被隐藏了。</li>
+<li>visible：如果内容太多，超出盒子大小的内容显示在盒子之外（这通常是默认的行为）。</li>
+</ul>
+<!-- raw HTML omitted -->
+<p>一个盒子的总宽度是它的 width， padding-right，padding-left，border-right 和 border-left 属性之和。 在某些情况下比较麻烦（例如，要是您想要一个宽度为 50％的盒子（box），边界（border）和内边距（padding）以像素为单位怎么办？）为了避免这种问题，可以使用属性 box-sizing 调整盒模型。 用值 border-box，它将盒模型更改为这样新的模型：
+<img src="/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/border-box.png" alt=""><br>
+我们将设置两个相同的 div 元素，赋予每个元素相同的 width，border 和 padding。 我们还将使用一些 JavaScript 脚本来打印出每个盒子宽度的计算值（最终屏幕上的像素值）。 唯一的区别是底部的盒子我们给出 box-sizing: border-box，顶部的盒子留着默认行为。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;one&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;two&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">html</span> {
+  <span style="color:#66d9ef">font-family</span>: <span style="color:#66d9ef">sans-serif</span>;
+  <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#ccc</span>;
+}
+
+.<span style="color:#a6e22e">one</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">two</span> {
+  <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">red</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">300</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">150</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">black</span>;
+  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">auto</span>;
+}
+
+.<span style="color:#a6e22e">two</span> {
+  <span style="color:#66d9ef">box-sizing</span>: <span style="color:#66d9ef">border-box</span>;
+}
+</code></pre></div><p>效果：
+<img src="/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/%E6%95%88%E6%9E%9C.png" alt=""><br>
+第一个框的宽度和高度等于 content + padding + border。 然而，第二个框的宽度和高度等于通过 CSS 设置在 content 的宽度和高度。 padding 和 border 并没有添加到总宽度和高度上; 反而，他们占用一些内容的空间，使内容更小，并保持总体尺寸相同。</p>
+<!-- raw HTML omitted -->
+<p>display  可以有很多种不同的值, 其中三种常见的值为  block, inline, 和  inline-block.</p>
+<ul>
+<li>块盒(block box)是被定义为堆放在其它盒子之上的盒子（即盒子之前以及之后的内容出现在不同的行上），并且可以给它设置高度和宽度。上面所述的整个盒模型都适用于块盒。</li>
+<li>行内盒（inline box）与块盒相反：它跟随文档的文本流堆放（即，它会与周围的文本和其它行内元素出现在同一行，并且其内容会像段落中的文本行一样，随着文本流换行）。宽度和高度设置对行内盒无效；在行内盒上的所有内边距、外边距和边界设置会改变周围文本的位置，但是不会影响周围块盒的位置。</li>
+<li>行内块盒（inline-block box）介于前两者之间：  它会像行内盒一样，跟随周围的文本流堆放，不会在其前后创建换行；不过，它可以像块盒一样，使用宽度和高度设置大小，并且维护其块完整性  — 它不会跨段落行换行（对于一行文本容纳不下的行内盒，会落到第二行上，因为第一行上没有足够的空间容纳它，并且不会跨两行换行）。</li>
+</ul>
+<p>块级元素默认设置为  display: block; ，行内元素默认设置为  display: inline; 。</p>
+<!-- raw HTML omitted -->
+<p>border-radius: 20px 10px 50px 30px;
+<img src="/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86.png" alt=""><br>
+四个属性值按顺时针排列，如果只设置两个值的话看对角。</p>
+<!-- raw HTML omitted -->
+<ol>
+<li>
+<p>圆形
+利用 border-radius 属性制作圆形的两个要点：</p>
+<ul>
+<li>元素的宽度和高度必须相同；</li>
+<li>圆角的半径为元素宽度的一半，或者直接设置圆角半径值为 50%。
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span>{                      
+ <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;                         
+ <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;                        
+ <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">red</span>;             
+ <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;}               
+</code></pre></div><p>或者</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span>{
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">red</span> ;
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">54</span><span style="color:#66d9ef">px</span>;  }
+</code></pre></div><p><img src="/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/%E5%88%B6%E4%BD%9C%E5%9C%86%E5%BD%A2.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li>
+<p>半圆形<br>
+利用 border-radius 属性制作半圆形的两个要点：</p>
+<ul>
+<li>制作上半圆或下半圆时，元素的宽度是高度的 2 倍，而且圆角半径为元素的高度值；</li>
+<li>制作左半圆或右半圆时，元素的高度是宽度的 2 倍，而且圆角半径为元素的宽度值。</li>
+</ul>
+<p>上半圆：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"> <span style="color:#f92672">div</span> {                  
+     <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;                                    
+     <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>; 
+     <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">red</span>;         
+     <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">54</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">54</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span> ;  
+  }
+</code></pre></div><p><img src="/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/%E4%B8%8A%E5%8D%8A%E5%9C%86.jpg" alt=""></p>
+<p>下半圆：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span>{                  
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;                                    
+    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>; 
+    <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">red</span>;         
+    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">54</span><span style="color:#66d9ef">px</span>  <span style="color:#ae81ff">54</span><span style="color:#66d9ef">px</span>;  
+ }
+</code></pre></div><p><img src="/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/%E4%B8%8B%E5%8D%8A%E5%9C%86.jpg" alt=""></p>
+<p>左半圆：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span>{                  
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;                                     
+    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;      
+    <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">red</span>;         
+    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">54</span><span style="color:#66d9ef">px</span>  <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">54</span><span style="color:#66d9ef">px</span>;  
+ }
+</code></pre></div><p><img src="/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/%E5%B7%A6%E5%8D%8A%E5%9C%86.jpg" alt=""></p>
+<p>右半圆：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span>{                  
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;                                     
+    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;      
+    <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">red</span>;         
+    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">54</span><span style="color:#66d9ef">px</span>  <span style="color:#ae81ff">54</span><span style="color:#66d9ef">px</span>  <span style="color:#ae81ff">0</span>;  
+ }
+</code></pre></div><p><img src="/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/%E5%8F%B3%E5%8D%8A%E5%9C%86.jpg" alt=""></p>
+</li>
+</ol>
+<!-- raw HTML omitted -->
+<p><img src="/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/%E7%9B%92%E5%AD%90%E9%98%B4%E5%BD%B1.png" alt=""><br>
+Inset 是内阴影，不设置就是外阴影。</p>
+<ol>
+<li>
+<p>此时有 inset</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span>{
+<span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">auto</span>;
+<span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
+<span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
+<span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">lightskyblue</span>;
+<span style="color:#66d9ef">box-shadow</span>: <span style="color:#66d9ef">inset</span>  <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">blue</span>;; 
+}
+</code></pre></div><p>运行结果：<br>
+<img src="/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/inset%E9%98%B4%E5%BD%B1.jpg" alt=""></p>
+</li>
+<li>
+<p>此时没有 inset</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span>{
+<span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">auto</span>;
+<span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
+<span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
+<span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">lightskyblue</span>;
+<span style="color:#66d9ef">box-shadow</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>  <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">blue</span>; 
+}
+</code></pre></div><p><img src="/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/%E9%98%B4%E5%BD%B1.jpg" alt=""></p>
+</li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://qiujia236.github.io/" >
+    &copy; 2020 wb的博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
