@@ -39,7 +39,7 @@
  Rendering Tree 渲染树并不等同于 DOM 树，因为一些像 Header 或 display:none 的东西就没必要放在渲染树中了。 CSS 的 Rule Tree 主要是为了完成匹配并把 CSS Rule 附加上 Rendering Tree 上的每个 Element。也就是 DOM 结点。也就是所谓的 Frame。 计算每个 Frame（也就是每个 Element）的位置，这又叫 layout 和 reflow 过程。  最后通过调用操作系统 Native GUI 的 API 绘制。">
 <meta itemprop="datePublished" content="2020-01-10T11:45:42&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-10T11:45:42&#43;08:00" />
-<meta itemprop="wordCount" content="628">
+<meta itemprop="wordCount" content="637">
 
 
 
@@ -259,7 +259,7 @@ CSS 的解析大概是下面这个样子假设我们有下面的 HTML 文档：<
 &lt;/<span style="color:#f92672">html</span>&gt;
 </code></pre></div><p>效果：
 <img src="/CSS%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/163c42601ede4b6e.gif" alt=""><br>
-我们来分析这一整个过程，首先 transition 给元素设置的过渡属性是 transform，当鼠标移入元素时，元素的 transform 发生变化，那么这个时候就触发了 transition，产生了动画，当鼠标移出时，transform 又发生变化，这个时候还是会触发 transition，产生动画，所以 transition 产生动画的条件是 transition 设置的 property 发生变化，这种动画的特点是需要“一个驱动力去触发”，有着以下几个不足：</p>
+我们来分析这一整个过程，首先 transition 给元素设置的过渡属性是 transform，当鼠标移入元素时，元素的 transform 发生变化，那么这个时候就触发了 transition，产生了动画，当鼠标移出时，transform 又发生变化，这个时候还是会触发 transition，产生动画，所以 transition 产生动画的条件是 transition 设置的 property 发生变化，这种动画的特点是需要“一个外界因素去触发”，有着以下缺点：</p>
 <ul>
 <li>需要事件触发，所以没法在网页加载时自动发生；</li>
 <li>是一次性的，不能重复发生，除非一再触发；</li>
@@ -355,6 +355,11 @@ animation 是由多个 transition 的效果叠加，并且可操作性更强，�
 </ul>
 </li>
 </ol>
+<h2 id="heading-2">总结</h2>
+<p>写这篇文章的目的是提醒自己学到了浏览器渲染的大致流程与优化技巧。顺便讲解 CSS 制作动画的方法。</p>
+<p>简单一次性的动画中推荐使用 transition，比较逻辑清晰，可维护性较好。如果遇到比较复杂的动画，这个时候便可以使用 animation。</p>
+<h2 id="heading-3">参考</h2>
+<p>本文中的动画参考的文章链接：https://juejin.im/post/5b137e6e51882513ac201dfb</p>
 <ul class="pa0">
   
 </ul>
