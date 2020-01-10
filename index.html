@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://qiujia236.github.io/" />
-<meta property="og:updated_time" content="2020-01-04T14:54:21+08:00" />
+<meta property="og:updated_time" content="2020-01-10T11:45:42+08:00" />
 <meta itemprop="name" content="wb的博客">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="wb的博客"/>
@@ -120,6 +120,32 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://qiujia236.github.io/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="color-inherit dim link">
+            css知识总结
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          浏览器渲染与动画 浏览器的渲染原理   浏览器工作大流程  根据 HTML 构建 HTL 树(DOM)； 根据 CSS 构建 CSS(CSSOM)； 将两棵树合并成一颗渲染树(rendertree)； Layout 布局（文档流、盒模型、计算大小和位置）； Paint 绘制（把边框颜色、文字颜色、阴影等画出来）； Compose 合成（根据层叠关系展示画面）。  浏览器会解析三个东西：
+ HTML/SVG/XHTML，解析这三种文件会产生一个 DOM Tree。 CSS，解析 CSS 会产生 CSS 规则树。 Javascript，脚本，主要是通过 DOM API 和 CSSOM API 来操作 DOM Tree 和 CSS Rule Tree。  解析完成后，浏览器引擎会通过 DOM Tree 和 CSS Rule Tree 来构造 Rendering Tree。注意：
+ Rendering Tree 渲染树并不等同于 DOM 树，因为一些像 Header 或 display:none 的东西就没必要放在渲染树中了。 CSS 的 Rule Tree 主要是为了完成匹配并把 CSS Rule 附加上 Rendering Tree 上的每个 Element。也就是 DOM 结点。也就是所谓的 Frame。 计算每个 Frame（也就是每个 Element）的位置，这又叫 layout 和 reflow 过程。  最后通过调用操作系统 Native GUI 的 API 绘制。
+        </div>
+          <a href="https://qiujia236.github.io/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://qiujia236.github.io/posts/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" class="color-inherit dim link">
             CSS盒模型
             </a>
@@ -180,43 +206,18 @@ URL 是链接指向的地址。链接不仅可以指向另一个网页，也可�
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://qiujia236.github.io/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" class="color-inherit dim link">
-            HTML入门笔记1
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          HTML 入门笔记 1 概述 HTML 是网页使用的语言，定义了网页的结构和内容。浏览器访问网站，其实就是从服务器下载 HTML 代码，然后渲染出网页。
-HTML 的全名是“超文本标记语言”（HyperText Markup Language），上个世纪 90 年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明。它的最大特点就是支持超链接，可以跳转到其他网页，从而构成了整个互联网。1999 年，HTML 4.01 版发布，成为广泛接受的 HTML 标准。2014 年，HTML 5 发布，这是目前正在使用的版本。
-HTML 起手式&ndash;头部介绍   网页的第一个标签通常是 &lt;!doctype&gt;，表示文档类型，告诉浏览器如何解析网页。一般来说，只要简单声明 doctype 为 html 即可。
-&lt;!DOCTYPE html&gt; 浏览器就会按照 HTML5 的规则处理网页。有时，该标签采用完全大写的形式 &lt;!DOCTYPE html&gt;，以便区别于正常的 HTML 标签。因为&lt;!doctype&gt;本质上不是标签，更像一个处理指令。
-&lt;!DOCTYPE html&gt;   &lt;html&gt;标签是网页的顶层容器，也称为根元素（root element），其他元素都是它的子元素。一个网页只能有一个&lt;html&gt;标签。该标签的 lang 属性，表示网页内容默认的语言,可以把 en 改成 zh-CN。
-&lt;html lang=&#34;en&#34;&gt;&lt;/html&gt;   &lt;head&gt;标签是一个容器标签，用于放置网页的元信息。它的内容不会出现在网页上，而是为网页渲染做准备。&lt;head&gt;是&lt;html&gt;的第一个子元素。如果网页不包含&lt;head&gt;，浏览器会自动创建一个。&lt;meta&gt; 标签用于设置或说明网页的元数据，必须放在&lt;head&gt;里面。一个&lt;meta&gt;标签就是一项元数据，网页可以有多个&lt;meta&gt;。
-下面代码声明，网页为 UTF-8 编码。虽然可以使用其他的编码方式，但基本上都采用 UTF-8。注意，声明的编码方式，应该与网页实际的编码方式一致，即声明了 UTF-8，网页就应该使用 UTF-8 编码保存。
-&lt;meta charset=&#34;utf-8&#34; /&gt; 下面代码声明禁用缩放，用于兼容手机。
-        </div>
-          <a href="https://qiujia236.github.io/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://qiujia236.github.io/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" class="link black dim">
+              HTML入门笔记1
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://qiujia236.github.io/posts/%E6%B7%BB%E5%8A%A0hugo%E5%8D%9A%E5%AE%A2/" class="link black dim">

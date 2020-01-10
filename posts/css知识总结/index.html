@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>wb的博客  | css知识总结</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.62.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="css知识总结" />
+<meta property="og:description" content="浏览器渲染与动画 浏览器的渲染原理   浏览器工作大流程  根据 HTML 构建 HTL 树(DOM)； 根据 CSS 构建 CSS(CSSOM)； 将两棵树合并成一颗渲染树(rendertree)； Layout 布局（文档流、盒模型、计算大小和位置）； Paint 绘制（把边框颜色、文字颜色、阴影等画出来）； Compose 合成（根据层叠关系展示画面）。  浏览器会解析三个东西：
+ HTML/SVG/XHTML，解析这三种文件会产生一个 DOM Tree。 CSS，解析 CSS 会产生 CSS 规则树。 Javascript，脚本，主要是通过 DOM API 和 CSSOM API 来操作 DOM Tree 和 CSS Rule Tree。  解析完成后，浏览器引擎会通过 DOM Tree 和 CSS Rule Tree 来构造 Rendering Tree。注意：
+ Rendering Tree 渲染树并不等同于 DOM 树，因为一些像 Header 或 display:none 的东西就没必要放在渲染树中了。 CSS 的 Rule Tree 主要是为了完成匹配并把 CSS Rule 附加上 Rendering Tree 上的每个 Element。也就是 DOM 结点。也就是所谓的 Frame。 计算每个 Frame（也就是每个 Element）的位置，这又叫 layout 和 reflow 过程。  最后通过调用操作系统 Native GUI 的 API 绘制。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qiujia236.github.io/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" />
+<meta property="article:published_time" content="2020-01-10T11:45:42+08:00" />
+<meta property="article:modified_time" content="2020-01-10T11:45:42+08:00" />
+<meta itemprop="name" content="css知识总结">
+<meta itemprop="description" content="浏览器渲染与动画 浏览器的渲染原理   浏览器工作大流程  根据 HTML 构建 HTL 树(DOM)； 根据 CSS 构建 CSS(CSSOM)； 将两棵树合并成一颗渲染树(rendertree)； Layout 布局（文档流、盒模型、计算大小和位置）； Paint 绘制（把边框颜色、文字颜色、阴影等画出来）； Compose 合成（根据层叠关系展示画面）。  浏览器会解析三个东西：
+ HTML/SVG/XHTML，解析这三种文件会产生一个 DOM Tree。 CSS，解析 CSS 会产生 CSS 规则树。 Javascript，脚本，主要是通过 DOM API 和 CSSOM API 来操作 DOM Tree 和 CSS Rule Tree。  解析完成后，浏览器引擎会通过 DOM Tree 和 CSS Rule Tree 来构造 Rendering Tree。注意：
+ Rendering Tree 渲染树并不等同于 DOM 树，因为一些像 Header 或 display:none 的东西就没必要放在渲染树中了。 CSS 的 Rule Tree 主要是为了完成匹配并把 CSS Rule 附加上 Rendering Tree 上的每个 Element。也就是 DOM 结点。也就是所谓的 Frame。 计算每个 Frame（也就是每个 Element）的位置，这又叫 layout 和 reflow 过程。  最后通过调用操作系统 Native GUI 的 API 绘制。">
+<meta itemprop="datePublished" content="2020-01-10T11:45:42&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-10T11:45:42&#43;08:00" />
+<meta itemprop="wordCount" content="628">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="css知识总结"/>
+<meta name="twitter:description" content="浏览器渲染与动画 浏览器的渲染原理   浏览器工作大流程  根据 HTML 构建 HTL 树(DOM)； 根据 CSS 构建 CSS(CSSOM)； 将两棵树合并成一颗渲染树(rendertree)； Layout 布局（文档流、盒模型、计算大小和位置）； Paint 绘制（把边框颜色、文字颜色、阴影等画出来）； Compose 合成（根据层叠关系展示画面）。  浏览器会解析三个东西：
+ HTML/SVG/XHTML，解析这三种文件会产生一个 DOM Tree。 CSS，解析 CSS 会产生 CSS 规则树。 Javascript，脚本，主要是通过 DOM API 和 CSSOM API 来操作 DOM Tree 和 CSS Rule Tree。  解析完成后，浏览器引擎会通过 DOM Tree 和 CSS Rule Tree 来构造 Rendering Tree。注意：
+ Rendering Tree 渲染树并不等同于 DOM 树，因为一些像 Header 或 display:none 的东西就没必要放在渲染树中了。 CSS 的 Rule Tree 主要是为了完成匹配并把 CSS Rule 附加上 Rendering Tree 上的每个 Element。也就是 DOM 结点。也就是所谓的 Frame。 计算每个 Frame（也就是每个 Element）的位置，这又叫 layout 和 reflow 过程。  最后通过调用操作系统 Native GUI 的 API 绘制。"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://qiujia236.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      wb的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">css知识总结</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-01-10T11:45:42&#43;08:00">January 10, 2020</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="heading">浏览器渲染与动画</h1>
+<h2 id="heading-1">浏览器的渲染原理</h2>
+<ol>
+<li>
+<p>浏览器工作大流程
+<img src="/CSS%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.jpg" alt=""></p>
+<ul>
+<li>根据 HTML 构建 HTL 树(DOM)；</li>
+<li>根据 CSS 构建 CSS(CSSOM)；</li>
+<li>将两棵树合并成一颗渲染树(rendertree)；</li>
+<li>Layout 布局（文档流、盒模型、计算大小和位置）；</li>
+<li>Paint 绘制（把边框颜色、文字颜色、阴影等画出来）；</li>
+<li>Compose 合成（根据层叠关系展示画面）。</li>
+</ul>
+<p>浏览器会解析三个东西：</p>
+<ul>
+<li>HTML/SVG/XHTML，解析这三种文件会产生一个 DOM Tree。</li>
+<li>CSS，解析 CSS 会产生 CSS 规则树。</li>
+<li>Javascript，脚本，主要是通过 DOM API 和 CSSOM API 来操作 DOM Tree 和 CSS Rule Tree。</li>
+</ul>
+<p>解析完成后，浏览器引擎会通过 DOM Tree 和 CSS Rule Tree 来构造 Rendering Tree。注意：</p>
+<ul>
+<li>Rendering Tree 渲染树并不等同于 DOM 树，因为一些像 Header 或 display:none 的东西就没必要放在渲染树中了。</li>
+<li>CSS 的 Rule Tree 主要是为了完成匹配并把 CSS Rule 附加上 Rendering Tree 上的每个 Element。也就是 DOM 结点。也就是所谓的 Frame。</li>
+<li>计算每个 Frame（也就是每个 Element）的位置，这又叫 layout 和 reflow 过程。</li>
+</ul>
+<p>最后通过调用操作系统 Native GUI 的 API 绘制。</p>
+</li>
+<li>
+<p>DOM 解析</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">html</span>&gt;
+    &lt;<span style="color:#f92672">head</span>&gt;
+      &lt;<span style="color:#f92672">title</span>&gt;Web page parsing&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;/<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">body</span>&gt;
+      &lt;<span style="color:#f92672">div</span>&gt;
+        &lt;<span style="color:#f92672">h1</span>&gt;Web page parsing&lt;/<span style="color:#f92672">h1</span>&gt;
+        &lt;<span style="color:#f92672">p</span>&gt;This is an example&lt;/<span style="color:#f92672">p</span>&gt;
+      &lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">body</span>&gt;
+  &lt;/<span style="color:#f92672">html</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>上面这段 HTML 会解析成这样：
+<img src="/CSS%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/DOM-Tree.jpg" alt=""></p>
+</li>
+<li>
+<p>CSS 的解析<br>
+CSS 的解析大概是下面这个样子假设我们有下面的 HTML 文档：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">doc</span>&gt;
+  &lt;<span style="color:#f92672">title</span>&gt;A few quotes&lt;/<span style="color:#f92672">title</span>&gt;
+  &lt;<span style="color:#f92672">para</span>&gt;
+    Franklin said that &lt;<span style="color:#f92672">quote</span>&gt;&#34;A penny saved is a penny earned.&#34;&lt;/<span style="color:#f92672">quote</span>&gt;
+  &lt;/<span style="color:#f92672">para</span>&gt;
+  &lt;<span style="color:#f92672">para</span>&gt;
+    FDR said
+    &lt;<span style="color:#f92672">quote</span>&gt;&#34;We have nothing to fear but &lt;<span style="color:#f92672">span</span>&gt;fear itself.&lt;/<span style="color:#f92672">span</span>&gt;&#34;&lt;/<span style="color:#f92672">quote</span>&gt;
+  &lt;/<span style="color:#f92672">para</span>&gt;
+&lt;/<span style="color:#f92672">doc</span>&gt;
+</code></pre></div><p>于是 DOM Tree 是这个样子：
+<img src="/CSS%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/DOM-Tree-Example.jpg" alt=""><br>
+我们的 CSS 文档是这样的：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* rule 1 */</span>
+<span style="color:#f92672">doc</span> {
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+  <span style="color:#66d9ef">text-indent</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span>;
+}
+<span style="color:#75715e">/* rule 2 */</span>
+<span style="color:#f92672">title</span> {
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">em</span>;
+}
+<span style="color:#75715e">/* rule 3 */</span>
+<span style="color:#f92672">para</span> {
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+}
+<span style="color:#75715e">/* rule 4 */</span>
+<span style="color:#f92672">[</span><span style="color:#f92672">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;emph&#34;</span><span style="color:#f92672">]</span> {
+  <span style="color:#66d9ef">font-style</span>: <span style="color:#66d9ef">italic</span>;
+}
+</code></pre></div><p>于是我们的 CSS Rule Tree 会是这个样子：
+<img src="/CSS%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/CSS-Rule-Tree-Example.jpg" alt=""><br>
+注意，图中的第 4 条规则出现了两次，一次是独立的，一次是在规则 3 的子结点。所以，我们可以知道，建立 CSS Rule Tree 是需要比照着 DOM Tree 来的。CSS 匹配 DOM Tree 主要是从右到左解析 CSS 的 Selector，好多人以为这个事会比较快，其实并不一定。关键还看我们的 CSS 的 Selector 怎么写了。</p>
+<p>CSS 匹配 HTML 元素是一个相当复杂和有性能问题的事情。所以，你就会在 N 多地方看到很多人都告诉你，DOM 树要小，CSS 尽量用 id 和 class，千万不要过渡层叠下去。</p>
+<p>通过这两个树，我们可以得到一个叫 Style Context Tree，也就是下面这样（把 CSS Rule 结点 Attach 到 DOM Tree 上）：
+<img src="/CSS%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/CSS-Content-Tree-Example.jpg" alt=""></p>
+</li>
+<li>
+<p>渲染
+渲染的流程基本上如下（黄色的四个步骤）：</p>
+<ul>
+<li>计算 CSS 样式</li>
+<li>构建 Render Tree</li>
+<li>Layout – 定位坐标和大小，是否换行，各种 position, overflow, z-index 属性 。</li>
+</ul>
+<p>这里重要要说两个概念，一个是 Reflow，另一个是 Repaint。</p>
+<ul>
+<li>Repaint——屏幕的一部分要重画，比如某个 CSS 的背景色变了。但是元素的几何尺寸没有变。</li>
+<li>Reflow——意味着元件的几何尺寸变了，我们需要重新验证并计算 Render Tree。是 Render Tree 的一部分或全部发生了变化。这就是 Reflow，或是 Layout。（HTML 使用的是 flow based layout，也就是流式布局，所以，如果某元件的几何尺寸发生了变化，需要重新布局，也就叫 reflow）reflow 会从<!-- raw HTML omitted -->这个 root frame 开始递归往下，依次计算所有的结点几何尺寸和位置，在 reflow 过程中，可能会增加一些 frame，比如一个文本字符串必需被包装起来。</li>
+</ul>
+<p>Reflow 的成本比 Repaint 的成本高得多的多。DOM Tree 里的每个结点都会有 reflow 方法，一个结点的 reflow 很有可能导致子结点，甚至父点以及同级结点的 reflow。在一些高性能的电脑上也许还没什么，但是如果 reflow 发生在手机上，那么这个过程是非常痛苦和耗电的。</p>
+<p>下面这些动作有很大可能会是成本比较高的。</p>
+<ul>
+<li>当你增加、删除、修改 DOM 结点时，会导致 Reflow 或 Repaint</li>
+<li>当你移动 DOM 的位置，或是搞个动画的时候。</li>
+<li>当你修改 CSS 样式的时候。</li>
+<li>当你 Resize 窗口的时候（移动端没有这个问题），或是滚动的时候。</li>
+<li>当你修改网页的默认字体时。</li>
+</ul>
+<p>display:none 会触发 reflow，而 visibility:hidden 只会触发 repaint，因为没有发现位置变化。</p>
+</li>
+<li>
+<p>减少 reflow/repaint</p>
+<ul>
+<li>不要一条一条地修改 DOM 的样式。与其这样，还不如预先定义好 css 的 class，然后修改 DOM 的 className。</li>
+<li>把 DOM 离线后修改。使用 documentFragment 对象在内存里操作 DOM。先把 DOM 给 display:none(有一次 reflow)，然后你想怎么改就怎么改。比如修改 100 次，然后再把他显示出来。clone 一个 DOM 结点到内存里，然后想怎么改就怎么改，改完后，和在线的那个的交换一下。</li>
+<li>不要把 DOM 结点的属性值放在一个循环里当成循环里的变量。不然这会导致大量地读写这个结点的属性。</li>
+<li>尽可能的修改层级比较低的 DOM。当然，改变层级比较底的 DOM 有可能会造成大面积的 reflow，但是也可能影响范围很小。</li>
+<li>为动画的 HTML 元件使用 fixed 或 absolute 的 position，那么修改他们的 CSS 是不会 reflow 的。</li>
+<li>千万不要使用 table 布局。因为可能很小的一个小改动会造成整个 table 的重新布局。</li>
+</ul>
+</li>
+</ol>
+<h2 id="css-">CSS 动画</h2>
+<ol>
+<li>
+<p>CSS Transition<br>
+什么叫过渡？字面意思上来讲，就是元素从这个属性(color)的某个值(red)过渡到这个属性(color)的另外一个值(green)，这是一个状态的转变，需要一种条件来触发这种转变，比如我们平时用到的:hoever、:focus、:checked、媒体查询或者 JavaScript。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;transition&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">style</span>&gt;
+      #box {
+        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">green</span>;
+        <span style="color:#66d9ef">transition</span>: <span style="color:#66d9ef">transform</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">ease</span><span style="color:#f92672">-</span>in <span style="color:#ae81ff">1</span><span style="color:#66d9ef">s</span>;
+      }
+
+      #box:<span style="color:#a6e22e">hover</span> {
+        <span style="color:#66d9ef">transform</span>: rotate(<span style="color:#ae81ff">180</span><span style="color:#66d9ef">deg</span>) scale(<span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.5</span>);
+      }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>效果：
+<img src="/CSS%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/163c42601ede4b6e.gif" alt=""><br>
+我们来分析这一整个过程，首先 transition 给元素设置的过渡属性是 transform，当鼠标移入元素时，元素的 transform 发生变化，那么这个时候就触发了 transition，产生了动画，当鼠标移出时，transform 又发生变化，这个时候还是会触发 transition，产生动画，所以 transition 产生动画的条件是 transition 设置的 property 发生变化，这种动画的特点是需要“一个驱动力去触发”，有着以下几个不足：</p>
+<ul>
+<li>需要事件触发，所以没法在网页加载时自动发生；</li>
+<li>是一次性的，不能重复发生，除非一再触发；</li>
+<li>只能定义开始状态和结束状态，不能定义中间状态，也就是说只有两个状态；</li>
+<li>一条 transition 规则，只能定义一个属性的变化，不能涉及多个属性。</li>
+</ul>
+<p>语法：transition: property duration timing-function delay：</p>
+<ul>
+<li>transition-property：规定设置过渡效果的 CSS 属性的名称；</li>
+<li>transition-duration：规定完成过渡效果需要多少秒或毫秒；</li>
+<li>transition-timing-function：规定速度效果的速度曲线 ；</li>
+<li>transition-delay：定义过渡效果何时开始。</li>
+</ul>
+</li>
+<li>
+<p>animation<br>
+animation 是由多个 transition 的效果叠加，并且可操作性更强，能够做出复杂酷炫的效果。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;X-UA-Compatible&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ie=edge&#34;</span> /&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;heart1&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">style</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span>&gt;
+      <span style="color:#f92672">*</span> {
+        <span style="color:#66d9ef">box-sizing</span>: <span style="color:#66d9ef">border-box</span>;
+      }
+      .<span style="color:#a6e22e">heart</span> {
+        <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline</span><span style="color:#f92672">-</span><span style="color:#66d9ef">block</span>;
+        <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+        <span style="color:#66d9ef">animation</span>: <span style="color:#ae81ff">4</span><span style="color:#66d9ef">s</span> heart2 <span style="color:#66d9ef">ease</span><span style="color:#f92672">-</span>in-out <span style="color:#66d9ef">infinite</span> <span style="color:#66d9ef">normal</span>;
+      }
+      @<span style="color:#66d9ef">keyframes</span> <span style="color:#f92672">heart2</span> {
+        <span style="color:#f92672">0</span><span style="color:#f92672">%</span> {
+          <span style="color:#66d9ef">transform</span>: scale(<span style="color:#ae81ff">1</span>);
+        }
+        <span style="color:#f92672">100</span><span style="color:#f92672">%</span> {
+          <span style="color:#66d9ef">transform</span>: scale(<span style="color:#ae81ff">2</span>);
+        }
+      }
+      .<span style="color:#a6e22e">heart</span> <span style="color:#f92672">&gt;</span> .<span style="color:#a6e22e">left</span> {
+        <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">red</span>;
+        <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
+        <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">-50</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">transform</span>: rotate(<span style="color:#ae81ff">45</span><span style="color:#66d9ef">deg</span>) translateX(<span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span>);
+        <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
+      }
+      .<span style="color:#a6e22e">heart</span> <span style="color:#f92672">&gt;</span> .<span style="color:#a6e22e">right</span> {
+        <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">red</span>;
+        <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
+        <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">-50</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">transform</span>: rotate(<span style="color:#ae81ff">45</span><span style="color:#66d9ef">deg</span>) translateY(<span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span>);
+        <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span> <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>;
+      }
+      .<span style="color:#a6e22e">heart</span> <span style="color:#f92672">&gt;</span> .<span style="color:#a6e22e">bottom</span> {
+        <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">red</span>;
+        <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">px</span>;
+        <span style="color:#66d9ef">transform</span>: rotate(<span style="color:#ae81ff">45</span><span style="color:#66d9ef">deg</span>);
+      }
+    &lt;/<span style="color:#f92672">style</span>&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;heart&#34;</span>&gt;
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;left&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;right&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+      &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bottom&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>效果：</p>
+<p><img src="/CSS%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/1578633937948.gif" alt=""><br>
+分析：<br>
+我们先来看看 keyframes 这个关键点，它定义了一个动画组合叫 heart2，里面的 0%，100%代表在变化中不同时间点的属性值，比如这个动画的总时间是 4s，那么 0%就是在 0 中的动画，通过这个我们可以较精确的控制动画变化中任何一个时间点的属性效果，这大大提高了我们对动画的把控，是做复杂动画的基础，通过控制 animation 的每个值，控制动画变得非常灵活，我们来具体了解它的语法以及各个值代表着什么：<br>
+语法：animation: name duration timing-function delay iteration-count direction play-state fill-mode：</p>
+<ul>
+<li>name：用来调用@keyframes 定义好的动画，与@keyframes 定义的动画名称一致；</li>
+<li>duration：指定元素播放动画所持续的时间；</li>
+<li>timing-function：规定速度效果的速度曲线，是针对每一个小动画所在时间范围的变换速率；</li>
+<li>delay：定义在浏览器开始执行动画之前等待的时间，值整个 animation 执行之前等待的时间；</li>
+<li>iteration-count：定义动画的播放次数，可选具体次数或者无限(infinite)；</li>
+<li>direction：设置动画播放方向：normal(按时间轴顺序),reverse(时间轴反方向运行),alternate(轮流，即来回往复进行),alternate-reverse(动画先反运行再正方向运行，并持续交替运行)；</li>
+<li>play-state：控制元素动画的播放状态，通过此来控制动画的暂停和继续，两个值：running(继续)，paused(暂停)；</li>
+<li>fill-mode：控制动画结束后，元素的样式，有四个值：none(回到动画没开始时的状态)，forwards(动画结束后动画停留在结束状态)，backwords(动画回到第一帧的状态)，both(根据 animation-direction 轮流应用 forwards 和 backwards 规则)，注意与 iteration-count 不要冲突(动画执行无限次)。</li>
+</ul>
+</li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://qiujia236.github.io/" >
+    &copy; 2020 wb的博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
