@@ -121,8 +121,7 @@ www.example.com 是域名。 它表明正在请求哪个 Web 服务器。或者�
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      浏览器渲染与动画 浏览器的渲染原理   浏览器工作大流程 !(/CSS知识总结/浏览器工作流程.jpg)
- 根据 HTML 构建 HTL 树(DOM)； 根据 CSS 构建 CSS(CSSOM)； 将两棵树合并成一颗渲染树(rendertree)； Layout 布局（文档流、盒模型、计算大小和位置）； Paint 绘制（把边框颜色、文字颜色、阴影等画出来）； Compose 合成（根据层叠关系展示画面）。  浏览器会解析三个东西：
+      浏览器渲染与动画 浏览器的渲染原理   浏览器工作大流程  根据 HTML 构建 HTL 树(DOM)； 根据 CSS 构建 CSS(CSSOM)； 将两棵树合并成一颗渲染树(rendertree)； Layout 布局（文档流、盒模型、计算大小和位置）； Paint 绘制（把边框颜色、文字颜色、阴影等画出来）； Compose 合成（根据层叠关系展示画面）。  浏览器会解析三个东西：
  HTML/SVG/XHTML，解析这三种文件会产生一个 DOM Tree。 CSS，解析 CSS 会产生 CSS 规则树。 Javascript，脚本，主要是通过 DOM API 和 CSSOM API 来操作 DOM Tree 和 CSS Rule Tree。  解析完成后，浏览器引擎会通过 DOM Tree 和 CSS Rule Tree 来构造 Rendering Tree。注意：
  Rendering Tree 渲染树并不等同于 DOM 树，因为一些像 Header 或 display:none 的东西就没必要放在渲染树中了。 CSS 的 Rule Tree 主要是为了完成匹配并把 CSS Rule 附加上 Rendering Tree 上的每个 Element。也就是 DOM 结点。也就是所谓的 Frame。 计算每个 Frame（也就是每个 Element）的位置，这又叫 layout 和 reflow 过程。  最后通过调用操作系统 Native GUI 的 API 绘制。
     </div>
