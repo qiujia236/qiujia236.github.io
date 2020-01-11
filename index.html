@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://qiujia236.github.io/" />
-<meta property="og:updated_time" content="2020-01-10T11:45:42+08:00" />
+<meta property="og:updated_time" content="2020-01-11T10:16:36+08:00" />
 <meta itemprop="name" content="wb的博客">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="wb的博客"/>
@@ -120,12 +120,44 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://qiujia236.github.io/posts/%E6%B5%85%E6%9E%90url/" class="color-inherit dim link">
+            浅析URL
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          浅析 URL URL 概述 URL 是 Web 中的一个核心概念。它是浏览器用来检索 web 上公布的任何资源的机制。
+URL 指的是统一资源定位符（Uniform Resource Locator）。URL 无非就是一个给定的独特资源在 Web 上的地址。理论上说，每个有效的 URL 都指向一个独特的资源。这个资源可以是一个 HTML 页面，一个 CSS 文档，一幅图像，等等。
+一个 URL 由不同的部分组成，其中一些是必须的，而另一些是可选的。让我们以下面这个 URL 为例看看其中最重要的部分：
+http://www.example.com:80/path/to/myfile.html?key1=value1&amp;key2=value2#SomewhereInTheDocumenthttp:// 是协议。它表明了浏览器必须使用何种协议。它通常都是 HTTP 协议或是 HTTP 协议的安全版，即 HTTPS。Web 需要它们二者之一，但浏览器也知道如何处理其他协议，比如 mailto:（打开邮件客户端）或者 ftp:（处理文件传输），所以当你看到这些协议时，不必惊讶。
+www.example.com 是域名。 它表明正在请求哪个 Web 服务器。或者，可以直接使用 IP address, 但是因为它不太方便，所以它不经常在网络上使用。
+:80 是端口。 它表示用于访问 Web 服务器上的资源的技术“门”。如果 Web 服务器使用 HTTP 协议的标准端口（HTTP 为 80，HTTPS 为 443）来授予其资源的访问权限，则通常会被忽略。否则是强制性的。
+/path/to/myfile.html 是网络服务器上资源的路径。在 Web 的早期阶段，像这样的路径表示 Web 服务器上的物理文件位置。
+?key1=value1&amp;key2=value2 是提供给网络服务器的额外参数。 这些参数是用 &amp; 符号分隔的键/值对列表。在返回资源之前，Web 服务器可以使用这些参数来执行额外的操作。
+        </div>
+          <a href="https://qiujia236.github.io/posts/%E6%B5%85%E6%9E%90url/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://qiujia236.github.io/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="color-inherit dim link">
             css知识总结
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          浏览器渲染与动画 浏览器的渲染原理   浏览器工作大流程  根据 HTML 构建 HTL 树(DOM)； 根据 CSS 构建 CSS(CSSOM)； 将两棵树合并成一颗渲染树(rendertree)； Layout 布局（文档流、盒模型、计算大小和位置）； Paint 绘制（把边框颜色、文字颜色、阴影等画出来）； Compose 合成（根据层叠关系展示画面）。  浏览器会解析三个东西：
+          浏览器渲染与动画 浏览器的渲染原理   浏览器工作大流程 !(/CSS知识总结/浏览器工作流程.jpg)
+ 根据 HTML 构建 HTL 树(DOM)； 根据 CSS 构建 CSS(CSSOM)； 将两棵树合并成一颗渲染树(rendertree)； Layout 布局（文档流、盒模型、计算大小和位置）； Paint 绘制（把边框颜色、文字颜色、阴影等画出来）； Compose 合成（根据层叠关系展示画面）。  浏览器会解析三个东西：
  HTML/SVG/XHTML，解析这三种文件会产生一个 DOM Tree。 CSS，解析 CSS 会产生 CSS 规则树。 Javascript，脚本，主要是通过 DOM API 和 CSSOM API 来操作 DOM Tree 和 CSS Rule Tree。  解析完成后，浏览器引擎会通过 DOM Tree 和 CSS Rule Tree 来构造 Rendering Tree。注意：
  Rendering Tree 渲染树并不等同于 DOM 树，因为一些像 Header 或 display:none 的东西就没必要放在渲染树中了。 CSS 的 Rule Tree 主要是为了完成匹配并把 CSS Rule 附加上 Rendering Tree 上的每个 Element。也就是 DOM 结点。也就是所谓的 Frame。 计算每个 Frame（也就是每个 Element）的位置，这又叫 layout 和 reflow 过程。  最后通过调用操作系统 Native GUI 的 API 绘制。
         </div>
@@ -151,7 +183,8 @@
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          CSS 盒模型 简述 CSS 盒模型就是布局网页的一种手段包括边框（border）、外边距（margin）、内边距（padding）、网页元素（content）、宽（width）、高（height）等元素。 盒模型分为 W3C 标准盒模型和 IE 盒模型：
+          CSS 盒模型 简述 CSS 盒模型就是布局网页的一种手段包括边框（border）、外边距（margin）、内边距（padding）、网页元素（content）、宽（width）、高（height）等元素。 !(/CSS盒模型/CSS盒模型2.png)
+盒模型分为 W3C 标准盒模型和 IE 盒模型：
   W3C 标准盒模型，又称为 content-box，属性 width,height 只包含内容 content，不包含 border 和 padding。
 width = 内容的宽度
 height = 内容的高度
@@ -159,45 +192,9 @@ height = 内容的高度
 width = border + padding + 内容的宽度
 height = border + padding + 内容的高度
   盒模型的相关边框：
- width 和 height 设置了内容框的宽/高; padding 家族属性设置内边距的宽度; border 家族属性设置边界的宽度、样式和颜色; margin 家族属性设置包围 CSS 盒子外部区域的宽度，这个属性推开布局中其他的 CSS 盒子;  边框 border   边框颜色：border-color： 四条边框写颜色时的顺序是顺时针的：上、右、下、左，如果只设置两个值的话看对边。
+ width 和 height 设置了内容框的宽/高; padding 家族属性设置内边距的宽度; border 家族属性设置边界的宽度、样式和颜色; margin 家族属性设置包围 CSS 盒子外部区域的宽度，这个属性推开布局中其他的 CSS 盒子;  边框 border   边框颜色：border-color： !
         </div>
           <a href="https://qiujia236.github.io/posts/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://qiujia236.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="color-inherit dim link">
-            HTML常用标签
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          HTML 常用标签 链接标签 链接（hyperlink）是互联网的核心。它允许用户在页面上，从一个网址跳转到另一个网址，从而把所有资源联系在一起。
-URL 是链接指向的地址。链接不仅可以指向另一个网页，也可以指向文本、图像、文件等资源。可以这样说，所有互联网上的资源，都可以通过链接访问。 链接通过&lt;a&gt;标签表示，用户点击后，浏览器会跳转到指定的网址。下面就是一个典型的链接。
-&lt;a href=&#34;https://www.google.com&#34;&gt;谷歌&lt;/a&gt; 上面代码就定义了一个超级链接。浏览器显示“谷歌”，文字下面默认会有下划线，表示这是一个链接。用户点击后，浏览器跳转到 href 属性指定的网址。
-&lt;a&gt;标签内部不仅可以放置文字，也可以放置其他元素，比如段落、图像、多媒体等等。
-&lt;a href=&#34;https://www.google.com&#34;&gt; &lt;img src=&#34;https://www.example.com/foo.jpg&#34; /&gt; &lt;/a&gt; &lt;a&gt;标签有如下属性：
-  href 属性给出链接指向的网址。它的值应该是一个 URL 或者锚点。
-&lt;a href=&#34;#demo&#34;&gt;示例&lt;/a&gt; 上面代码中，href 属性的值是#加上锚点名称。点击后，浏览器会自动滚动，停在当前页面里面 demo 锚点所在的位置。
-  hreflang 属性给出链接指向的网址所使用的语言，纯粹是提示性的，没有实际功能。
-&lt;a href=&#34;https://www.google.com&#34; hreflang=&#34;en&#34;&gt;示例网址&lt;/a&gt; 上面代码表明，href 属性指向的网址的语言是英语。
-  title 属性给出链接的说明信息。鼠标悬停在链接上方时，浏览器会将这个属性的值，以提示块的形式显示出来。
-下面代码中，用户鼠标停留在链接上面，会出现文字提示 hello。
-&lt;a href=&#34;https://www.google.com&#34; title=&#34;hello&#34;&gt;示例&lt;/a&gt;。   target 属性指定如何展示打开的链接。它可以是在指定的窗口打开，也可以在&lt;iframe&gt;里面打开。
-&lt;p&gt;&lt;a href=&#34;https://www.google.com&#34; target=&#34;test&#34;&gt;google&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href=&#34;https://www.baidu.com&#34; target=&#34;test&#34;&gt;baidu&lt;/a&gt;&lt;/p&gt; 上面代码中，两个链接都在名叫 test 的窗口打开。首先点击链接 google，浏览器发现没有叫做 test 的窗口，就新建一个窗口，起名为 test，在该窗口打开 google.com。然后，用户又点击链接 baidu，由于已经存在 test 窗口，浏览器就在该窗口打开 baidu.
-        </div>
-          <a href="https://qiujia236.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
       </div>
     </div>
@@ -212,6 +209,12 @@ URL 是链接指向的地址。链接不仅可以指向另一个网页，也可�
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://qiujia236.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="link black dim">
+              HTML常用标签
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://qiujia236.github.io/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" class="link black dim">
