@@ -39,7 +39,7 @@
  Rendering Tree 渲染树并不等同于 DOM 树，因为一些像 Header 或 display:none 的东西就没必要放在渲染树中了。 CSS 的 Rule Tree 主要是为了完成匹配并把 CSS Rule 附加上 Rendering Tree 上的每个 Element。也就是 DOM 结点。也就是所谓的 Frame。 计算每个 Frame（也就是每个 Element）的位置，这又叫 layout 和 reflow 过程。  最后通过调用操作系统 Native GUI 的 API 绘制。">
 <meta itemprop="datePublished" content="2020-01-10T11:45:42&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-10T11:45:42&#43;08:00" />
-<meta itemprop="wordCount" content="639">
+<meta itemprop="wordCount" content="637">
 
 
 
@@ -168,7 +168,7 @@ CSS 的解析大概是下面这个样子假设我们有下面的 HTML 文档：<
   &lt;/<span style="color:#f92672">para</span>&gt;
 &lt;/<span style="color:#f92672">doc</span>&gt;
 </code></pre></div><p>于是 DOM Tree 是这个样子：
-![](/CSS 知识总结/DOM-Tree-Example.jpg)<br>
+<img src="/CSS%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/DOM-Tree-Example.jpg" alt=""><br>
 我们的 CSS 文档是这样的：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* rule 1 */</span>
 <span style="color:#f92672">doc</span> {
