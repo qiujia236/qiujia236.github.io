@@ -185,14 +185,14 @@ Javascript 提供的标准函数库非常小，只能完成一些基本操作，
 <li>
 <p>null 和 undefined<br>
 null 属于对象（object）的一种，意思是该对象为空；undefined 则是一种数据类型，表示未定义。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> <span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">null</span>; <span style="color:#75715e">// object
-</span><span style="color:#75715e"></span> <span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">undefined</span>; <span style="color:#75715e">// undefined
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">    <span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">null</span>; <span style="color:#75715e">// object
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">undefined</span>; <span style="color:#75715e">// undefined
 </span></code></pre></div><p>两者非常容易混淆，但是含义完全不同。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> 　　<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span>;
- 　　<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">foo</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// true
-</span><span style="color:#75715e"></span> 　　<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">foo</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>); <span style="color:#75715e">// true
-</span><span style="color:#75715e"></span> 　　<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">foo</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// false
-</span><span style="color:#75715e"></span> 　　<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">foo</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>); <span style="color:#75715e">// true
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span>;
+    <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">foo</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">foo</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">foo</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">foo</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>); <span style="color:#75715e">// true
 </span></code></pre></div><p>在编程实践中，null 几乎没用，根本不应该设计它。</p>
 </li>
 <li>
