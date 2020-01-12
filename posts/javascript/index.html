@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>wb的博客  | JavaScript</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.62.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="JavaScript" />
+<meta property="og:description" content="JavaScript 的诞生 诞生背景 &ldquo;1994 年，网景公司（Netscape）发布了 Navigator 浏览器 0.9 版。这是历史上第一个比较成熟的网络浏览器，轰动一时。但是，这个版本的浏览器只能用来浏览，不具备与访问者互动的能力。&hellip;&hellip;网景公司急需一种网页脚本语言，使得浏览器可以与网页互动。&rdquo; 网页脚本语言到底是什么语言？网景公司当时有两个选择：一个是采用现有的语言，比如 Perl、Python、Tcl、Scheme 等等，允许它们直接嵌入网页；另一个是发明一种全新的语言。
+这两个选择各有利弊。第一个选择，有利于充分利用现有代码和程序员资源，推广起来比较容易；第二个选择，有利于开发出完全适用的语言，实现起来比较容易。
+就在这时，发生了另外一件大事：1995 年 Sun 公司将 Oak 语言改名为 Java，正式向市场推出。
+Sun 公司大肆宣传，许诺这种语言可以&quot;一次编写，到处运行&rdquo;（Write Once, Run Anywhere），它看上去很可能成为未来的主宰。
+网景公司动了心，决定与 Sun 公司结成联盟。它不仅允许 Java 程序以 applet（小程序）的形式，直接在浏览器中运行；甚至还考虑直接将 Java 作为脚本语言嵌入网页，只是因为这样会使 HTML 网页过于复杂，后来才不得不放弃。
+Brendan Eich 此时，34 岁的系统程序员 Brendan Eich 登场了。1995 年 4 月，网景公司录用了他。Brendan Eich 的主要方向和兴趣是函数式编程，网景公司招聘他的目的，是研究将 Scheme 语言作为网页脚本语言的可能性。
+仅仅一个月之后，1995 年 5 月，网景公司做出决策，未来的网页脚本语言必须&quot;看上去与 Java 足够相似&rdquo;，但是比 Java 简单，使得非专业的网页作者也能很快上手。这个决策实际上将 Perl、Python、Tcl、Scheme 等非面向对象编程的语言都排除在外了。Brendan Eich 被指定为这种&quot;简化版 Java 语言&quot;的设计师。
+但是，他对 Java 一点兴趣也没有。为了应付公司安排的任务，他只用 10 天时间就把 Javascript 设计出来了。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qiujia236.github.io/posts/javascript/" />
+<meta property="article:published_time" content="2020-01-12T15:19:41+08:00" />
+<meta property="article:modified_time" content="2020-01-12T15:19:41+08:00" />
+<meta itemprop="name" content="JavaScript">
+<meta itemprop="description" content="JavaScript 的诞生 诞生背景 &ldquo;1994 年，网景公司（Netscape）发布了 Navigator 浏览器 0.9 版。这是历史上第一个比较成熟的网络浏览器，轰动一时。但是，这个版本的浏览器只能用来浏览，不具备与访问者互动的能力。&hellip;&hellip;网景公司急需一种网页脚本语言，使得浏览器可以与网页互动。&rdquo; 网页脚本语言到底是什么语言？网景公司当时有两个选择：一个是采用现有的语言，比如 Perl、Python、Tcl、Scheme 等等，允许它们直接嵌入网页；另一个是发明一种全新的语言。
+这两个选择各有利弊。第一个选择，有利于充分利用现有代码和程序员资源，推广起来比较容易；第二个选择，有利于开发出完全适用的语言，实现起来比较容易。
+就在这时，发生了另外一件大事：1995 年 Sun 公司将 Oak 语言改名为 Java，正式向市场推出。
+Sun 公司大肆宣传，许诺这种语言可以&quot;一次编写，到处运行&rdquo;（Write Once, Run Anywhere），它看上去很可能成为未来的主宰。
+网景公司动了心，决定与 Sun 公司结成联盟。它不仅允许 Java 程序以 applet（小程序）的形式，直接在浏览器中运行；甚至还考虑直接将 Java 作为脚本语言嵌入网页，只是因为这样会使 HTML 网页过于复杂，后来才不得不放弃。
+Brendan Eich 此时，34 岁的系统程序员 Brendan Eich 登场了。1995 年 4 月，网景公司录用了他。Brendan Eich 的主要方向和兴趣是函数式编程，网景公司招聘他的目的，是研究将 Scheme 语言作为网页脚本语言的可能性。
+仅仅一个月之后，1995 年 5 月，网景公司做出决策，未来的网页脚本语言必须&quot;看上去与 Java 足够相似&rdquo;，但是比 Java 简单，使得非专业的网页作者也能很快上手。这个决策实际上将 Perl、Python、Tcl、Scheme 等非面向对象编程的语言都排除在外了。Brendan Eich 被指定为这种&quot;简化版 Java 语言&quot;的设计师。
+但是，他对 Java 一点兴趣也没有。为了应付公司安排的任务，他只用 10 天时间就把 Javascript 设计出来了。">
+<meta itemprop="datePublished" content="2020-01-12T15:19:41&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-12T15:19:41&#43;08:00" />
+<meta itemprop="wordCount" content="422">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JavaScript"/>
+<meta name="twitter:description" content="JavaScript 的诞生 诞生背景 &ldquo;1994 年，网景公司（Netscape）发布了 Navigator 浏览器 0.9 版。这是历史上第一个比较成熟的网络浏览器，轰动一时。但是，这个版本的浏览器只能用来浏览，不具备与访问者互动的能力。&hellip;&hellip;网景公司急需一种网页脚本语言，使得浏览器可以与网页互动。&rdquo; 网页脚本语言到底是什么语言？网景公司当时有两个选择：一个是采用现有的语言，比如 Perl、Python、Tcl、Scheme 等等，允许它们直接嵌入网页；另一个是发明一种全新的语言。
+这两个选择各有利弊。第一个选择，有利于充分利用现有代码和程序员资源，推广起来比较容易；第二个选择，有利于开发出完全适用的语言，实现起来比较容易。
+就在这时，发生了另外一件大事：1995 年 Sun 公司将 Oak 语言改名为 Java，正式向市场推出。
+Sun 公司大肆宣传，许诺这种语言可以&quot;一次编写，到处运行&rdquo;（Write Once, Run Anywhere），它看上去很可能成为未来的主宰。
+网景公司动了心，决定与 Sun 公司结成联盟。它不仅允许 Java 程序以 applet（小程序）的形式，直接在浏览器中运行；甚至还考虑直接将 Java 作为脚本语言嵌入网页，只是因为这样会使 HTML 网页过于复杂，后来才不得不放弃。
+Brendan Eich 此时，34 岁的系统程序员 Brendan Eich 登场了。1995 年 4 月，网景公司录用了他。Brendan Eich 的主要方向和兴趣是函数式编程，网景公司招聘他的目的，是研究将 Scheme 语言作为网页脚本语言的可能性。
+仅仅一个月之后，1995 年 5 月，网景公司做出决策，未来的网页脚本语言必须&quot;看上去与 Java 足够相似&rdquo;，但是比 Java 简单，使得非专业的网页作者也能很快上手。这个决策实际上将 Perl、Python、Tcl、Scheme 等非面向对象编程的语言都排除在外了。Brendan Eich 被指定为这种&quot;简化版 Java 语言&quot;的设计师。
+但是，他对 Java 一点兴趣也没有。为了应付公司安排的任务，他只用 10 天时间就把 Javascript 设计出来了。"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://qiujia236.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      wb的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">JavaScript</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-01-12T15:19:41&#43;08:00">January 12, 2020</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="javascript-">JavaScript 的诞生</h1>
+<h2 id="heading">诞生背景</h2>
+<p>&ldquo;1994 年，网景公司（Netscape）发布了 Navigator 浏览器 0.9 版。这是历史上第一个比较成熟的网络浏览器，轰动一时。但是，这个版本的浏览器只能用来浏览，不具备与访问者互动的能力。&hellip;&hellip;网景公司急需一种网页脚本语言，使得浏览器可以与网页互动。&rdquo;
+<img src="/js%E8%AF%9E%E7%94%9F/Navigator%E6%B5%8F%E8%A7%88%E5%99%A8.jpg" alt="">
+网页脚本语言到底是什么语言？网景公司当时有两个选择：一个是采用现有的语言，比如 Perl、Python、Tcl、Scheme 等等，允许它们直接嵌入网页；另一个是发明一种全新的语言。<br>
+这两个选择各有利弊。第一个选择，有利于充分利用现有代码和程序员资源，推广起来比较容易；第二个选择，有利于开发出完全适用的语言，实现起来比较容易。<br>
+就在这时，发生了另外一件大事：1995 年 Sun 公司将 Oak 语言改名为 Java，正式向市场推出。<br>
+Sun 公司大肆宣传，许诺这种语言可以&quot;一次编写，到处运行&rdquo;（Write Once, Run Anywhere），它看上去很可能成为未来的主宰。<br>
+网景公司动了心，决定与 Sun 公司结成联盟。它不仅允许 Java 程序以 applet（小程序）的形式，直接在浏览器中运行；甚至还考虑直接将 Java 作为脚本语言嵌入网页，只是因为这样会使 HTML 网页过于复杂，后来才不得不放弃。</p>
+<h2 id="brendan-eich">Brendan Eich</h2>
+<p><img src="/js%E8%AF%9E%E7%94%9F/Brendan%20Eich.jpg" alt=""><br>
+此时，34 岁的系统程序员 Brendan Eich 登场了。1995 年 4 月，网景公司录用了他。Brendan Eich 的主要方向和兴趣是函数式编程，网景公司招聘他的目的，是研究将 Scheme 语言作为网页脚本语言的可能性。<br>
+仅仅一个月之后，1995 年 5 月，网景公司做出决策，未来的网页脚本语言必须&quot;看上去与 Java 足够相似&rdquo;，但是比 Java 简单，使得非专业的网页作者也能很快上手。这个决策实际上将 Perl、Python、Tcl、Scheme 等非面向对象编程的语言都排除在外了。Brendan Eich 被指定为这种&quot;简化版 Java 语言&quot;的设计师。<br>
+但是，他对 Java 一点兴趣也没有。为了应付公司安排的任务，他只用 10 天时间就把 Javascript 设计出来了。<br>
+总的来说，他的设计思路是这样的：</p>
+<ul>
+<li>借鉴 C 语言的基本语法；</li>
+<li>借鉴 Java 语言的数据类型和内存管理；</li>
+<li>借鉴 Scheme 语言，将函数提升到&quot;第一等公民&rdquo;（first class）的地位；</li>
+<li>借鉴 Self 语言，使用基于原型（prototype）的继承机制。</li>
+</ul>
+<p>所以，Javascript 语言实际上是两种语言风格的混合产物&mdash;-（简化的）函数式编程+（简化的）面向对象编程。这是由 Brendan Eich（函数式编程）与网景公司（面向对象编程）共同决定的。<br>
+如果不是公司的决策，Brendan Eich 绝不可能把 Java 作为 Javascript 设计的原型。作为设计者，他一点也不喜欢自己的这个作品。</p>
+<h2 id="heading-1">微软采纳</h2>
+<p>JavaScript 推出后在浏览器上大获成功，微软公司在不久后就为 Internet Explorer 3 浏览器推出了 JScript，以与处于市场领导地位的网景产品同台竞争。JScript 也是一种 JavaScript 实现，这两个 JavaScript 语言版本在浏览器端共存意味着语言标准化的缺失，发展初期，JavaScript 的标准并未确定，同期有网景的 JavaScript，微软的 JScript 双峰并峙。除此之外，微软也在网页技术上加入了不少专属对象，使不少网页使用非微软平台及浏览器无法正常显示，导致在浏览器大战期间网页设计者通常会把“用 Netscape 可达到最佳效果”或“用 IE 可达到最佳效果”的标志放在主页。随着 Internet Explorer 4 的发布，微软引入了动态 HTML 的概念，但语言实现和不同专有化的文档对象模型的差异仍然存在，成为网络上普及使用 JavaScript 的阻碍。</p>
+<h2 id="heading-2">标准化</h2>
+<p>1996 年 11 月，网景正式向 ECMA（欧洲计算机制造商协会）提交语言标准。1997 年 6 月，ECMA 以 JavaScript 语言为基础制定了 ECMAScript 标准规范 ECMA-262。JavaScript 成为了 ECMAScript 最著名的实现之一。除此之外，ActionScript 和 JScript 也都是 ECMAScript 规范的实现语言。尽管 JavaScript 作为给非程序人员的脚本语言，而非作为给程序人员的脚本语言来推广和宣传，但是 JavaScript 具有非常丰富的特性。<br>
+一般来说，完整的 JavaScript 包括以下几个部分：</p>
+<ul>
+<li>ECMAScript，描述了该语言的语法和基本对象；</li>
+<li>文档对象模型（DOM），描述处理网页内容的方法和接口；</li>
+<li>浏览器对象模型（BOM），描述与浏览器进行交互的方法和接口。</li>
+</ul>
+<p>JavaScript 的基本特点如下：</p>
+<ul>
+<li>是一种解释性脚本语言（代码不进行预编译）；</li>
+<li>主要用来向 HTML 页面添加交互行为；</li>
+<li>可以直接嵌入 HTML 页面，但写成单独的 js 文件有利于结构和行为的分离。</li>
+</ul>
+<p>JavaScript 常用来完成以下任务：</p>
+<ul>
+<li>嵌入动态文本于 HTML 页面；</li>
+<li>对浏览器事件作出响应；</li>
+<li>读写 HTML 元素；</li>
+<li>在数据被提交到服务器之前验证数据；</li>
+<li>检测访客的浏览器信息；</li>
+<li>控制 cookies，包括创建和修改等。</li>
+</ul>
+<p>不同于服务器端脚本语言，例如 PHP 与 ASP，JavaScript 主要被作为客户端脚本语言在用户的浏览器上运行，不需要服务器的支持。所以在早期程序员比较青睐于 JavaScript 以减少对服务器的负担，而与此同时也带来另一个问题：安全性。而随着服务器变得强大，现在的程序员更喜欢运行于服务端的脚本以保证安全，但 JavaScript 仍然以其跨平台、容易上手等优势大行其道。同时，有些特殊功能（如 AJAX）必须依赖 JavaScript 在客户端进行支持。随着引擎如 V8 和框架如 Node.js 的发展，及其事件驱动及异步 IO 等特性，JavaScript 逐渐被用来编写服务器端程序。且在近几年中，Node.js 的出世，让 JavaScript 也具有了一定的服务器功能，且在某些方面比 PHP 的效果更为显著。</p>
+<h2 id="javascript--10-">Javascript 的 10 个设计缺陷</h2>
+<ol>
+<li>
+<p>不适合开发大型程序。<br>
+Javascript 没有名称空间（namespace），很难模块化；没有如何将代码分布在多个文件的规范；允许同名函数的重复定义，后面的定义可以覆盖前面的定义，很不利于模块化加载。</p>
+</li>
+<li>
+<p>非常小的标准库<br>
+Javascript 提供的标准函数库非常小，只能完成一些基本操作，很多功能都不具备。</p>
+</li>
+<li>
+<p>null 和 undefined<br>
+null 属于对象（object）的一种，意思是该对象为空；undefined 则是一种数据类型，表示未定义。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> <span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">null</span>; <span style="color:#75715e">// object
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">undefined</span>; <span style="color:#75715e">// undefined
+</span></code></pre></div><p>两者非常容易混淆，但是含义完全不同。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> 　　<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span>;
+ 　　<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">foo</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span> 　　<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">foo</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span>); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span> 　　<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">foo</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span>); <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span> 　　<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">foo</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">undefined</span>); <span style="color:#75715e">// true
+</span></code></pre></div><p>在编程实践中，null 几乎没用，根本不应该设计它。</p>
+</li>
+<li>
+<p>全局变量难以控制<br>
+Javascript 的全局变量，在所有模块中都是可见的；任何一个函数内部都可以生成全局变量，这大大加剧了程序的复杂性。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> 　　<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+ 　　(<span style="color:#66d9ef">function</span>(){
+ 　　　　<span style="color:#a6e22e">b</span><span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>;
+ 　　　　<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">a</span>);
+ 　　})(); <span style="color:#75715e">// 1
+</span><span style="color:#75715e"></span> 　　<span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">b</span>); <span style="color:#75715e">//2
+</span></code></pre></div></li>
+<li>
+<p>自动插入行尾分号<br>
+Javascript 的所有语句，都必须以分号结尾。但是，如果你忘记加分号，解释器并不报错，而是为你自动加上分号。有时候，这会导致一些难以发现的错误。比如，下面这个函数根本无法达到预期的结果，返回值不是一个对象，而是 undefined。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> 　　<span style="color:#66d9ef">function</span>(){
+ 　　　　<span style="color:#66d9ef">return</span>
+ 　　　　　　{
+ 　　　　　　　　<span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+ 　　　　　　};
+ 　　}
+</code></pre></div><p>原因是解释器自动在 return 语句后面加上了分号。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> 　　<span style="color:#66d9ef">function</span>(){
+ 　　　　<span style="color:#66d9ef">return</span>;
+ 　　　　　　{
+ 　　　　　　　　<span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+ 　　　　　　};
+ 　　}
+</code></pre></div></li>
+<li>
+<p>加号运算符<br>
++号作为运算符，有两个含义，可以表示数字与数字的和，也可以表示字符与字符的连接。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> 　　<span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>); <span style="color:#75715e">// 11
+</span><span style="color:#75715e"></span> 　　<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;10&#34;</span>); <span style="color:#75715e">// 110
+</span></code></pre></div><p>如果一个操作项是字符，另一个操作项是数字，则数字自动转化为字符。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">   <span style="color:#a6e22e">alert</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;10&#34;</span>); <span style="color:#75715e">// 110
+</span><span style="color:#75715e"></span>   <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;10&#34;</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>); <span style="color:#75715e">// 101
+</span></code></pre></div><p>这样的设计，不必要地加剧了运算的复杂性，完全可以另行设置一个字符连接的运算符。</p>
+</li>
+<li>
+<p>NaN<br>
+NaN 是一种数字，表示超出了解释器的极限。它有一些很奇怪的特性：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">   <span style="color:#66d9ef">NaN</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">NaN</span>; <span style="color:#75715e">//false
+</span><span style="color:#75715e"></span>   <span style="color:#66d9ef">NaN</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">NaN</span>; <span style="color:#75715e">//true
+</span><span style="color:#75715e"></span>   <span style="color:#a6e22e">alert</span>( <span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">NaN</span> ); <span style="color:#75715e">// NaN
+</span></code></pre></div><p>与其设计 NaN，不如解释器直接报错，反而有利于简化程序。</p>
+</li>
+<li>
+<p>数组和对象的区分<br>
+由于 Javascript 的数组也属于对象（object），所以要区分一个对象到底是不是数组，相当麻烦。Douglas Crockford 的代码是这样的：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> 　　<span style="color:#66d9ef">if</span> ( <span style="color:#a6e22e">arr</span> <span style="color:#f92672">&amp;&amp;</span>
+ 　　　　<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;object&#39;</span> <span style="color:#f92672">&amp;&amp;</span>
+ 　　　　<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;number&#39;</span> <span style="color:#f92672">&amp;&amp;</span>
+ 　　　　<span style="color:#f92672">!</span><span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">propertyIsEnumerable</span>(<span style="color:#e6db74">&#39;length&#39;</span>)){
+
+ 　　　　<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;arr is an array&#34;</span>);
+
+ 　　}
+</code></pre></div></li>
+<li>
+<p>== 和 ===<br>
+==用来判断两个值是否相等。当两个值类型不同时，会发生自动转换，得到的结果非常不符合直觉。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">   <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">0</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">0</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>   <span style="color:#66d9ef">false</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>   <span style="color:#66d9ef">false</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>   <span style="color:#66d9ef">false</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span> <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>   <span style="color:#66d9ef">false</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>   <span style="color:#66d9ef">null</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">undefined</span> <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span>   <span style="color:#e6db74">&#34; \t\r\n&#34;</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#75715e">// true
+</span></code></pre></div><p>因此，推荐任何时候都使用&quot;===&rdquo;（精确判断）比较符。</p>
+</li>
+<li>
+<p>基本类型的包装对象<br>
+Javascript 有三种基本数据类型：字符串、数字和布尔值。它们都有相应的建构函数，可以生成字符串对象、数字对象和布尔值对象。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">    <span style="color:#66d9ef">new</span> Boolean(<span style="color:#66d9ef">false</span>);
+    <span style="color:#66d9ef">new</span> Number(<span style="color:#ae81ff">1234</span>);
+    <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;Hello World&#34;</span>);
+</code></pre></div><p>与基本数据类型对应的对象类型，作用很小，造成的混淆却很大。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript">   <span style="color:#a6e22e">alert</span>( <span style="color:#66d9ef">typeof</span> <span style="color:#ae81ff">1234</span>); <span style="color:#75715e">// number
+</span><span style="color:#75715e"></span>   <span style="color:#a6e22e">alert</span>( <span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">new</span> Number(<span style="color:#ae81ff">1234</span>)); <span style="color:#75715e">// object
+</span></code></pre></div></li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://qiujia236.github.io/" >
+    &copy; 2020 wb的博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
