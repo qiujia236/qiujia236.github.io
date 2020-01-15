@@ -6,10 +6,25 @@
     <description>Recent content on wb的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sun, 12 Jan 2020 15:19:41 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jan 2020 23:21:43 +0800</lastBuildDate>
     
 	<atom:link href="https://qiujia236.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript语法</title>
+      <link>https://qiujia236.github.io/posts/javascript%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Tue, 14 Jan 2020 23:21:43 +0800</pubDate>
+      
+      <guid>https://qiujia236.github.io/posts/javascript%E8%AF%AD%E6%B3%95/</guid>
+      <description>JavaScript 语法 语句 JavaScript 程序的执行单位为行（line），也就是一行一行地执行。语句（statement）是为了完成某种任务而进行的操作。
+var a = 1 + 2; 这条语句先用 var 命令，声明了变量 a，然后将 1 + 3 的运算结果赋值给变量 a。1 + 3 叫做表达式（expression），指一个为了得到返回值的计算式。语句和表达式的区别在于，前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。
+语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。
+var a = 1 + 2 ; var b = &amp;#34;a&amp;#34;; 表达式不需要分号结尾。一旦在表达式后面添加分号，则 JavaScript 引擎就将表达式视为语句，这样会产生一些没有任何意义的语句。
+1 + 3; &amp;#39;abc&amp;#39;; 变量   变量是对“值”的具名引用。变量就是为“值”起名，然后引用这个名字，就等同于引用这个值。变量的名字就是变量名。
+var a = 1; 上面的代码先声明变量 a，然后在变量 a 与数值 1 之间建立引用关系，称为将数值 1“赋值”给变量 a。以后，引用变量名 a 就会得到数值 1。 变量的声明和赋值，是分开的两个步骤，上面的代码将它们合在了一起，实际的步骤是下面这样。
+var a; a = 1; 如果只是声明变量而没有赋值，则该变量的值是 undefined。undefined 是一个特殊的值，表示“无定义”。</description>
+    </item>
     
     <item>
       <title>JavaScript</title>

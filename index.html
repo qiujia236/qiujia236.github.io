@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://qiujia236.github.io/" />
-<meta property="og:updated_time" content="2020-01-12T15:19:41+08:00" />
+<meta property="og:updated_time" content="2020-01-14T23:21:43+08:00" />
 <meta itemprop="name" content="wb的博客">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="wb的博客"/>
@@ -120,6 +120,36 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://qiujia236.github.io/posts/javascript%E8%AF%AD%E6%B3%95/" class="color-inherit dim link">
+            JavaScript语法
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          JavaScript 语法 语句 JavaScript 程序的执行单位为行（line），也就是一行一行地执行。语句（statement）是为了完成某种任务而进行的操作。
+var a = 1 + 2; 这条语句先用 var 命令，声明了变量 a，然后将 1 + 3 的运算结果赋值给变量 a。1 + 3 叫做表达式（expression），指一个为了得到返回值的计算式。语句和表达式的区别在于，前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。
+语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。
+var a = 1 + 2 ; var b = &#34;a&#34;; 表达式不需要分号结尾。一旦在表达式后面添加分号，则 JavaScript 引擎就将表达式视为语句，这样会产生一些没有任何意义的语句。
+1 + 3; &#39;abc&#39;; 变量   变量是对“值”的具名引用。变量就是为“值”起名，然后引用这个名字，就等同于引用这个值。变量的名字就是变量名。
+var a = 1; 上面的代码先声明变量 a，然后在变量 a 与数值 1 之间建立引用关系，称为将数值 1“赋值”给变量 a。以后，引用变量名 a 就会得到数值 1。 变量的声明和赋值，是分开的两个步骤，上面的代码将它们合在了一起，实际的步骤是下面这样。
+var a; a = 1; 如果只是声明变量而没有赋值，则该变量的值是 undefined。undefined 是一个特殊的值，表示“无定义”。
+        </div>
+          <a href="https://qiujia236.github.io/posts/javascript%E8%AF%AD%E6%B3%95/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://qiujia236.github.io/posts/javascript/" class="color-inherit dim link">
             JavaScript
             </a>
@@ -174,38 +204,18 @@ www.example.com 是域名。 它表明正在请求哪个 Web 服务器。或者�
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://qiujia236.github.io/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="color-inherit dim link">
-            css知识总结
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          浏览器渲染与动画 浏览器的渲染原理   浏览器工作大流程  根据 HTML 构建 HTL 树(DOM)； 根据 CSS 构建 CSS(CSSOM)； 将两棵树合并成一颗渲染树(rendertree)； Layout 布局（文档流、盒模型、计算大小和位置）； Paint 绘制（把边框颜色、文字颜色、阴影等画出来）； Compose 合成（根据层叠关系展示画面）。  浏览器会解析三个东西：
- HTML/SVG/XHTML，解析这三种文件会产生一个 DOM Tree。 CSS，解析 CSS 会产生 CSS 规则树。 Javascript，脚本，主要是通过 DOM API 和 CSSOM API 来操作 DOM Tree 和 CSS Rule Tree。  解析完成后，浏览器引擎会通过 DOM Tree 和 CSS Rule Tree 来构造 Rendering Tree。注意：
- Rendering Tree 渲染树并不等同于 DOM 树，因为一些像 Header 或 display:none 的东西就没必要放在渲染树中了。 CSS 的 Rule Tree 主要是为了完成匹配并把 CSS Rule 附加上 Rendering Tree 上的每个 Element。也就是 DOM 结点。也就是所谓的 Frame。 计算每个 Frame（也就是每个 Element）的位置，这又叫 layout 和 reflow 过程。  最后通过调用操作系统 Native GUI 的 API 绘制。
-        </div>
-          <a href="https://qiujia236.github.io/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://qiujia236.github.io/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="link black dim">
+              css知识总结
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://qiujia236.github.io/posts/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" class="link black dim">
@@ -222,12 +232,6 @@ www.example.com 是域名。 它表明正在请求哪个 Web 服务器。或者�
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://qiujia236.github.io/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" class="link black dim">
               HTML入门笔记1
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://qiujia236.github.io/posts/%E6%B7%BB%E5%8A%A0hugo%E5%8D%9A%E5%AE%A2/" class="link black dim">
-              用 hugo 搭建个人博客
             </a>
           </h2>
         
