@@ -6,10 +6,23 @@
     <description>Recent content on wb的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Tue, 14 Jan 2020 23:21:43 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jan 2020 14:32:31 +0800</lastBuildDate>
     
 	<atom:link href="https://qiujia236.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS对象基本用法</title>
+      <link>https://qiujia236.github.io/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Thu, 16 Jan 2020 14:32:31 +0800</pubDate>
+      
+      <guid>https://qiujia236.github.io/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</guid>
+      <description>JS 对象基本用法 概述 对象（object）是 JavaScript 语言的核心概念，也是最重要的数据类型。什么是对象？简单说，对象就是一组“键值对”（key-value）的集合，是一种无序的复合数据集合。
+var obj = { foo: &amp;#39;Hello&amp;#39;, bar: &amp;#39;World&amp;#39; }; 上面代码中，大括号就定义了一个对象，它被赋值给变量 obj，所以变量 obj 就指向一个对象。该对象内部包含两个键值对（又称为两个“成员”），第一个键值对是 foo: &amp;lsquo;Hello&amp;rsquo;，其中 foo 是“键名”（成员的名称），字符串 Hello 是“键值”（成员的值）。键名与键值之间用冒号分隔。第二个键值对是 bar: &amp;lsquo;World&amp;rsquo;，bar 是键名，World 是键值。两个键值对之间用逗号分隔。
+对象的所有键名都是字符串（ES6 又引入了 Symbol 值也可以作为键名），所以加不加引号都可以。上面的代码也可以写成下面这样。
+var obj = { &amp;#39;foo&amp;#39;: &amp;#39;Hello&amp;#39;, &amp;#39;bar&amp;#39;: &amp;#39;World&amp;#39; }; 如果键名是数值，会被自动转为字符串。如果键名不符合标识名的条件（比如第一个字符为数字，或者含有空格或运算符），且也不是数字，则必须加上引号，否则会报错。
+// 报错 var obj = { 1p: &amp;#39;Hello World&amp;#39; }; // 不报错 var obj = { &amp;#39;1p&amp;#39;: &amp;#39;Hello World&amp;#39;, &amp;#39;h w&amp;#39;: &amp;#39;Hello World&amp;#39;, &amp;#39;p+q&amp;#39;: &amp;#39;Hello World&amp;#39; }; 上面对象的三个键名，都不符合标识名的条件，所以必须加上引号。</description>
+    </item>
     
     <item>
       <title>JavaScript语法</title>
