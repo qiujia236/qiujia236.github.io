@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://qiujia236.github.io/" />
-<meta property="og:updated_time" content="2020-01-16T14:32:31+08:00" />
+<meta property="og:updated_time" content="2020-01-17T22:18:14+08:00" />
 <meta itemprop="name" content="wb的博客">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="wb的博客"/>
@@ -120,6 +120,35 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://qiujia236.github.io/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="color-inherit dim link">
+            JS函数的执行时机
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          JS 函数的执行时机 setTimeout()基础 setTimeout 函数用来指定某个函数或某段代码，在多少毫秒之后执行。它返回一个整数，表示定时器的编号，以后可以用来取消这个定时器。
+var timerId = setTimeout(func|code, delay) 上面代码中，setTimeout 函数接受两个参数，第一个参数 func|code 是将要推迟执行的函数名或者一段代码，第二个参数 delay 是推迟执行的毫秒数。
+需要注意的是，推迟执行的代码必须以字符串的形式，放入 setTimeout，因为引擎内部使用 eval 函数，将字符串转为代码。如果推迟执行的是函数，则可以直接将函数名，放入 setTimeout。一方面 eval 函数有安全顾虑，另一方面为了便于 JavaScript 引擎优化代码，setTimeout 方法一般总是采用函数名的形式，就像下面这样。
+function func(){ console.log(2); } setTimeout(func,1000); // 或者 setTimeout(function (){console.log(2)},1000); 分析 for 循环中的 setTimeout 函数 let i = 0 for(i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },3000) } 说起事件循环，不得不提起任务队列。事件循环只有一个，但任务队列可能有多个，任务队列可分为宏任务（macro-task）和微任务（micro-task）。注意进入到任务队列的是具体的执行任务的函数。比如上述例子 setTimeout()中的 console.log 函数。
+XHR 回调、事件回调（鼠标键盘事件）、setImmediate、setTimeout、setInterval、indexedDB 数据库操作等 I/O 以及 UI rendering 都属于宏任务（也有文章说 UI render 不属于宏任务，目前还没有定论），process.nextTick、Promise.then、Object.observer(已经被废弃)、MutationObserver(html5 新特性)属于微任务。
+另外不同类型的任务会分别进入到他们所属类型的任务队列，比如所有 setTimeout()的回调都会进入到 setTimeout 任务队列，所有 then()回调都会进入到 then 队列。当前的整体代码我们可以认为是宏任务。事件循环从当前整体代码开始第一次事件循环，然后再执行队列中所有的微任务，当微任务执行完毕之后，事件循环再找到其中一个宏任务队列并执行其中的所有任务，然后再找到一个微任务队列并执行里面的所有任务，就这样一直循环下去。
+        </div>
+          <a href="https://qiujia236.github.io/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://qiujia236.github.io/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="color-inherit dim link">
             JS对象基本用法
             </a>
@@ -170,43 +199,18 @@ var a; a = 1; 如果只是声明变量而没有赋值，则该变量的值是 un
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://qiujia236.github.io/posts/javascript/" class="color-inherit dim link">
-            JavaScript
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          JavaScript 的诞生 诞生背景 &ldquo;1994 年，网景公司（Netscape）发布了 Navigator 浏览器 0.9 版。这是历史上第一个比较成熟的网络浏览器，轰动一时。但是，这个版本的浏览器只能用来浏览，不具备与访问者互动的能力。&hellip;&hellip;网景公司急需一种网页脚本语言，使得浏览器可以与网页互动。&rdquo; 网页脚本语言到底是什么语言？网景公司当时有两个选择：一个是采用现有的语言，比如 Perl、Python、Tcl、Scheme 等等，允许它们直接嵌入网页；另一个是发明一种全新的语言。
-这两个选择各有利弊。第一个选择，有利于充分利用现有代码和程序员资源，推广起来比较容易；第二个选择，有利于开发出完全适用的语言，实现起来比较容易。
-就在这时，发生了另外一件大事：1995 年 Sun 公司将 Oak 语言改名为 Java，正式向市场推出。
-Sun 公司大肆宣传，许诺这种语言可以&quot;一次编写，到处运行&rdquo;（Write Once, Run Anywhere），它看上去很可能成为未来的主宰。
-网景公司动了心，决定与 Sun 公司结成联盟。它不仅允许 Java 程序以 applet（小程序）的形式，直接在浏览器中运行；甚至还考虑直接将 Java 作为脚本语言嵌入网页，只是因为这样会使 HTML 网页过于复杂，后来才不得不放弃。
-Brendan Eich 此时，34 岁的系统程序员 Brendan Eich 登场了。1995 年 4 月，网景公司录用了他。Brendan Eich 的主要方向和兴趣是函数式编程，网景公司招聘他的目的，是研究将 Scheme 语言作为网页脚本语言的可能性。
-仅仅一个月之后，1995 年 5 月，网景公司做出决策，未来的网页脚本语言必须&quot;看上去与 Java 足够相似&rdquo;，但是比 Java 简单，使得非专业的网页作者也能很快上手。这个决策实际上将 Perl、Python、Tcl、Scheme 等非面向对象编程的语言都排除在外了。Brendan Eich 被指定为这种&quot;简化版 Java 语言&quot;的设计师。
-但是，他对 Java 一点兴趣也没有。为了应付公司安排的任务，他只用 10 天时间就把 Javascript 设计出来了。
-        </div>
-          <a href="https://qiujia236.github.io/posts/javascript/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://qiujia236.github.io/posts/javascript/" class="link black dim">
+              JavaScript
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://qiujia236.github.io/posts/%E6%B5%85%E6%9E%90url/" class="link black dim">
@@ -223,12 +227,6 @@ Brendan Eich 此时，34 岁的系统程序员 Brendan Eich 登场了。1995 年
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://qiujia236.github.io/posts/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" class="link black dim">
               CSS盒模型
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://qiujia236.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="link black dim">
-              HTML常用标签
             </a>
           </h2>
         
