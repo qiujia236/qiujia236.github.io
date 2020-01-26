@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://qiujia236.github.io/posts/" />
-<meta property="og:updated_time" content="2020-01-17T22:18:14+08:00" />
+<meta property="og:updated_time" content="2020-01-26T14:13:52+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -89,6 +89,27 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://qiujia236.github.io/posts/jquery%E7%9A%84%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD/" class="link black dim">
+        JQuery的常用功能
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      JQuery 的常用功能 概述 jQuery 是目前使用最广泛的 javascript 函数库。全世界排名前 100 万的网站，有 46%使用 jQuery，远远超过其他库。微软公司甚至把 jQuery 作为他们的官方库。 对于网页开发者来说，学会 jQuery 是必要的。因为它让你了解业界最通用的技术，为将来学习更高级的库打下基础，并且确实可以很轻松地做出许多复杂的效果。虽然 jQuery 上手简单，比其他库容易学会，但是要全面掌握，却不轻松。因为它涉及到网页开发的方方面面，提供的各种方法和内部变化有上千种之多。初学者常常感到，入门很方便，提高很困难。
+jQuery 如何获取元素 jQuery 的基本设计思想和主要用法，就是&quot;选择某个网页元素，然后对其进行某种操作&rdquo;。这是它区别于其他 Javascript 库的根本特点。
+使用 jQuery 的第一步，往往就是将一个选择表达式，放进构造函数 jQuery()（简写为$），然后得到被选中的元素。
+选择表达式可以是 CSS 选择器：
+$(document) //选择整个文档对象  $(&#39;#myId&#39;) //选择ID为myId的网页元素  $(&#39;div.myClass&#39;) // 选择class为myClass的div元素  $(&#39;input[name=first]&#39;) // 选择name属性等于first的input元素 也可以是 jQuery 特有的表达式：
+$(&#39;a:first&#39;) //选择网页中第一个a元素  $(&#39;tr:odd&#39;) //选择表格的奇数行  $(&#39;#myForm :input&#39;) // 选择表单中的input元素  $(&#39;div:visible&#39;) //选择可见的div元素 jQuery 设计思想之二，就是提供各种强大的过滤器，对结果集进行筛选，缩小选择结果。
+$(&#39;div&#39;).has(&#39;p&#39;); // 选择包含p元素的div元素  $(&#39;div&#39;).not(&#39;.myClass&#39;); //选择class不等于myClass的div元素  $(&#39;div&#39;).filter(&#39;.myClass&#39;); //选择class等于myClass的div元素  $(&#39;div&#39;).
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -285,24 +306,51 @@ HTML 起手式&ndash;头部介绍 !(/static/HTML/HTML头部.png)
 </div>
 </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://qiujia236.github.io/posts/%E6%B7%BB%E5%8A%A0hugo%E5%8D%9A%E5%AE%A2/" class="link black dim">
-        用 hugo 搭建个人博客
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      如何使用 hugo 搭建个人博客   下载 hugo，到https://github.com/gohugoio/hugo/releases 下载 hugo_0.62.0_Windows-64bit.zip，解压，将 hugo.exe 放到个人目录里面，并且设置环境变量，path 为你的个人目录路径,安装完成后使用 hugo version 检测 hugo 是否安装成功，如果出现 Hugo Static Site Generator v0.62.0-6608F155 windows/amd64 BuildDate: 2019-12-23T10:26:18Z 的字样，则表明安装成功；
-  使用 hugo new site xxx 创建一个 hugo 站点，其中 xxx 为站点的名字；
-  添加主题，使用 cmder 软件输入 cd xxx 命令进入站点，在站点里面输入 git init 和 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 两条命令获取主题，最后输入 echo &lsquo;theme = &ldquo;ananke&rdquo;&rsquo; &raquo; config.toml 添加主题，在 config.toml 中可以修改相关配置，例如你的标题，你的语言编码，还有 URL，其中 URL 必须为你的域名，比如 xxx.github.io 域名； !(/images/toml.png)
-    </div>
-  </div>
-</div>
-</div>
-      
     </section>
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/posts/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item disabled">
+    <a  class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/posts/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/2/">2</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/posts/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/posts/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
 
 </article>
 

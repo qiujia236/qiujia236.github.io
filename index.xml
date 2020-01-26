@@ -6,10 +6,25 @@
     <description>Recent content on wb的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Fri, 17 Jan 2020 22:18:14 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jan 2020 14:13:52 +0800</lastBuildDate>
     
 	<atom:link href="https://qiujia236.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JQuery的常用功能</title>
+      <link>https://qiujia236.github.io/posts/jquery%E7%9A%84%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Sun, 26 Jan 2020 14:13:52 +0800</pubDate>
+      
+      <guid>https://qiujia236.github.io/posts/jquery%E7%9A%84%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD/</guid>
+      <description>JQuery 的常用功能 概述 jQuery 是目前使用最广泛的 javascript 函数库。全世界排名前 100 万的网站，有 46%使用 jQuery，远远超过其他库。微软公司甚至把 jQuery 作为他们的官方库。 对于网页开发者来说，学会 jQuery 是必要的。因为它让你了解业界最通用的技术，为将来学习更高级的库打下基础，并且确实可以很轻松地做出许多复杂的效果。虽然 jQuery 上手简单，比其他库容易学会，但是要全面掌握，却不轻松。因为它涉及到网页开发的方方面面，提供的各种方法和内部变化有上千种之多。初学者常常感到，入门很方便，提高很困难。
+jQuery 如何获取元素 jQuery 的基本设计思想和主要用法，就是&amp;quot;选择某个网页元素，然后对其进行某种操作&amp;rdquo;。这是它区别于其他 Javascript 库的根本特点。
+使用 jQuery 的第一步，往往就是将一个选择表达式，放进构造函数 jQuery()（简写为$），然后得到被选中的元素。
+选择表达式可以是 CSS 选择器：
+$(document) //选择整个文档对象  $(&amp;#39;#myId&amp;#39;) //选择ID为myId的网页元素  $(&amp;#39;div.myClass&amp;#39;) // 选择class为myClass的div元素  $(&amp;#39;input[name=first]&amp;#39;) // 选择name属性等于first的input元素 也可以是 jQuery 特有的表达式：
+$(&amp;#39;a:first&amp;#39;) //选择网页中第一个a元素  $(&amp;#39;tr:odd&amp;#39;) //选择表格的奇数行  $(&amp;#39;#myForm :input&amp;#39;) // 选择表单中的input元素  $(&amp;#39;div:visible&amp;#39;) //选择可见的div元素 jQuery 设计思想之二，就是提供各种强大的过滤器，对结果集进行筛选，缩小选择结果。
+$(&amp;#39;div&amp;#39;).has(&amp;#39;p&amp;#39;); // 选择包含p元素的div元素  $(&amp;#39;div&amp;#39;).not(&amp;#39;.myClass&amp;#39;); //选择class不等于myClass的div元素  $(&amp;#39;div&amp;#39;).filter(&amp;#39;.myClass&amp;#39;); //选择class等于myClass的div元素  $(&amp;#39;div&amp;#39;).</description>
+    </item>
     
     <item>
       <title>JS函数的执行时机</title>
