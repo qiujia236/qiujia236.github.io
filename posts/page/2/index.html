@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://qiujia236.github.io/posts/" />
-<meta property="og:updated_time" content="2020-01-26T14:13:52+08:00" />
+<meta property="og:updated_time" content="2020-02-02T19:14:17+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -94,14 +94,213 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="https://qiujia236.github.io/posts/%E6%B7%BB%E5%8A%A0hugo%E5%8D%9A%E5%AE%A2/" class="link black dim">
-        用 hugo 搭建个人博客
+      <a href="https://qiujia236.github.io/posts/jquery%E7%9A%84%E5%B8%B8%E7%94%A8%E5%8A%9F%E8%83%BD/" class="link black dim">
+        JQuery的常用功能
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      如何使用 hugo 搭建个人博客   下载 hugo，到https://github.com/gohugoio/hugo/releases 下载 hugo_0.62.0_Windows-64bit.zip，解压，将 hugo.exe 放到个人目录里面，并且设置环境变量，path 为你的个人目录路径,安装完成后使用 hugo version 检测 hugo 是否安装成功，如果出现 Hugo Static Site Generator v0.62.0-6608F155 windows/amd64 BuildDate: 2019-12-23T10:26:18Z 的字样，则表明安装成功；
-  使用 hugo new site xxx 创建一个 hugo 站点，其中 xxx 为站点的名字；
-  添加主题，使用 cmder 软件输入 cd xxx 命令进入站点，在站点里面输入 git init 和 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 两条命令获取主题，最后输入 echo &lsquo;theme = &ldquo;ananke&rdquo;&rsquo; &raquo; config.toml 添加主题，在 config.toml 中可以修改相关配置，例如你的标题，你的语言编码，还有 URL，其中 URL 必须为你的域名，比如 xxx.github.io 域名； !(/images/toml.png)
+      JQuery 的常用功能 概述 jQuery 是目前使用最广泛的 javascript 函数库。全世界排名前 100 万的网站，有 46%使用 jQuery，远远超过其他库。微软公司甚至把 jQuery 作为他们的官方库。 对于网页开发者来说，学会 jQuery 是必要的。因为它让你了解业界最通用的技术，为将来学习更高级的库打下基础，并且确实可以很轻松地做出许多复杂的效果。虽然 jQuery 上手简单，比其他库容易学会，但是要全面掌握，却不轻松。因为它涉及到网页开发的方方面面，提供的各种方法和内部变化有上千种之多。初学者常常感到，入门很方便，提高很困难。
+jQuery 如何获取元素 jQuery 的基本设计思想和主要用法，就是&quot;选择某个网页元素，然后对其进行某种操作&rdquo;。这是它区别于其他 Javascript 库的根本特点。
+使用 jQuery 的第一步，往往就是将一个选择表达式，放进构造函数 jQuery()（简写为$），然后得到被选中的元素。
+选择表达式可以是 CSS 选择器：
+$(document) //选择整个文档对象  $(&#39;#myId&#39;) //选择ID为myId的网页元素  $(&#39;div.myClass&#39;) // 选择class为myClass的div元素  $(&#39;input[name=first]&#39;) // 选择name属性等于first的input元素 也可以是 jQuery 特有的表达式：
+$(&#39;a:first&#39;) //选择网页中第一个a元素  $(&#39;tr:odd&#39;) //选择表格的奇数行  $(&#39;#myForm :input&#39;) // 选择表单中的input元素  $(&#39;div:visible&#39;) //选择可见的div元素 jQuery 设计思想之二，就是提供各种强大的过滤器，对结果集进行筛选，缩小选择结果。
+$(&#39;div&#39;).has(&#39;p&#39;); // 选择包含p元素的div元素  $(&#39;div&#39;).not(&#39;.myClass&#39;); //选择class不等于myClass的div元素  $(&#39;div&#39;).filter(&#39;.myClass&#39;); //选择class等于myClass的div元素  $(&#39;div&#39;).
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://qiujia236.github.io/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="link black dim">
+        JS函数的执行时机
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      JS 函数的执行时机 setTimeout()基础 setTimeout 函数用来指定某个函数或某段代码，在多少毫秒之后执行。它返回一个整数，表示定时器的编号，以后可以用来取消这个定时器。
+var timerId = setTimeout(func|code, delay) 上面代码中，setTimeout 函数接受两个参数，第一个参数 func|code 是将要推迟执行的函数名或者一段代码，第二个参数 delay 是推迟执行的毫秒数。
+需要注意的是，推迟执行的代码必须以字符串的形式，放入 setTimeout，因为引擎内部使用 eval 函数，将字符串转为代码。如果推迟执行的是函数，则可以直接将函数名，放入 setTimeout。一方面 eval 函数有安全顾虑，另一方面为了便于 JavaScript 引擎优化代码，setTimeout 方法一般总是采用函数名的形式，就像下面这样。
+function func(){ console.log(2); } setTimeout(func,1000); // 或者 setTimeout(function (){console.log(2)},1000); 分析 for 循环中的 setTimeout 函数 let i = 0 for(i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },3000) } 说起事件循环，不得不提起任务队列。事件循环只有一个，但任务队列可能有多个，任务队列可分为宏任务（macro-task）和微任务（micro-task）。注意进入到任务队列的是具体的执行任务的函数。比如上述例子 setTimeout()中的 console.log 函数。
+XHR 回调、事件回调（鼠标键盘事件）、setImmediate、setTimeout、setInterval、indexedDB 数据库操作等 I/O 以及 UI rendering 都属于宏任务（也有文章说 UI render 不属于宏任务，目前还没有定论），process.nextTick、Promise.then、Object.observer(已经被废弃)、MutationObserver(html5 新特性)属于微任务。
+另外不同类型的任务会分别进入到他们所属类型的任务队列，比如所有 setTimeout()的回调都会进入到 setTimeout 任务队列，所有 then()回调都会进入到 then 队列。当前的整体代码我们可以认为是宏任务。事件循环从当前整体代码开始第一次事件循环，然后再执行队列中所有的微任务，当微任务执行完毕之后，事件循环再找到其中一个宏任务队列并执行其中的所有任务，然后再找到一个微任务队列并执行里面的所有任务，就这样一直循环下去。
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://qiujia236.github.io/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="link black dim">
+        JS对象基本用法
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      JS 对象基本用法 概述 对象（object）是 JavaScript 语言的核心概念，也是最重要的数据类型。什么是对象？简单说，对象就是一组“键值对”（key-value）的集合，是一种无序的复合数据集合。
+var obj = { foo: &#39;Hello&#39;, bar: &#39;World&#39; }; 上面代码中，大括号就定义了一个对象，它被赋值给变量 obj，所以变量 obj 就指向一个对象。该对象内部包含两个键值对（又称为两个“成员”），第一个键值对是 foo: &lsquo;Hello&rsquo;，其中 foo 是“键名”（成员的名称），字符串 Hello 是“键值”（成员的值）。键名与键值之间用冒号分隔。第二个键值对是 bar: &lsquo;World&rsquo;，bar 是键名，World 是键值。两个键值对之间用逗号分隔。
+对象的所有键名都是字符串（ES6 又引入了 Symbol 值也可以作为键名），所以加不加引号都可以。上面的代码也可以写成下面这样。
+var obj = { &#39;foo&#39;: &#39;Hello&#39;, &#39;bar&#39;: &#39;World&#39; }; 如果键名是数值，会被自动转为字符串。如果键名不符合标识名的条件（比如第一个字符为数字，或者含有空格或运算符），且也不是数字，则必须加上引号，否则会报错。
+// 报错 var obj = { 1p: &#39;Hello World&#39; }; // 不报错 var obj = { &#39;1p&#39;: &#39;Hello World&#39;, &#39;h w&#39;: &#39;Hello World&#39;, &#39;p+q&#39;: &#39;Hello World&#39; }; 上面对象的三个键名，都不符合标识名的条件，所以必须加上引号。
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://qiujia236.github.io/posts/javascript%E8%AF%AD%E6%B3%95/" class="link black dim">
+        JavaScript语法
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      JavaScript 语法 语句 JavaScript 程序的执行单位为行（line），也就是一行一行地执行。语句（statement）是为了完成某种任务而进行的操作。
+var a = 1 + 2; 这条语句先用 var 命令，声明了变量 a，然后将 1 + 3 的运算结果赋值给变量 a。1 + 3 叫做表达式（expression），指一个为了得到返回值的计算式。语句和表达式的区别在于，前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。
+语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。
+var a = 1 + 2 ; var b = &#34;a&#34;; 表达式不需要分号结尾。一旦在表达式后面添加分号，则 JavaScript 引擎就将表达式视为语句，这样会产生一些没有任何意义的语句。
+1 + 3; &#39;abc&#39;; 变量   变量是对“值”的具名引用。变量就是为“值”起名，然后引用这个名字，就等同于引用这个值。变量的名字就是变量名。
+var a = 1; 上面的代码先声明变量 a，然后在变量 a 与数值 1 之间建立引用关系，称为将数值 1“赋值”给变量 a。以后，引用变量名 a 就会得到数值 1。 变量的声明和赋值，是分开的两个步骤，上面的代码将它们合在了一起，实际的步骤是下面这样。
+var a; a = 1; 如果只是声明变量而没有赋值，则该变量的值是 undefined。undefined 是一个特殊的值，表示“无定义”。
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://qiujia236.github.io/posts/javascript/" class="link black dim">
+        JavaScript
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      JavaScript 的诞生 诞生背景 &ldquo;1994 年，网景公司（Netscape）发布了 Navigator 浏览器 0.9 版。这是历史上第一个比较成熟的网络浏览器，轰动一时。但是，这个版本的浏览器只能用来浏览，不具备与访问者互动的能力。&hellip;&hellip;网景公司急需一种网页脚本语言，使得浏览器可以与网页互动。&rdquo; 网页脚本语言到底是什么语言？网景公司当时有两个选择：一个是采用现有的语言，比如 Perl、Python、Tcl、Scheme 等等，允许它们直接嵌入网页；另一个是发明一种全新的语言。
+这两个选择各有利弊。第一个选择，有利于充分利用现有代码和程序员资源，推广起来比较容易；第二个选择，有利于开发出完全适用的语言，实现起来比较容易。
+就在这时，发生了另外一件大事：1995 年 Sun 公司将 Oak 语言改名为 Java，正式向市场推出。
+Sun 公司大肆宣传，许诺这种语言可以&quot;一次编写，到处运行&rdquo;（Write Once, Run Anywhere），它看上去很可能成为未来的主宰。
+网景公司动了心，决定与 Sun 公司结成联盟。它不仅允许 Java 程序以 applet（小程序）的形式，直接在浏览器中运行；甚至还考虑直接将 Java 作为脚本语言嵌入网页，只是因为这样会使 HTML 网页过于复杂，后来才不得不放弃。
+Brendan Eich 此时，34 岁的系统程序员 Brendan Eich 登场了。1995 年 4 月，网景公司录用了他。Brendan Eich 的主要方向和兴趣是函数式编程，网景公司招聘他的目的，是研究将 Scheme 语言作为网页脚本语言的可能性。
+仅仅一个月之后，1995 年 5 月，网景公司做出决策，未来的网页脚本语言必须&quot;看上去与 Java 足够相似&rdquo;，但是比 Java 简单，使得非专业的网页作者也能很快上手。这个决策实际上将 Perl、Python、Tcl、Scheme 等非面向对象编程的语言都排除在外了。Brendan Eich 被指定为这种&quot;简化版 Java 语言&quot;的设计师。
+但是，他对 Java 一点兴趣也没有。为了应付公司安排的任务，他只用 10 天时间就把 Javascript 设计出来了。
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://qiujia236.github.io/posts/%E6%B5%85%E6%9E%90url/" class="link black dim">
+        浅析URL
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      浅析 URL URL 概述 URL 是 Web 中的一个核心概念。它是浏览器用来检索 web 上公布的任何资源的机制。
+URL 指的是统一资源定位符（Uniform Resource Locator）。URL 无非就是一个给定的独特资源在 Web 上的地址。理论上说，每个有效的 URL 都指向一个独特的资源。这个资源可以是一个 HTML 页面，一个 CSS 文档，一幅图像，等等。
+一个 URL 由不同的部分组成，其中一些是必须的，而另一些是可选的。让我们以下面这个 URL 为例看看其中最重要的部分：
+http://www.example.com:80/path/to/myfile.html?key1=value1&amp;key2=value2#SomewhereInTheDocumenthttp:// 是协议。它表明了浏览器必须使用何种协议。它通常都是 HTTP 协议或是 HTTP 协议的安全版，即 HTTPS。Web 需要它们二者之一，但浏览器也知道如何处理其他协议，比如 mailto:（打开邮件客户端）或者 ftp:（处理文件传输），所以当你看到这些协议时，不必惊讶。
+www.example.com 是域名。 它表明正在请求哪个 Web 服务器。或者，可以直接使用 IP address, 但是因为它不太方便，所以它不经常在网络上使用。
+:80 是端口。 它表示用于访问 Web 服务器上的资源的技术“门”。如果 Web 服务器使用 HTTP 协议的标准端口（HTTP 为 80，HTTPS 为 443）来授予其资源的访问权限，则通常会被忽略。否则是强制性的。
+/path/to/myfile.html 是网络服务器上资源的路径。在 Web 的早期阶段，像这样的路径表示 Web 服务器上的物理文件位置。
+?key1=value1&amp;key2=value2 是提供给网络服务器的额外参数。 这些参数是用 &amp; 符号分隔的键/值对列表。在返回资源之前，Web 服务器可以使用这些参数来执行额外的操作。
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://qiujia236.github.io/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="link black dim">
+        css知识总结
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      浏览器渲染与动画 浏览器的渲染原理   浏览器工作大流程  根据 HTML 构建 HTL 树(DOM)； 根据 CSS 构建 CSS(CSSOM)； 将两棵树合并成一颗渲染树(rendertree)； Layout 布局（文档流、盒模型、计算大小和位置）； Paint 绘制（把边框颜色、文字颜色、阴影等画出来）； Compose 合成（根据层叠关系展示画面）。  浏览器会解析三个东西：
+ HTML/SVG/XHTML，解析这三种文件会产生一个 DOM Tree。 CSS，解析 CSS 会产生 CSS 规则树。 Javascript，脚本，主要是通过 DOM API 和 CSSOM API 来操作 DOM Tree 和 CSS Rule Tree。  解析完成后，浏览器引擎会通过 DOM Tree 和 CSS Rule Tree 来构造 Rendering Tree。注意：
+ Rendering Tree 渲染树并不等同于 DOM 树，因为一些像 Header 或 display:none 的东西就没必要放在渲染树中了。 CSS 的 Rule Tree 主要是为了完成匹配并把 CSS Rule 附加上 Rendering Tree 上的每个 Element。也就是 DOM 结点。也就是所谓的 Frame。 计算每个 Frame（也就是每个 Element）的位置，这又叫 layout 和 reflow 过程。  最后通过调用操作系统 Native GUI 的 API 绘制。
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://qiujia236.github.io/posts/css%E7%9B%92%E6%A8%A1%E5%9E%8B/" class="link black dim">
+        CSS盒模型
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      CSS 盒模型 简述 CSS 盒模型就是布局网页的一种手段包括边框（border）、外边距（margin）、内边距（padding）、网页元素（content）、宽（width）、高（height）等元素。 !(/CSS盒模型/CSS盒模型2.png)
+盒模型分为 W3C 标准盒模型和 IE 盒模型：
+  W3C 标准盒模型，又称为 content-box，属性 width,height 只包含内容 content，不包含 border 和 padding。
+width = 内容的宽度
+height = 内容的高度
+  IE 盒模型，又称为 border-box，属性 width,height 包含 border 和 padding，指的是 content+padding+border。
+width = border + padding + 内容的宽度
+height = border + padding + 内容的高度
+  盒模型的相关边框：
+ width 和 height 设置了内容框的宽/高; padding 家族属性设置内边距的宽度; border 家族属性设置边界的宽度、样式和颜色; margin 家族属性设置包围 CSS 盒子外部区域的宽度，这个属性推开布局中其他的 CSS 盒子;  边框 border   边框颜色：border-color： !
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://qiujia236.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="link black dim">
+        HTML常用标签
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      HTML 常用标签 链接标签 链接（hyperlink）是互联网的核心。它允许用户在页面上，从一个网址跳转到另一个网址，从而把所有资源联系在一起。
+URL 是链接指向的地址。链接不仅可以指向另一个网页，也可以指向文本、图像、文件等资源。可以这样说，所有互联网上的资源，都可以通过链接访问。 链接通过&lt;a&gt;标签表示，用户点击后，浏览器会跳转到指定的网址。下面就是一个典型的链接。
+&lt;a href=&#34;https://www.google.com&#34;&gt;谷歌&lt;/a&gt; 上面代码就定义了一个超级链接。浏览器显示“谷歌”，文字下面默认会有下划线，表示这是一个链接。用户点击后，浏览器跳转到 href 属性指定的网址。
+&lt;a&gt;标签内部不仅可以放置文字，也可以放置其他元素，比如段落、图像、多媒体等等。
+&lt;a href=&#34;https://www.google.com&#34;&gt; &lt;img src=&#34;https://www.example.com/foo.jpg&#34; /&gt; &lt;/a&gt; &lt;a&gt;标签有如下属性：
+  href 属性给出链接指向的网址。它的值应该是一个 URL 或者锚点。
+&lt;a href=&#34;#demo&#34;&gt;示例&lt;/a&gt; 上面代码中，href 属性的值是#加上锚点名称。点击后，浏览器会自动滚动，停在当前页面里面 demo 锚点所在的位置。
+  hreflang 属性给出链接指向的网址所使用的语言，纯粹是提示性的，没有实际功能。
+&lt;a href=&#34;https://www.google.com&#34; hreflang=&#34;en&#34;&gt;示例网址&lt;/a&gt; 上面代码表明，href 属性指向的网址的语言是英语。
+  title 属性给出链接的说明信息。鼠标悬停在链接上方时，浏览器会将这个属性的值，以提示块的形式显示出来。
+下面代码中，用户鼠标停留在链接上面，会出现文字提示 hello。
+&lt;a href=&#34;https://www.google.com&#34; title=&#34;hello&#34;&gt;示例&lt;/a&gt;。   target 属性指定如何展示打开的链接。它可以是在指定的窗口打开，也可以在&lt;iframe&gt;里面打开。
+&lt;p&gt;&lt;a href=&#34;https://www.google.com&#34; target=&#34;test&#34;&gt;google&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href=&#34;https://www.baidu.com&#34; target=&#34;test&#34;&gt;baidu&lt;/a&gt;&lt;/p&gt; 上面代码中，两个链接都在名叫 test 的窗口打开。首先点击链接 google，浏览器发现没有叫做 test 的窗口，就新建一个窗口，起名为 test，在该窗口打开 google.com。然后，用户又点击链接 baidu，由于已经存在 test 窗口，浏览器就在该窗口打开 baidu.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://qiujia236.github.io/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/" class="link black dim">
+        HTML入门笔记1
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      HTML 入门笔记 1 概述 HTML 是网页使用的语言，定义了网页的结构和内容。浏览器访问网站，其实就是从服务器下载 HTML 代码，然后渲染出网页。
+HTML 的全名是“超文本标记语言”（HyperText Markup Language），上个世纪 90 年代由欧洲核子研究中心的物理学家蒂姆·伯纳斯-李（Tim Berners-Lee）发明。它的最大特点就是支持超链接，可以跳转到其他网页，从而构成了整个互联网。1999 年，HTML 4.01 版发布，成为广泛接受的 HTML 标准。2014 年，HTML 5 发布，这是目前正在使用的版本。
+HTML 起手式&ndash;头部介绍 !(/static/HTML/HTML头部.png)
+  网页的第一个标签通常是 &lt;!doctype&gt;，表示文档类型，告诉浏览器如何解析网页。一般来说，只要简单声明 doctype 为 html 即可。
+&lt;!DOCTYPE html&gt; 浏览器就会按照 HTML5 的规则处理网页。有时，该标签采用完全大写的形式 &lt;!DOCTYPE html&gt;，以便区别于正常的 HTML 标签。因为&lt;!doctype&gt;本质上不是标签，更像一个处理指令。
+&lt;!DOCTYPE html&gt;   &lt;html&gt;标签是网页的顶层容器，也称为根元素（root element），其他元素都是它的子元素。一个网页只能有一个&lt;html&gt;标签。该标签的 lang 属性，表示网页内容默认的语言,可以把 en 改成 zh-CN。
+&lt;html lang=&#34;en&#34;&gt;&lt;/html&gt;   &lt;head&gt;标签是一个容器标签，用于放置网页的元信息。它的内容不会出现在网页上，而是为网页渲染做准备。&lt;head&gt;是&lt;html&gt;的第一个子元素。如果网页不包含&lt;head&gt;，浏览器会自动创建一个。&lt;meta&gt; 标签用于设置或说明网页的元数据，必须放在&lt;head&gt;里面。一个&lt;meta&gt;标签就是一项元数据，网页可以有多个&lt;meta&gt;。
+下面代码声明，网页为 UTF-8 编码。虽然可以使用其他的编码方式，但基本上都采用 UTF-8。注意，声明的编码方式，应该与网页实际的编码方式一致，即声明了 UTF-8，网页就应该使用 UTF-8 编码保存。
+&lt;meta charset=&#34;utf-8&#34; /&gt; 下面代码声明禁用缩放，用于兼容手机。
     </div>
   </div>
 </div>
@@ -143,12 +342,23 @@
     <li class="page-item active"><a class="page-link" href="/posts/page/2/">2</a></li>
     
     
-    <li class="page-item disabled">
-    <a  class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/3/">3</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/posts/page/3/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/3/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>
