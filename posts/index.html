@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://qiujia236.github.io/posts/" />
-<meta property="og:updated_time" content="2020-02-02T19:14:17+08:00" />
+<meta property="og:updated_time" content="2020-02-06T16:31:19+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -89,6 +89,24 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://qiujia236.github.io/posts/%E6%B5%85%E6%9E%90mvc/" class="link black dim">
+        浅析MVC
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      浅析 MVCMVC MVC 模式 概述 MVC 模式的目的是实现一种动态的程式设计，使后续对程序的修改和扩展简化，并且使程序某一部分的重复利用成为可能。除此之外，此模式透过对复杂度的简化，使程序结构更加直观。软件系统透过对自身基本部分分离的同时也赋予了各个基本部分应有的功能：
+ 控制器（Controller）- 负责转发请求，对请求进行处理。 视图（View） - 界面设计人员进行图形界面设计。 模型（Model） - 程序员编写程序应有的功能（实现算法等等）。  前端的 MVC   前端的 View 是，与页面上元素直接相关的部分都属于 View。包括 html，css 和一部分直接控制页面元素的 JS。作为观察者模式中的观察者，它可以从 Model 中得到数据，并将其显示到页面上。而关于数据的变更和请求，则统统交给 Controller 处理。
+  Controller 作为 Model 和 View 的粘合剂，Controller 将 View 方面的请求转发给合适的 Model，在必要的时候也会去更新 View。而 Controller 本身也可以作为 Model 的观察者，获取 Model 的变更。而作为 Controller 本身，就不应该有涉及到页面元素的代码了。
+  与后端的沟通、AJAX 请求以及对数据的处理都属于 Model 的工作。Model 本身不知道谁是 View，谁是 Controller。它只提供一些方法供 View 和 Controller 调用，并且将变更通知给它的观察者 View 或 Controller。显然，Model 与页面元素之间也解耦了。
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -259,28 +277,6 @@ call 函数实例的 call 方法，可以指定函数内部 this 的指向（即
 var obj = {}; var f = function () { return this; }; f() === window // true f.call(obj) === obj // true 上面代码中，全局环境运行函数 f 时，this 指向全局环境（浏览器为 window 对象）；call 方法可以改变 this 的指向，指定 this 指向对象 obj，然后在对象 obj 的作用域中运行函数 f。
 call 方法的参数，应该是一个对象。如果参数为空、null 和 undefined，则默认传入全局对象。
 var n = 123; var obj = { n: 456 }; function a() { console.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="https://qiujia236.github.io/posts/%E9%97%AD%E5%8C%85/" class="link black dim">
-        闭包
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      闭包 闭包的概念 各种专业文献上的&quot;闭包&rdquo;（closure）定义非常抽象，很难看懂。我的理解是，闭包就是能够读取其他函数内部变量的函数。函数和函数内部能访问到的变量也叫环境的总和，组成一个闭包。
-闭包的作用   可以读取函数内部的变量。
-  一个就是让这些变量的值始终保持在内存中。
-function foo() { var a = 2; return function fun1() { console.log(a) } } var fun2 = foo() fun2() //2 在上面的例子中，fun1 能够访问 foo 的内部作用域。在 foo()执行后，把 foo()的返回值 fun1 赋值给 fun2 并调用 fun2。打印出了结果 2 。
-此时，我们可以说 fun1 记住并访问了所在的词法作用域 或者说 fun2 访问了另一个函数作用域中的变量。
-由于引擎有自动的垃圾回收机制，在 foo()执行后（不再使用），通常 foo 的整个内部作用域会被销毁，对内存进行回收。闭包的神奇之处正是可以阻止这件事情的发生，因为 fun1 依然持有对该作用域的引用，这个引用就叫做闭包。
-  闭包可以用来隐藏一个变量，比如有一个变量，我们不想别人直接访问它，而是间接使用你提供的方法来操作它，就可以使用闭包。
-function outerFn(){ var i = 10; window.add = function(){ i+=1; } return i } var inner = outerFn(); inner(); //10 add(); inner(); //11   使用闭包的注意点   由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在 IE 中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。
     </div>
   </div>
 </div>

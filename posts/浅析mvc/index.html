@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>wb的博客  | 浅析MVC</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.62.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="浅析MVC" />
+<meta property="og:description" content="浅析 MVCMVC MVC 模式 概述 MVC 模式的目的是实现一种动态的程式设计，使后续对程序的修改和扩展简化，并且使程序某一部分的重复利用成为可能。除此之外，此模式透过对复杂度的简化，使程序结构更加直观。软件系统透过对自身基本部分分离的同时也赋予了各个基本部分应有的功能：
+ 控制器（Controller）- 负责转发请求，对请求进行处理。 视图（View） - 界面设计人员进行图形界面设计。 模型（Model） - 程序员编写程序应有的功能（实现算法等等）。  前端的 MVC   前端的 View 是，与页面上元素直接相关的部分都属于 View。包括 html，css 和一部分直接控制页面元素的 JS。作为观察者模式中的观察者，它可以从 Model 中得到数据，并将其显示到页面上。而关于数据的变更和请求，则统统交给 Controller 处理。
+  Controller 作为 Model 和 View 的粘合剂，Controller 将 View 方面的请求转发给合适的 Model，在必要的时候也会去更新 View。而 Controller 本身也可以作为 Model 的观察者，获取 Model 的变更。而作为 Controller 本身，就不应该有涉及到页面元素的代码了。
+  与后端的沟通、AJAX 请求以及对数据的处理都属于 Model 的工作。Model 本身不知道谁是 View，谁是 Controller。它只提供一些方法供 View 和 Controller 调用，并且将变更通知给它的观察者 View 或 Controller。显然，Model 与页面元素之间也解耦了。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qiujia236.github.io/posts/%E6%B5%85%E6%9E%90mvc/" />
+<meta property="article:published_time" content="2020-02-06T16:31:19+08:00" />
+<meta property="article:modified_time" content="2020-02-06T16:31:19+08:00" />
+<meta itemprop="name" content="浅析MVC">
+<meta itemprop="description" content="浅析 MVCMVC MVC 模式 概述 MVC 模式的目的是实现一种动态的程式设计，使后续对程序的修改和扩展简化，并且使程序某一部分的重复利用成为可能。除此之外，此模式透过对复杂度的简化，使程序结构更加直观。软件系统透过对自身基本部分分离的同时也赋予了各个基本部分应有的功能：
+ 控制器（Controller）- 负责转发请求，对请求进行处理。 视图（View） - 界面设计人员进行图形界面设计。 模型（Model） - 程序员编写程序应有的功能（实现算法等等）。  前端的 MVC   前端的 View 是，与页面上元素直接相关的部分都属于 View。包括 html，css 和一部分直接控制页面元素的 JS。作为观察者模式中的观察者，它可以从 Model 中得到数据，并将其显示到页面上。而关于数据的变更和请求，则统统交给 Controller 处理。
+  Controller 作为 Model 和 View 的粘合剂，Controller 将 View 方面的请求转发给合适的 Model，在必要的时候也会去更新 View。而 Controller 本身也可以作为 Model 的观察者，获取 Model 的变更。而作为 Controller 本身，就不应该有涉及到页面元素的代码了。
+  与后端的沟通、AJAX 请求以及对数据的处理都属于 Model 的工作。Model 本身不知道谁是 View，谁是 Controller。它只提供一些方法供 View 和 Controller 调用，并且将变更通知给它的观察者 View 或 Controller。显然，Model 与页面元素之间也解耦了。">
+<meta itemprop="datePublished" content="2020-02-06T16:31:19&#43;08:00" />
+<meta itemprop="dateModified" content="2020-02-06T16:31:19&#43;08:00" />
+<meta itemprop="wordCount" content="806">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="浅析MVC"/>
+<meta name="twitter:description" content="浅析 MVCMVC MVC 模式 概述 MVC 模式的目的是实现一种动态的程式设计，使后续对程序的修改和扩展简化，并且使程序某一部分的重复利用成为可能。除此之外，此模式透过对复杂度的简化，使程序结构更加直观。软件系统透过对自身基本部分分离的同时也赋予了各个基本部分应有的功能：
+ 控制器（Controller）- 负责转发请求，对请求进行处理。 视图（View） - 界面设计人员进行图形界面设计。 模型（Model） - 程序员编写程序应有的功能（实现算法等等）。  前端的 MVC   前端的 View 是，与页面上元素直接相关的部分都属于 View。包括 html，css 和一部分直接控制页面元素的 JS。作为观察者模式中的观察者，它可以从 Model 中得到数据，并将其显示到页面上。而关于数据的变更和请求，则统统交给 Controller 处理。
+  Controller 作为 Model 和 View 的粘合剂，Controller 将 View 方面的请求转发给合适的 Model，在必要的时候也会去更新 View。而 Controller 本身也可以作为 Model 的观察者，获取 Model 的变更。而作为 Controller 本身，就不应该有涉及到页面元素的代码了。
+  与后端的沟通、AJAX 请求以及对数据的处理都属于 Model 的工作。Model 本身不知道谁是 View，谁是 Controller。它只提供一些方法供 View 和 Controller 调用，并且将变更通知给它的观察者 View 或 Controller。显然，Model 与页面元素之间也解耦了。"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://qiujia236.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      wb的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">浅析MVC</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-02-06T16:31:19&#43;08:00">February 6, 2020</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="-mvcmvc">浅析 MVCMVC</h1>
+<h2 id="mvc-">MVC 模式</h2>
+<h3 id="heading">概述</h3>
+<p>MVC 模式的目的是实现一种动态的程式设计，使后续对程序的修改和扩展简化，并且使程序某一部分的重复利用成为可能。除此之外，此模式透过对复杂度的简化，使程序结构更加直观。软件系统透过对自身基本部分分离的同时也赋予了各个基本部分应有的功能：</p>
+<ul>
+<li>控制器（Controller）- 负责转发请求，对请求进行处理。</li>
+<li>视图（View） - 界面设计人员进行图形界面设计。</li>
+<li>模型（Model） - 程序员编写程序应有的功能（实现算法等等）。</li>
+</ul>
+<p><img src="/MVC/MVC-Process.png" alt=""></p>
+<h3 id="-mvc">前端的 MVC</h3>
+<ol>
+<li>
+<p>前端的 View 是，与页面上元素直接相关的部分都属于 View。包括 html，css 和一部分直接控制页面元素的 JS。作为观察者模式中的观察者，它可以从 Model 中得到数据，并将其显示到页面上。而关于数据的变更和请求，则统统交给 Controller 处理。</p>
+</li>
+<li>
+<p>Controller 作为 Model 和 View 的粘合剂，Controller 将 View 方面的请求转发给合适的 Model，在必要的时候也会去更新 View。而 Controller 本身也可以作为 Model 的观察者，获取 Model 的变更。而作为 Controller 本身，就不应该有涉及到页面元素的代码了。</p>
+</li>
+<li>
+<p>与后端的沟通、AJAX 请求以及对数据的处理都属于 Model 的工作。Model 本身不知道谁是 View，谁是 Controller。它只提供一些方法供 View 和 Controller 调用，并且将变更通知给它的观察者 View 或 Controller。显然，Model 与页面元素之间也解耦了。</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">body</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page&#34;</span>&gt;
+    &lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app1&#34;</span>&gt;&lt;/<span style="color:#f92672">section</span>&gt;
+    &lt;<span style="color:#f92672">section</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app2&#34;</span>&gt;&lt;/<span style="color:#f92672">section</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;./app1.css&#39;</span>
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">$</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;jquery&#39;</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">eventBus</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(window)
+<span style="color:#75715e">// 数据相关都放到m
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">n</span><span style="color:#f92672">:</span> parseInt(<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#39;n&#39;</span>))
+  },
+  <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">data</span>) {
+    Object.<span style="color:#a6e22e">assign</span>(<span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">data</span>, <span style="color:#a6e22e">data</span>)
+    <span style="color:#a6e22e">eventBus</span>.<span style="color:#a6e22e">trigger</span>(<span style="color:#e6db74">&#39;m:updated&#39;</span>)
+    <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;n&#39;</span>, <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">n</span>)
+  },
+}
+
+<span style="color:#75715e">// 视图相关都放到v
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">v</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">el</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>,
+  <span style="color:#a6e22e">html</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    &lt;div class=&#34;output&#34;&gt;
+</span><span style="color:#e6db74">      &lt;span id=&#34;number&#34;&gt;{{n}}&lt;/span&gt;
+</span><span style="color:#e6db74">    &lt;/div&gt;
+</span><span style="color:#e6db74">    &lt;div class=&#34;actions&#34;&gt;
+</span><span style="color:#e6db74">      &lt;button id=&#34;add1&#34;&gt;+1&lt;/button&gt;
+</span><span style="color:#e6db74">      &lt;button id=&#34;minus1&#34;&gt;-1&lt;/button&gt;
+</span><span style="color:#e6db74">      &lt;button id=&#34;mul2&#34;&gt;*2&lt;/button&gt;
+</span><span style="color:#e6db74">      &lt;button id=&#34;divide2&#34;&gt;÷2&lt;/button&gt;
+</span><span style="color:#e6db74">    &lt;/div&gt;</span><span style="color:#e6db74">`</span>,
+
+  <span style="color:#a6e22e">init</span>(<span style="color:#a6e22e">container</span>) {
+    <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">el</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">container</span>)
+  },
+  <span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">n</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">children</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">0</span>) <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">empty</span>()
+    <span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">html</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">&#39;{{n}}&#39;</span>, <span style="color:#a6e22e">n</span>))
+      .<span style="color:#a6e22e">appendTo</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">el</span>)
+  }
+}
+
+<span style="color:#75715e">// 其他都c
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">init</span>(<span style="color:#a6e22e">container</span>) {
+    <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">init</span>(<span style="color:#a6e22e">container</span>)
+    <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">n</span>) <span style="color:#75715e">// view = render(data)
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">autoBindEvents</span>()
+    <span style="color:#a6e22e">eventBus</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;m:updated&#39;</span>, () =&gt; {
+      <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">n</span>)
+    })
+  },
+  <span style="color:#a6e22e">events</span><span style="color:#f92672">:</span> {
+    <span style="color:#e6db74">&#39;click #add1&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;add&#39;</span>,
+    <span style="color:#e6db74">&#39;click #minus1&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;minus&#39;</span>,
+    <span style="color:#e6db74">&#39;click #mul2&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;mul&#39;</span>,
+    <span style="color:#e6db74">&#39;click #divide2&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;div&#39;</span>,
+  },
+  <span style="color:#a6e22e">add</span>() {
+    <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">update</span>({<span style="color:#a6e22e">n</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">n</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>})
+  },
+  <span style="color:#a6e22e">minus</span>() {
+    <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">update</span>({<span style="color:#a6e22e">n</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">n</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>})
+  },
+  <span style="color:#a6e22e">mul</span>() {
+    <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">update</span>({<span style="color:#a6e22e">n</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>})
+  },
+  <span style="color:#a6e22e">div</span>() {
+    <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">update</span>({<span style="color:#a6e22e">n</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">n</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>})
+  },
+  <span style="color:#a6e22e">autoBindEvents</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">events</span>) {
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>[<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">events</span>[<span style="color:#a6e22e">key</span>]]
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">spaceIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">key</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#39; &#39;</span>)
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">part1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">key</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">spaceIndex</span>)
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">part2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">key</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">spaceIndex</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)
+      <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">on</span>(<span style="color:#a6e22e">part1</span>, <span style="color:#a6e22e">part2</span>, <span style="color:#a6e22e">value</span>)
+    }
+  }
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">c</span>
+</code></pre></div><p>以上代码，将数据相关代码都放到了 m 对象中，m 负责获取数据，并通过 EventBus 在事件更新后，触发监听；</p>
+<p>对象 v 负责获取 html 元素，并负责初始化和更新触发后重新渲染 dom；</p>
+<p>对象 c 中保存了保存了相关的方法和事件，在事件更新数据后，告诉对象 m，数据更新，保存最新的数据，并等待监听，监听触发后，通知 view 重新渲染 dom。
+<img src="/MVC/MVC%E8%81%8C%E8%B4%A3.png" alt=""></p>
+<h2 id="eventbus">事件总线(eventBus)</h2>
+<p>在老式编程模型中，每一位代码都会与其他每一位代码进行对话。如果更改了页面上的元素或存储在对象中的数据，它将立即告知该页面或对象上的其他所有人该更改。这里的中心问题是可伸缩性–为了使事情保持同步，您的每一段代码都需要了解其他每一段代码。</p>
+<p>对于一个简单的 Hello World 应用程序，没什么大不了的。但是，对于较大的程序，这将成为繁琐的噩梦。</p>
+<p>一个事件总线缓解这个问题，并允许你写两个完全分开的代码。一段代码将通过事件总线预订事件，而不是查看其邻居以查看更改 。当另一段代码（再次通过事件总线）触发事件时，将通知每个观察者。</p>
+<p>jQuery 提供了相关的事件方法 API，可以实现 eventBus，</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">eventBus</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(window);
+
+<span style="color:#75715e">//通过jQuery的on方法添加一个事件
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">eventBus</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;m:updated&#39;</span>, () =&gt; {
+    <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">m</span>.<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">n</span>)
+});
+
+<span style="color:#75715e">//通过jQuery的trigger方法触发一个事件
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">eventBus</span>.<span style="color:#a6e22e">trigger</span>(<span style="color:#e6db74">&#39;m:updated&#39;</span>);
+
+<span style="color:#75715e">//通过jQuery的off方法移除一个事件
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">eventBus</span>.<span style="color:#a6e22e">off</span>(<span style="color:#e6db74">&#34;m:updated&#34;</span>)
+</code></pre></div><ol>
+<li>
+<p>on() 方法在被选元素及子元素上添加一个或多个事件处理程序。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">selector</span>).<span style="color:#a6e22e">on</span>(<span style="color:#a6e22e">event</span>,<span style="color:#a6e22e">childSelector</span>,<span style="color:#a6e22e">data</span>,<span style="color:#66d9ef">function</span>)
+</code></pre></div><p>event：必需。规定要从被选元素移除的一个或多个事件或命名空间。由空格分隔多个事件值，也可以是数组。必须是有效的事件。<br>
+childSelector：可选。规定只能添加到指定的子元素上的事件处理程序。<br>
+data：可选。规定传递到函数的额外数据。
+function：可选。规定当事件发生时运行的函数。</p>
+</li>
+<li>
+<p>trigger() 方法触发被选元素上指定的事件以及事件的默认行为（比如表单提交）。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">selector</span>).<span style="color:#a6e22e">trigger</span>(<span style="color:#a6e22e">event</span>,<span style="color:#a6e22e">eventObj</span>,<span style="color:#a6e22e">param1</span>,<span style="color:#a6e22e">param2</span>,...)
+</code></pre></div><p>event：必需。规定指定元素上要触发的事件。
+可以是自定义事件，或者任何标准事件。<br>
+param1,param2,&hellip; 可选。传递到事件处理程序的额外参数。</p>
+</li>
+<li>
+<p>off() 方法通常用于移除通过 on() 方法添加的事件处理程序。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">selector</span>).<span style="color:#a6e22e">off</span>(<span style="color:#a6e22e">event</span>,<span style="color:#a6e22e">selector</span>,<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">eventObj</span>),<span style="color:#a6e22e">map</span>)
+</code></pre></div><p>event：必需。规定要从被选元素移除的一个或多个事件或命名空间。由空格分隔多个事件值。必须是有效的事件。<br>
+selector：可选。规定添加事件处理程序时最初传递给 on() 方法的选择器。
+function(eventObj)：可选。规定当事件发生时运行的函数。<br>
+map：规定事件映射 ({event:function, event:function, &hellip;})，包含要添加到元素的一个或多个事件，以及当事件发生时运行的函数。</p>
+</li>
+</ol>
+<p>jQuery 还提供了很多的其他事件方法，例如 one(),ready(),submit(),load(),这些方法就不一一赘述了，如需用时，可以自行查阅 jQuery 文档。</p>
+<h2 id="heading-1">表驱动编程</h2>
+<p>表驱动方法(Table-Driven Approach)是一种使你可以在表中查找信息，而不必用很多的逻辑语句（if 或 case）来把它们找出来的方法。数值不多的时候我们可以用逻辑语句(if 或 case)的方法来获取值,但随着数值的增多逻辑语句就会越来越长,此时表驱动法的优势就显现出来了。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">key</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;A&#34;</span>){
+   <span style="color:#75715e">//处理 Key A 相关的数据。
+</span><span style="color:#75715e"></span>}
+<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">key</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;Key B&#34;</span>){
+   <span style="color:#75715e">//处理 Key B 相关的数据。
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>以上代码是基于 if 进行逻辑判断的分支语句，可以改写成表驱动编程。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">table</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">A</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;数据1&#34;</span>,
+    <span style="color:#a6e22e">action</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;行为1&#34;</span>
+  },
+  <span style="color:#a6e22e">B</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;数据2&#34;</span>,
+    <span style="color:#a6e22e">action</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;行为2&#34;</span>
+  }
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleTable</span>(<span style="color:#a6e22e">key</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">table</span>[<span style="color:#a6e22e">key</span>]
+}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">handleTable</span>(<span style="color:#e6db74">&#39;A&#39;</span>).<span style="color:#a6e22e">data</span>)
+</code></pre></div><p>以上方法还是太简单，因为分支语句太少，让我们看一个复杂点的。</p>
+<p>假设你需要一个可以返回每个月中天数的函数（为简单起见不考虑闰年）</p>
+<p>使用 if else</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">GetMonthDays</span>(<span style="color:#a6e22e">iMonth</span>) {
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">iDays</span>;
+<span style="color:#66d9ef">if</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">iMonth</span>) {<span style="color:#a6e22e">iDays</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">31</span>;}
+<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">iMonth</span>) {<span style="color:#a6e22e">iDays</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">28</span>;}
+<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">iMonth</span>) {<span style="color:#a6e22e">iDays</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">31</span>;}
+<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#ae81ff">4</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">iMonth</span>) {<span style="color:#a6e22e">iDays</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>;}
+<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#ae81ff">5</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">iMonth</span>) {<span style="color:#a6e22e">iDays</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">31</span>;}
+<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#ae81ff">6</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">iMonth</span>) {<span style="color:#a6e22e">iDays</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>;}
+<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#ae81ff">7</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">iMonth</span>) {<span style="color:#a6e22e">iDays</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">31</span>;}
+<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#ae81ff">8</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">iMonth</span>) {<span style="color:#a6e22e">iDays</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">31</span>;}
+<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#ae81ff">9</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">iMonth</span>) {<span style="color:#a6e22e">iDays</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>;}
+<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#ae81ff">10</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">iMonth</span>) {<span style="color:#a6e22e">iDays</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">31</span>;}
+<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#ae81ff">11</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">iMonth</span>) {<span style="color:#a6e22e">iDays</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>;}
+<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#ae81ff">12</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">iMonth</span>) {<span style="color:#a6e22e">iDays</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">31</span>;}
+<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">iDays</span>;
+}
+</code></pre></div><p>使用表驱动(包括闰年判断)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">monthDays</span> <span style="color:#f92672">=</span> [
+[<span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>],
+[<span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">29</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>]
+]
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getMonthDays</span>(<span style="color:#a6e22e">month</span>, <span style="color:#a6e22e">year</span>) {
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">isLeapYear</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">year</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">year</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">year</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">400</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">monthDays</span>[<span style="color:#a6e22e">isLeapYear</span>][(<span style="color:#a6e22e">month</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)];
+}
+</code></pre></div><p>表驱动法，一方面简化代码实现，便于维护。(这里的简化强调地是上层实现逻辑的简化。) 二是提高代码的弹性，增减内容的成本低，甚至可以做到动态支持。</p>
+<h2 id="heading-2">前端模块化</h2>
+<h3 id="heading-3">概述</h3>
+<p>​ JavaScript 最初只需要实现简单的验证和提交表单，以及一些简单的 JS 交互效果，直接在 HTML 中通过 script 标签引入 js 文件或直接在 script 标签中添加相应 JavaScript 代码即可。​ 随着代码负责度的增加，需要引入多个 JavaScript 文件，特殊情况下还需要注意顺序，比如使用 jQuery 实现功能之前，必须先引入 jQuery，顺序错误会导致报错。</p>
+<p>为了实现模块化，出现了用于 JavaScript 模块管理的两大流行规范：CommonJS 和 AMD。前者定义的是模块的同步加载，主要用于 Node.js。同步加载在前端会导致整个页面等待，对前端并不适用，便出现了 AMD。AMD 采用异步加载方式，通过 RequireJS 等工具适用于前端。</p>
+<p>后来 ES6 提供了对模块的原生支持，它的目标是创建一种 CommonJS 和 AMD 使用者都愿意接受的方式，既拥有简洁的语法，又支持异步加载和配置模块加载。​ ES6 的模块化规范才是真正的规范，import 引入模块，export 导出模块，和前几个方案相比，功能更加强大</p>
+<h3 id="heading-4">导入</h3>
+<ol>
+<li>
+<p>只想导入源模块的部分内容</p>
+<p>假设 a.js 是以如下方式导出的</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> <span style="color:#75715e">// a.js
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+ <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;王小明&#39;</span>
+</code></pre></div><p>那么如果我们只需要 a 模块的 num，就应该按下面的方式导入它</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> <span style="color:#75715e">// b.js
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">num</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./a.js&#39;</span>
+</code></pre></div></li>
+<li>
+<p>不满意源模块所导出的变量或方法的名称，想要为它们另起名称</p>
+<p>假设 a.js 中有一个名称如此晦涩的变量 gddhauabsg。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> <span style="color:#75715e">// a.js
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gddhauabsg</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+</code></pre></div><p>忍不住想要重命名这个变量的名称，但是又无权或不想修改源模块的话，那么不妨这么做。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> <span style="color:#75715e">// b.js，如此，我们就可以在b.js中愉快的使用num 了
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">gddhauabsg</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">num</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./a.js&#39;</span>
+</code></pre></div></li>
+<li>
+<p>想要把源模块的所有导出都导入进来，但偏偏源模块不是以 export default 方式导出的。</p>
+<p>假设 a 模块将每个变量都单独，且声明时立即导出。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> <span style="color:#75715e">// a.js
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+ <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;王小明&#39;</span>
+</code></pre></div><p>那么我们就要这样导入 a 的所有导出</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> <span style="color:#75715e">// b.js
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">moduleA</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./a.js&#39;</span>
+
+ <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">moduleA</span>.<span style="color:#a6e22e">num</span>)  <span style="color:#75715e">// 100
+</span><span style="color:#75715e"></span> <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">moduleA</span>.<span style="color:#a6e22e">name</span>) <span style="color:#75715e">// &#39;王小明&#39;
+</span></code></pre></div><p>* 代表源模块（除去 export default）的所有导出的集合，该集合类似 Object 类型，* 就相当于{num: 100, name: &lsquo;王小明&rsquo;}，所以在源模块没有使用 export default 导出时，我们就可以使用上面的方式导入源模块的所有导出</p>
+</li>
+<li>
+<p>源模块并没有对外暴露任何导出</p>
+<p>a 模块没有导出任何内容</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> <span style="color:#75715e">// a.js
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+ <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;<span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">length</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+     <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">i</span>])
+ }
+</code></pre></div><p>那么 b 文件将 a.js 文件整个引入就好了</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// b.js
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 此处会执行a.js的所有代码逻辑
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;./a.js&#39;</span>
+</code></pre></div><p>一些第三方脚本或工具，作用类似于补丁，用于兼容一些新特性或功能，在一般情况下，这些脚本或工具只需要自执行，并且通常都是在我们的业务代码之前引入</p>
+</li>
+</ol>
+<h3 id="heading-5">导出</h3>
+<p>ES6 模块的导出方式大致有两种：命名导出、默认导出；对比模块的导入规则，导出要简单一些，下面我们还是通过场景来介绍</p>
+<ol>
+<li>
+<p>源模块支持命名导入和命名空间导入。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// a.js // 方式 1：在源模块末尾集中导出（当导出较多时，推荐此方式，方便管理导出）
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;王小明&#39;</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">flag</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+
+<span style="color:#66d9ef">export</span> {
+    <span style="color:#a6e22e">num</span>,
+    <span style="color:#a6e22e">name</span>,
+    <span style="color:#a6e22e">flag</span>
+}
+
+<span style="color:#75715e">// 方式 2：声明时立即导出（当导出较少时，推荐此方式）
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;王小明&#39;</span>
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">flag</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</code></pre></div></li>
+<li>
+<p>导出的内容前后名称需要不一致，那么我们可以尝试重命名。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// a.js
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 名称真的好长
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">getOrderInfoFromDatabaseByHttp</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+ <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#66d9ef">export</span> {
+    <span style="color:#75715e">// 如果没有重命名，机会导出下面这一大串
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// getOrderInfoFromDatabaseByHttp
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 但如果使用了重命名，方法的名称就会变得很简洁，即getOrderInfo。
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">getOrderInfoFromDatabaseByHttp</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">getOrderInfo</span>
+}
+</code></pre></div></li>
+<li>
+<p>模块功能单一，并且只需要导出值，不需要具名。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#75715e">// version.js
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#e6db74">&#39;v1.0.0&#39;</span>
+
+<span style="color:#75715e">// index.js
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">version</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./version.js&#39;</span>
+</code></pre></div><p>模块化的目的是使代码可以重用，模块化在任何开发中都是必不可少的。若干年前，前端模块化的需求并不是很强烈，因为在浏览器里运行的逻辑都比较简单。随着 Node.js 的出现，JavaScript 开始在后端发挥作用，为了代码重用，模块化就变得不可或缺。随着前端快速发展，前端业务越来越复杂，模块化的需求开始出现。</p>
+</li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://qiujia236.github.io/" >
+    &copy; 2020 wb的博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

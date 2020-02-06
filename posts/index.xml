@@ -6,10 +6,22 @@
     <description>Recent content in Posts on wb的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sun, 02 Feb 2020 19:14:17 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 06 Feb 2020 16:31:19 +0800</lastBuildDate>
     
 	<atom:link href="https://qiujia236.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>浅析MVC</title>
+      <link>https://qiujia236.github.io/posts/%E6%B5%85%E6%9E%90mvc/</link>
+      <pubDate>Thu, 06 Feb 2020 16:31:19 +0800</pubDate>
+      
+      <guid>https://qiujia236.github.io/posts/%E6%B5%85%E6%9E%90mvc/</guid>
+      <description>浅析 MVCMVC MVC 模式 概述 MVC 模式的目的是实现一种动态的程式设计，使后续对程序的修改和扩展简化，并且使程序某一部分的重复利用成为可能。除此之外，此模式透过对复杂度的简化，使程序结构更加直观。软件系统透过对自身基本部分分离的同时也赋予了各个基本部分应有的功能：
+ 控制器（Controller）- 负责转发请求，对请求进行处理。 视图（View） - 界面设计人员进行图形界面设计。 模型（Model） - 程序员编写程序应有的功能（实现算法等等）。  前端的 MVC   前端的 View 是，与页面上元素直接相关的部分都属于 View。包括 html，css 和一部分直接控制页面元素的 JS。作为观察者模式中的观察者，它可以从 Model 中得到数据，并将其显示到页面上。而关于数据的变更和请求，则统统交给 Controller 处理。
+  Controller 作为 Model 和 View 的粘合剂，Controller 将 View 方面的请求转发给合适的 Model，在必要的时候也会去更新 View。而 Controller 本身也可以作为 Model 的观察者，获取 Model 的变更。而作为 Controller 本身，就不应该有涉及到页面元素的代码了。
+  与后端的沟通、AJAX 请求以及对数据的处理都属于 Model 的工作。Model 本身不知道谁是 View，谁是 Controller。它只提供一些方法供 View 和 Controller 调用，并且将变更通知给它的观察者 View 或 Controller。显然，Model 与页面元素之间也解耦了。</description>
+    </item>
     
     <item>
       <title>对前端的理解</title>
