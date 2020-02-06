@@ -339,12 +339,12 @@ map：规定事件映射 ({event:function, event:function, &hellip;})，包含�
 </code></pre></div></li>
 <li>
 <p>不满意源模块所导出的变量或方法的名称，想要为它们另起名称</p>
-<p>假设 a.js 中有一个名称如此晦涩的变量 gddhauabsg。</p>
+<p>假设 a.js 中有一个名称如此晦涩的变量 abcdefghj</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> <span style="color:#75715e">// a.js
-</span><span style="color:#75715e"></span> <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">gddhauabsg</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
-</code></pre></div><p>忍不住想要重命名这个变量的名称，但是又无权或不想修改源模块的话，那么不妨这么做。</p>
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">abcdefghj</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+</code></pre></div><p>忍不住想要重命名这个变量的名称，但是又无权或不想修改源模块的话，那么可以这么做。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> <span style="color:#75715e">// b.js，如此，我们就可以在b.js中愉快的使用num 了
-</span><span style="color:#75715e"></span> <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">gddhauabsg</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">num</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./a.js&#39;</span>
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">abcdefghj</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">num</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./a.js&#39;</span>
 </code></pre></div></li>
 <li>
 <p>想要把源模块的所有导出都导入进来，但偏偏源模块不是以 export default 方式导出的。</p>
