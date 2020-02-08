@@ -6,10 +6,21 @@
     <description>Recent content on wb的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Thu, 06 Feb 2020 16:31:19 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2020 16:15:00 +0800</lastBuildDate>
     
 	<atom:link href="https://qiujia236.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue完整版与运行时版</title>
+      <link>https://qiujia236.github.io/posts/vue%E5%AE%8C%E6%95%B4%E7%89%88%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%97%B6%E7%89%88/</link>
+      <pubDate>Sat, 08 Feb 2020 16:15:00 +0800</pubDate>
+      
+      <guid>https://qiujia236.github.io/posts/vue%E5%AE%8C%E6%95%B4%E7%89%88%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%97%B6%E7%89%88/</guid>
+      <description>Vue 完整版与运行时版 Vue 完整版 在初次使用 vue.js 时，可以看到官方提供了两个版本可以使用，包括 vue.js（完整版）和 vue.runtime.js（运行时版）。  完整版：同时包含编译器和运行时的版本。 编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码。 运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。  在实际环境中，应当使用运行时版，这是由于 vue.runtime.js 体积更小，在用户网络情况不好时能更快地加载。
+我们知道，vue.js 提供了一套模版，使我们能使用 v-if, v-for 之类的语法来编写 html。但是浏览器并不认识 v-if、v-for 之类的模版，需要通过一个模版编译器将这样的模版转换为浏览器认识的 html。所以 vue.js 的渲染逻辑是将模版字符串转换为 html 字符串，在将 html 字符串插入到页面的 html 中实现渲染。
+&amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34; src=&amp;#34;./node_modules/vue/dist/vue.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; new Vue({ el: &amp;#34;#app&amp;#34;, data: { msg: &amp;#34;hello指令系统&amp;#34; }, template: `&amp;lt;h4&amp;gt;{{msg}}&amp;lt;/h4&amp;gt;&amp;gt;` }); &amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; Vue 运行时版 vue.runtime.js 和 vue.js 的区别在于，vue.runtime.js 不包含模版编译器来获得整个包体积的减少。显然，如果没有模版编译器，上面代码中的模版字符串就没有办法转化为原始的 html 字符串。但是与其将模版字符串在用户端编译，为何不在开发时本地编译好了再发送给用户呢？这样做就节省了 vue.</description>
+    </item>
     
     <item>
       <title>浅析MVC</title>

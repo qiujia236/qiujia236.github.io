@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://qiujia236.github.io/" />
-<meta property="og:updated_time" content="2020-02-06T16:31:19+08:00" />
+<meta property="og:updated_time" content="2020-02-08T16:15:00+08:00" />
 <meta itemprop="name" content="wb的博客">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="wb的博客"/>
@@ -120,6 +120,32 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://qiujia236.github.io/posts/vue%E5%AE%8C%E6%95%B4%E7%89%88%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%97%B6%E7%89%88/" class="color-inherit dim link">
+            Vue完整版与运行时版
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Vue 完整版与运行时版 Vue 完整版 在初次使用 vue.js 时，可以看到官方提供了两个版本可以使用，包括 vue.js（完整版）和 vue.runtime.js（运行时版）。  完整版：同时包含编译器和运行时的版本。 编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码。 运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。  在实际环境中，应当使用运行时版，这是由于 vue.runtime.js 体积更小，在用户网络情况不好时能更快地加载。
+我们知道，vue.js 提供了一套模版，使我们能使用 v-if, v-for 之类的语法来编写 html。但是浏览器并不认识 v-if、v-for 之类的模版，需要通过一个模版编译器将这样的模版转换为浏览器认识的 html。所以 vue.js 的渲染逻辑是将模版字符串转换为 html 字符串，在将 html 字符串插入到页面的 html 中实现渲染。
+&lt;body&gt; &lt;div id=&#34;app&#34;&gt;&lt;/div&gt; &lt;script type=&#34;text/javascript&#34; src=&#34;./node_modules/vue/dist/vue.js&#34;&gt;&lt;/script&gt; &lt;script type=&#34;text/javascript&#34;&gt; new Vue({ el: &#34;#app&#34;, data: { msg: &#34;hello指令系统&#34; }, template: `&lt;h4&gt;{{msg}}&lt;/h4&gt;&gt;` }); &lt;/script&gt; &lt;/body&gt; Vue 运行时版 vue.runtime.js 和 vue.js 的区别在于，vue.runtime.js 不包含模版编译器来获得整个包体积的减少。显然，如果没有模版编译器，上面代码中的模版字符串就没有办法转化为原始的 html 字符串。但是与其将模版字符串在用户端编译，为何不在开发时本地编译好了再发送给用户呢？这样做就节省了 vue.
+        </div>
+          <a href="https://qiujia236.github.io/posts/vue%E5%AE%8C%E6%95%B4%E7%89%88%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%97%B6%E7%89%88/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://qiujia236.github.io/posts/%E6%B5%85%E6%9E%90mvc/" class="color-inherit dim link">
             浅析MVC
             </a>
@@ -170,43 +196,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://qiujia236.github.io/posts/%E8%B7%A8%E5%9F%9F%E8%A7%A3%E6%9E%90/" class="color-inherit dim link">
-            跨域解析
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          跨域解析 同源 1995 年，同源政策由 Netscape 公司引入浏览器。目前，所有浏览器都实行这个政策。同源（即指在同一个域）就是两个页面具有相同的协议（protocol），主机（host）和端口号（port）。可以说 Web 是构建在同源策略基础之上的，浏览器只是针对同源策略的一种实现。同源策略会阻止一个域的 javascript 脚本和另外一个域的内容进行交互。
-跨域 当一个请求 url 的协议、域名、端口三者之间任意一个与当前页面 url 不同即为跨域
-举例来说，http://www.example.com/dir/page.html 这个网址，协议是“http://”，域名是“www.example.com”，端口是80（默认端口可以省略）。它的同源情况如下。
-http://www.example.com/dir2/other.html：同源https://www.example.com/dir2/other.html：不同源（协议不同）http://example.com/dir/other.html：不同源（域名不同）http://v2.www.example.com/dir/other.html：不同源（域名不同）http://www.example.com:81/dir/other.html：不同源（端口不同）随着互联网的发展，&ldquo;同源政策&quot;越来越严格。目前，如果非同源，共有三种行为受到限制：
- Cookie、LocalStorage 和 IndexDB 无法读取。 DOM 无法获得。 AJAX 请求不能发送。  JSONP JSONP 是服务器与客户端跨源通信的常用方法。最大特点就是简单适用，兼容性好（兼容低版本 IE），缺点是只支持 get 请求，不支持 post 请求。
-核心思想：网页通过添加一个 script 元素，向服务器请求 JSON 数据，服务器收到请求后，将数据放在一个指定名字的回调函数的参数位置传回来。
-首先，网页动态插入 script 元素，由它向跨源网址发出请求。
-function addScriptTag(src) { var script = document.createElement(&#39;script&#39;); script.setAttribute(&#34;type&#34;,&#34;text/javascript&#34;); script.src = src; document.body.appendChild(script); } // 向服务器example.com发出请求，该请求的查询字符串有一个callback参数，用来指定回调函数的名字 window.onload = function () { addScriptTag(&#39;http://example.com/ip?callback=foo&#39;); } // 处理服务器返回回调函数的数据 function foo(data) { console.
-        </div>
-          <a href="https://qiujia236.github.io/posts/%E8%B7%A8%E5%9F%9F%E8%A7%A3%E6%9E%90/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://qiujia236.github.io/posts/%E8%B7%A8%E5%9F%9F%E8%A7%A3%E6%9E%90/" class="link black dim">
+              跨域解析
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://qiujia236.github.io/posts/promise%E7%9B%B8%E5%85%B3/" class="link black dim">
@@ -223,12 +224,6 @@ function addScriptTag(src) { var script = document.createElement(&#39;script&#39
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://qiujia236.github.io/posts/js%E7%9A%84%E7%BB%A7%E6%89%BF/" class="link black dim">
               JS的继承
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://qiujia236.github.io/posts/dom%E4%BA%8B%E4%BB%B6%E7%9B%B8%E5%85%B3/" class="link black dim">
-              DOM事件相关
             </a>
           </h2>
         
