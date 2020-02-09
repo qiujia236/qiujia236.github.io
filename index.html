@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://qiujia236.github.io/" />
-<meta property="og:updated_time" content="2020-02-08T16:15:00+08:00" />
+<meta property="og:updated_time" content="2020-02-09T15:08:24+08:00" />
 <meta itemprop="name" content="wb的博客">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="wb的博客"/>
@@ -120,6 +120,33 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://qiujia236.github.io/posts/%E5%AF%B9vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E7%90%86%E8%A7%A3/" class="color-inherit dim link">
+            对Vue数据响应式的理解
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          对 Vue 数据响应式的理解 “响应式”，是指当数据改变后，Vue 会通知到使用该数据的代码。例如，视图渲染中使用了数据，数据改变后，视图也会自动更新。Vue 的数据响应主要是依赖了 Object.defineProperty()方法。
+我们先来尝试写一个函数，用于改造对象：
+function defineReactive (obj,key,val) { Object.defineProperty(obj,key,{ get() { return val; }, set(newVal) { //判断新值与旧值是否相等  //判断的后半段是为了验证新值与旧值都为NaN的情况 NaN不等于自身  if(newVal === val || (newVal !== newVal &amp;&amp; value !== value)){ return ; } val = newVal; } }); } 例如 const obj = {},然后再调用 defineReactive(obj,&lsquo;a&rsquo;,2)方法，此时在函数内，val=2，然后每次获取 obj.a 的值的时候都是获取 val 的值，设置 obj.a 的时候也是设置 val 的值。（每次调用 defineReactive 都会产生一个闭包保存了 val 的值）;
+经过验证之后，发现这个函数确实可以使用的。然后我们来讨论一下响应的流程：  输入数据 改造数据（defineReactive()） 如果数据变动 =&gt; 触发事件  Vue 的响应式，核心机制是 观察者模式。
+        </div>
+          <a href="https://qiujia236.github.io/posts/%E5%AF%B9vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E7%90%86%E8%A7%A3/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="https://qiujia236.github.io/posts/vue%E5%AE%8C%E6%95%B4%E7%89%88%E4%B8%8E%E8%BF%90%E8%A1%8C%E6%97%B6%E7%89%88/" class="color-inherit dim link">
             Vue完整版与运行时版
             </a>
@@ -165,43 +192,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="https://qiujia236.github.io/posts/%E5%AF%B9%E5%89%8D%E7%AB%AF%E7%9A%84%E7%90%86%E8%A7%A3/" class="color-inherit dim link">
-            对前端的理解
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          对前端的理解 什么是前端 前端它是一个工作，它的工作领域是浏览器，它即要跟美工、设计打交道又要懂点后台代码，知道 ajax 怎么从后台拿数据，接口怎么调用，最主要的是把美工的图合成完成的网页呈现在用户面前，需要实现网页的交互效果。
-前端处于设计与后台的中间领域，起到承上启下的作用，这也要求前端工程师的知识面在横向上必须要广。服务器技术要懂，产品与交互也要懂。
-它需要掌握三个基本的技能：HTML，CSS， javascript。另外还需要懂点 PHP 或者其他应用在 Web 上的编程语言。
-前端工作师主要面向用户、浏览器、数据接口。
-前端工程师的价值  让用户更便捷的获取信息； 让前端工作更加规范和标准。  需要掌握的技能  解决浏览器兼容问题； 横向技能面要广； 纵向技能要深。js, css, html5, css3，还有主流的框架要熟悉一两种； 关注用户体验，懂得交互设计。  深入学习前端，需要做很多，前端各类库与框架的架构设计，w3c 各种标准的深入研究，对于 javascript 语言本身的研究，对浏览器的原理分析，对于网络传输协议的原理分析等等。
-前端工程师的未来 有越来越多的软件开始在浏览器里运行，随着 google 和火狐的 webos 的发展，甚至在不久的将来，浏览器的 api，会替代操作系统的 sdk 成为软件开发的标准。随着 html5 的发展，浏览器里运行的早已不是简单的页面，而是复杂的 web 应用。前端工程师也早已不是页面制作，而是 web 应用工程师。
-学习方法 在我这个阶段的认识来看，我认为学习最靠谱的方法就是积累。有一个很普遍的假象是，互联网时代似乎获取知识越来越容易，很多人都在担忧所谓的信息过剩的问题。然而实际情况却是，我们更加难以捕捉到对我们来说真正有用的信息。而前端的知识相对而言更加零散与碎片化，并且越来越多样化，所以知识的积累则是一个非常重要的过程。
-英语很重要，原因是因为国外的技术比我们发达，我们常常需要阅读国外的文章来提升自己，也常常需要在 google 搜索上找到自己问题的答案。
-        </div>
-          <a href="https://qiujia236.github.io/posts/%E5%AF%B9%E5%89%8D%E7%AB%AF%E7%9A%84%E7%90%86%E8%A7%A3/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://qiujia236.github.io/posts/%E5%AF%B9%E5%89%8D%E7%AB%AF%E7%9A%84%E7%90%86%E8%A7%A3/" class="link black dim">
+              对前端的理解
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://qiujia236.github.io/posts/%E8%B7%A8%E5%9F%9F%E8%A7%A3%E6%9E%90/" class="link black dim">
@@ -218,12 +220,6 @@
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="https://qiujia236.github.io/posts/%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F/" class="link black dim">
               数组排序
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="https://qiujia236.github.io/posts/js%E7%9A%84%E7%BB%A7%E6%89%BF/" class="link black dim">
-              JS的继承
             </a>
           </h2>
         

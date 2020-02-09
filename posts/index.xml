@@ -6,10 +6,22 @@
     <description>Recent content in Posts on wb的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sat, 08 Feb 2020 16:15:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Feb 2020 15:08:24 +0800</lastBuildDate>
     
 	<atom:link href="https://qiujia236.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>对Vue数据响应式的理解</title>
+      <link>https://qiujia236.github.io/posts/%E5%AF%B9vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Sun, 09 Feb 2020 15:08:24 +0800</pubDate>
+      
+      <guid>https://qiujia236.github.io/posts/%E5%AF%B9vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+      <description>对 Vue 数据响应式的理解 “响应式”，是指当数据改变后，Vue 会通知到使用该数据的代码。例如，视图渲染中使用了数据，数据改变后，视图也会自动更新。Vue 的数据响应主要是依赖了 Object.defineProperty()方法。
+我们先来尝试写一个函数，用于改造对象：
+function defineReactive (obj,key,val) { Object.defineProperty(obj,key,{ get() { return val; }, set(newVal) { //判断新值与旧值是否相等  //判断的后半段是为了验证新值与旧值都为NaN的情况 NaN不等于自身  if(newVal === val || (newVal !== newVal &amp;amp;&amp;amp; value !== value)){ return ; } val = newVal; } }); } 例如 const obj = {},然后再调用 defineReactive(obj,&amp;lsquo;a&amp;rsquo;,2)方法，此时在函数内，val=2，然后每次获取 obj.a 的值的时候都是获取 val 的值，设置 obj.a 的时候也是设置 val 的值。（每次调用 defineReactive 都会产生一个闭包保存了 val 的值）;
+经过验证之后，发现这个函数确实可以使用的。然后我们来讨论一下响应的流程：  输入数据 改造数据（defineReactive()） 如果数据变动 =&amp;gt; 触发事件  Vue 的响应式，核心机制是 观察者模式。</description>
+    </item>
     
     <item>
       <title>Vue完整版与运行时版</title>

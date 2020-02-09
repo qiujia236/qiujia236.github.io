@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>wb的博客  | 对Vue数据响应式的理解</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.62.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="对Vue数据响应式的理解" />
+<meta property="og:description" content="对 Vue 数据响应式的理解 “响应式”，是指当数据改变后，Vue 会通知到使用该数据的代码。例如，视图渲染中使用了数据，数据改变后，视图也会自动更新。Vue 的数据响应主要是依赖了 Object.defineProperty()方法。
+我们先来尝试写一个函数，用于改造对象：
+function defineReactive (obj,key,val) { Object.defineProperty(obj,key,{ get() { return val; }, set(newVal) { //判断新值与旧值是否相等  //判断的后半段是为了验证新值与旧值都为NaN的情况 NaN不等于自身  if(newVal === val || (newVal !== newVal &amp;&amp; value !== value)){ return ; } val = newVal; } }); } 例如 const obj = {},然后再调用 defineReactive(obj,&lsquo;a&rsquo;,2)方法，此时在函数内，val=2，然后每次获取 obj.a 的值的时候都是获取 val 的值，设置 obj.a 的时候也是设置 val 的值。（每次调用 defineReactive 都会产生一个闭包保存了 val 的值）;
+经过验证之后，发现这个函数确实可以使用的。然后我们来讨论一下响应的流程：  输入数据 改造数据（defineReactive()） 如果数据变动 =&gt; 触发事件  Vue 的响应式，核心机制是 观察者模式。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qiujia236.github.io/posts/%E5%AF%B9vue%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F%E7%9A%84%E7%90%86%E8%A7%A3/" />
+<meta property="article:published_time" content="2020-02-09T15:08:24+08:00" />
+<meta property="article:modified_time" content="2020-02-09T15:08:24+08:00" />
+<meta itemprop="name" content="对Vue数据响应式的理解">
+<meta itemprop="description" content="对 Vue 数据响应式的理解 “响应式”，是指当数据改变后，Vue 会通知到使用该数据的代码。例如，视图渲染中使用了数据，数据改变后，视图也会自动更新。Vue 的数据响应主要是依赖了 Object.defineProperty()方法。
+我们先来尝试写一个函数，用于改造对象：
+function defineReactive (obj,key,val) { Object.defineProperty(obj,key,{ get() { return val; }, set(newVal) { //判断新值与旧值是否相等  //判断的后半段是为了验证新值与旧值都为NaN的情况 NaN不等于自身  if(newVal === val || (newVal !== newVal &amp;&amp; value !== value)){ return ; } val = newVal; } }); } 例如 const obj = {},然后再调用 defineReactive(obj,&lsquo;a&rsquo;,2)方法，此时在函数内，val=2，然后每次获取 obj.a 的值的时候都是获取 val 的值，设置 obj.a 的时候也是设置 val 的值。（每次调用 defineReactive 都会产生一个闭包保存了 val 的值）;
+经过验证之后，发现这个函数确实可以使用的。然后我们来讨论一下响应的流程：  输入数据 改造数据（defineReactive()） 如果数据变动 =&gt; 触发事件  Vue 的响应式，核心机制是 观察者模式。">
+<meta itemprop="datePublished" content="2020-02-09T15:08:24&#43;08:00" />
+<meta itemprop="dateModified" content="2020-02-09T15:08:24&#43;08:00" />
+<meta itemprop="wordCount" content="249">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="对Vue数据响应式的理解"/>
+<meta name="twitter:description" content="对 Vue 数据响应式的理解 “响应式”，是指当数据改变后，Vue 会通知到使用该数据的代码。例如，视图渲染中使用了数据，数据改变后，视图也会自动更新。Vue 的数据响应主要是依赖了 Object.defineProperty()方法。
+我们先来尝试写一个函数，用于改造对象：
+function defineReactive (obj,key,val) { Object.defineProperty(obj,key,{ get() { return val; }, set(newVal) { //判断新值与旧值是否相等  //判断的后半段是为了验证新值与旧值都为NaN的情况 NaN不等于自身  if(newVal === val || (newVal !== newVal &amp;&amp; value !== value)){ return ; } val = newVal; } }); } 例如 const obj = {},然后再调用 defineReactive(obj,&lsquo;a&rsquo;,2)方法，此时在函数内，val=2，然后每次获取 obj.a 的值的时候都是获取 val 的值，设置 obj.a 的时候也是设置 val 的值。（每次调用 defineReactive 都会产生一个闭包保存了 val 的值）;
+经过验证之后，发现这个函数确实可以使用的。然后我们来讨论一下响应的流程：  输入数据 改造数据（defineReactive()） 如果数据变动 =&gt; 触发事件  Vue 的响应式，核心机制是 观察者模式。"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://qiujia236.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      wb的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">对Vue数据响应式的理解</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-02-09T15:08:24&#43;08:00">February 9, 2020</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="-vue-">对 Vue 数据响应式的理解</h1>
+<p>“响应式”，是指当数据改变后，Vue 会通知到使用该数据的代码。例如，视图渲染中使用了数据，数据改变后，视图也会自动更新。Vue 的数据响应主要是依赖了 Object.defineProperty()方法。</p>
+<p>我们先来尝试写一个函数，用于改造对象：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">defineReactive</span> (<span style="color:#a6e22e">obj</span>,<span style="color:#a6e22e">key</span>,<span style="color:#a6e22e">val</span>) {
+ Object.<span style="color:#a6e22e">defineProperty</span>(<span style="color:#a6e22e">obj</span>,<span style="color:#a6e22e">key</span>,{
+  <span style="color:#a6e22e">get</span>() {
+   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">val</span>;
+  },
+  <span style="color:#a6e22e">set</span>(<span style="color:#a6e22e">newVal</span>) {
+   <span style="color:#75715e">//判断新值与旧值是否相等
+</span><span style="color:#75715e"></span>   <span style="color:#75715e">//判断的后半段是为了验证新值与旧值都为NaN的情况 NaN不等于自身
+</span><span style="color:#75715e"></span>   <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">newVal</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">||</span> (<span style="color:#a6e22e">newVal</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">newVal</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">value</span>)){
+    <span style="color:#66d9ef">return</span> ;
+   }
+   <span style="color:#a6e22e">val</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">newVal</span>;
+  }
+ });
+}
+</code></pre></div><p>例如 const obj = {},然后再调用 defineReactive(obj,&lsquo;a&rsquo;,2)方法，此时在函数内，val=2，然后每次获取 obj.a 的值的时候都是获取 val 的值，设置 obj.a 的时候也是设置 val 的值。（每次调用 defineReactive 都会产生一个闭包保存了 val 的值）;</p>
+<p>经过验证之后，发现这个函数确实可以使用的。然后我们来讨论一下响应的流程：
+<img src="/static/%E5%93%8D%E5%BA%94%E5%BC%8F/%E5%93%8D%E5%BA%94%E5%BC%8F-1.jpg" alt=""></p>
+<ul>
+<li>输入数据</li>
+<li>改造数据（defineReactive()）</li>
+<li>如果数据变动 =&gt; 触发事件</li>
+</ul>
+<p>Vue 的响应式，核心机制是 观察者模式。</p>
+<p>数据是被观察的一方，发生改变时，通知所有的观察者，这样观察者可以做出响应，比如，重新渲染然后更新视图。</p>
+<p>我们把依赖数据的观察者称为 watcher，那么这种关系可以表示为：</p>
+<pre><code>data -&gt; watcher
+</code></pre><p>数据可以有多个观察者，怎么记录这种依赖关系呢？
+Vue 通过在 data 和 watcher 间创建一个 dep 对象，来记录这种依赖关系：</p>
+<pre><code>data - dep -&gt; watcher
+</code></pre><p>dep 的结构很简单，除了唯一标识属性 id，另一个属性就是用于记录所有观察者的 subs：</p>
+<pre><code>id - number
+subs - [Watcher]
+</code></pre><p>Vue 中 watcher 的观察对象，确切来说是一个求值表达式，或者函数。这个表达式或者函数，在一个 Vue 实例的上下文中求值或执行。这个过程中，使用到数据，也就是 watcher 所依赖的数据。用于记录依赖关系的属性是 deps，对应的是由 dep 对象组成的数组，对应所有依赖的数据。而表达式或函数，最终会作为求值函数记录到 getter 属性，每次求值得到的结果记录在 value 属性：</p>
+<pre><code>vm - VueComponent
+deps - [Dep]
+getter - function
+value - *
+</code></pre><p>另外，还有一个重要的属性 cb，记录回调函数，当 getter 返回的值与当前 value 不同时被调用：</p>
+<pre><code>cb - function
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;test&#39;</span>,
+    <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>
+  }
+})
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">userInfo</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; - &#39;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span>
+}
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">onUserInfoChange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">userInfo</span>) {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">userInfo</span>)
+}
+
+<span style="color:#a6e22e">vm</span>.<span style="color:#a6e22e">$watch</span>(<span style="color:#a6e22e">userInfo</span>, <span style="color:#a6e22e">onUserInfoChange</span>)
+</code></pre></div><p>上面代码首先创建了一个新的 Vue 实例对象 vm，包含两个数据字段：name、age。对于这两个字段，Vue 会分别创建对应的 dep 对象，用于记录依赖该数据的 watcher。</p>
+<p>然后定义了一个求值函数 userInfo，注意，这个函数会在对应的 Vue 示例上下文中执行，也就是说，执行时的 this 对应的就是 vm。</p>
+<p>回调函数 onUserInfoChange 只是打印出新的 watcher 得到的新的值，由 userInfo 执行后生成。</p>
+<p>通过 vm.$watch(userInfo, onUserInfoChange)，将 vm、getter、cb 集成在一起创建了新的 watcher。创建成功后，watcher 在内部已经记录了依赖关系，watcher.deps 中记录了 vm 的 name、age 对应的 dep 对象（因为 userInfo 中使用了这两个数据）。</p>
+<p>用个简单的图来整理下上面的关系：</p>
+<pre><code>vm.name -- dep1
+vm.age  -- dep2
+watcher.deps --&gt; [dep1, dep2]
+</code></pre><p>修改 vm 后，dep1 通知相关的 watcher，然后 watcher 执行 getter，得到新的 value，再将新的 value 传给 cb：</p>
+<pre><code>vm.name -&gt; dep1 -&gt; watcher -&gt; getter -&gt; value -&gt; cb
+</code></pre><h2 id="heading">参考</h2>
+<p>链接：https://www.jianshu.com/p/4dff7c2cdaaa</p>
+<p>链接：https://www.jb51.net/article/139593.htm</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://qiujia236.github.io/" >
+    &copy; 2020 wb的博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
