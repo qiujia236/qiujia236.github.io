@@ -34,7 +34,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://qiujia236.github.io/vue/" />
-<meta property="og:updated_time" content="2020-02-10T13:16:43+08:00" />
+<meta property="og:updated_time" content="2020-02-10T20:46:40+08:00" />
 <meta itemprop="name" content="Vues">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vues"/>
@@ -89,6 +89,25 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Vue</span>
+    <h1 class="f3 near-black">
+      <a href="https://qiujia236.github.io/vue/vue%E4%B8%AD%E7%9A%84.sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/" class="link black dim">
+        Vue中的.sync 修饰符
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Vue 中的.sync 修饰符 .sync 修饰符可以让子组件改变父组件状态的代码更容易被区分，但是它只是作为一个编译时的语法糖存在。它会被扩展为一个自动更新父组件属性的 v-on 监听器。它可以更方便的父子组件间的双向绑定。
+在解释.sync 修饰符之前，我们需要了解 vue 之父子组件间是怎么样通信的。
+通过 prop 实现通信 子组件的 props 选项能够接收来自父组件数据。没错，仅仅只能接收，props 是单向绑定的，即只能父组件向子组件传递，不能反向。
+子组件通过 props 选项来声明一个自定义的属性，然后父组件就可以在嵌套标签的时候，通过这个属性往子组件传递数据了。但是我们更多的情况需要动态的数据。这时候就可以用 v-bind 来实现。通过 v-bind 绑定 props 的自定义的属性，传递去过的就不是静态的字符串了，它可以是一个表达式、布尔值、对象等等任何类型的值。
+&lt;!--父组件 --&gt; &lt;template&gt; &lt;div&gt; &lt;h1&gt;我是父组件！&lt;/h1&gt; &lt;child message=&#34;我是子组件一！&#34;&gt;&lt;/child&gt; &lt;!--这是一个 JavaScript 表达式而不是一个字符串。--&gt; &lt;child v-bind:message=&#34;a+b&#34;&gt;&lt;/child&gt; &lt;!--用一个变量进行动态赋值。--&gt; &lt;child v-bind:message=&#34;msg&#34;&gt;&lt;/child&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import Child from &#34;../components/child.vue&#34;; export default { components: { Child }, data() { return { a: &#34;我是子组件二！&#34;, b: 112233, msg: &#34;我是子组件三！&#34; + Math.random() }; } }; &lt;/script&gt; &lt;!
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
