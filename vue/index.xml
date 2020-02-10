@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vues on wb的博客</title>
+    <link>https://qiujia236.github.io/vue/</link>
+    <description>Recent content in Vues on wb的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Mon, 10 Feb 2020 13:16:43 +0800</lastBuildDate>
+    
+	<atom:link href="https://qiujia236.github.io/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Computed和watch的区别</title>
+      <link>https://qiujia236.github.io/vue/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Mon, 10 Feb 2020 13:16:43 +0800</pubDate>
+      
+      <guid>https://qiujia236.github.io/vue/computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>computed 和 watch 的区别 computed 如果一个属性是由其他属性计算而来的，这个属性依赖其他属性，是一个多对一或者一对一，一般用 computed。支持缓存，只有依赖数据发生改变，才会重新进行计算。不支持异步，当 computed 内有异步操作时无效，无法监听数据的变化。computed 属性值会默认走缓存，计算属性是基于它们的响应式依赖进行缓存的，也就是基于 data 中声明过的数据通过计算得到的。
+&amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;hello&amp;#34;&amp;gt; {{fullName}} &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { data() { return { firstName: &amp;#34;firstName&amp;#34;, lastName: &amp;#34;lastName&amp;#34; }; }, props: { msg: String }, computed: { fullName() { return this.firstName + &amp;#34; &amp;#34; + this.lastName; } } }; &amp;lt;/script&amp;gt; 在 Vue 的 template 模板内（{{}}）是可以写一些简单的 js 表达式的很便利，如上直接计算 {{this.firstName + &#39; &#39; + this.lastName}}，因为在模版中放入太多声明式的逻辑会让模板本身过重，尤其当在页面中使用大量复杂的逻辑表达式处理数据时，会对页面的可维护性造成很大的影响，而 computed 的设计初衷也正是用于解决此类问题。
+watcher watcher 更像是一个 data 的数据监听回调，当依赖的 data 的数据变化，执行回调，在方法中会传入 newVal 和 oldVal。</description>
+    </item>
+    
+  </channel>
+</rss>
